@@ -1,0 +1,3 @@
+rootProject.name = 'RNfortaptap'
+
+include ':app'
