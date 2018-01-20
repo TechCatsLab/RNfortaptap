@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
 // import App from './App';
-import App from './app/pages/Main';
+import application from './app/index';
 
-AppRegistry.registerComponent('RNfortaptap', () => App);
+AppRegistry.registerComponent('RNfortaptap', () => application);
