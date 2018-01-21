@@ -27,23 +27,41 @@
  *     Initial: 2018/01/16        Cheng Jifeng
  */
 
-// import {
-//   TabNavigator,
-// } from 'react-navigation';
-// import MainScreen from './pages/MainScreen';
-// import SetupScreen from './pages/SetupScreen';
+import {
+  TabNavigator,
+} from 'react-navigation';
+import RecommendScreen from './pages/RecommendPage';
+import RankScreen from './pages/RankPage';
+import FindScreen from './pages/FindPage';
+import LikeScreen from './pages/LikePage';
+import MyGameScreen from './pages/MyGamePage';
 
-// const BasicApp = TabNavigator({
-//   Main: { screen: MainScreen },
-//   Setup: { screen: SetupScreen },
-// });
-
-// export default BasicApp;
-
-import Main from './pages/Main';
+const BasicApp = TabNavigator({
+  Recommand: {
+    screen: RecommendScreen,
+  },
+  Rank: {
+    screen: RankScreen,
+  },
+  Find: {
+    screen: FindScreen,
+  },
+  Like: {
+    screen: LikeScreen,
+  },
+  MyGame: {
+    screen: MyGameScreen,
+  },
+}, {
+  tabBarPosition: 'bottom',
+  animationEnabled: true,
+  tabBarOptions: {
+    activeTintColor: 'white',
+  },
+});
 
 const Navigations = {
-  Main: { screen: Main },
+  Main: { screen: BasicApp },
 };
 
 export default Navigations;
