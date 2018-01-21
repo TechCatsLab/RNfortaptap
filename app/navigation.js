@@ -24,8 +24,21 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Feng Yifei
+ *     Initial: 2018/01/16        Cheng Jifeng
  */
+
+// import {
+//   TabNavigator,
+// } from 'react-navigation';
+// import MainScreen from './pages/MainScreen';
+// import SetupScreen from './pages/SetupScreen';
+
+// const BasicApp = TabNavigator({
+//   Main: { screen: MainScreen },
+//   Setup: { screen: SetupScreen },
+// });
+
+// export default BasicApp;
 
 import Main from './pages/Main';
 

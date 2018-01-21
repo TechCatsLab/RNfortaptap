@@ -24,7 +24,7 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Feng Yifei
+ *     Initial: 2018/01/16        Cheng Jifeng
  */
 
 import { init } from '../services/init';

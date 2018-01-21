@@ -24,7 +24,7 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Feng Yifei
+ *     Initial: 2018/01/16        Cheng Jifeng
  */
 
 export { NavigationActions } from 'react-navigation';
