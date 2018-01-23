@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2018 SmartestEE Co., Ltd.
+ * Copyright (c) 2018 SmartestEE Co., Ltd..
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,10 +30,11 @@
 import {
   TabNavigator,
 } from 'react-navigation';
+
 import RecommendScreen from './pages/RecommendPage';
 import RankScreen from './pages/RankPage';
 import FindScreen from './pages/FindPage';
-import LikeScreen from './pages/LikePage';
+import AttentionScreen from './pages/AttentionPage';
 import MyGameScreen from './pages/MyGamePage';
 
 const BasicApp = TabNavigator({
@@ -47,7 +48,7 @@ const BasicApp = TabNavigator({
     screen: FindScreen,
   },
   Like: {
-    screen: LikeScreen,
+    screen: AttentionScreen,
   },
   MyGame: {
     screen: MyGameScreen,
@@ -55,8 +56,21 @@ const BasicApp = TabNavigator({
 }, {
   tabBarPosition: 'bottom',
   animationEnabled: true,
+  lazy: true,
+  // pressColor: 'red',
   tabBarOptions: {
+    showIcon: true,
     activeTintColor: 'white',
+    pressOpacity: 4,
+    labelStyle: {
+      fontSize: 10,
+    },
+    style: {
+      backgroundColor: '#14B9C8',
+    },
+    indicatorStyle: {
+      height: 0,
+    },
   },
 });
 

@@ -42,14 +42,14 @@ import { Header, Avatar } from 'react-native-elements';
 //     'Shake or press menu button for dev menu',
 // });
 
-export default class MyGamePage extends React.Component {
+export default class AttentionPage extends React.Component {
   static navigationOptions = {
     header: null,
-    tabBarLabel: '我的游戏',
-    title: '我的游戏',
+    tabBarLabel: '关注',
+    title: '关注',
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
-        name={focused ? 'ios-game-controller-b' : 'ios-game-controller-b-outline'}
+        name={focused ? 'ios-heart' : 'ios-heart-outline'}
         size={26}
         style={{ color: tintColor }}
       />
@@ -67,12 +67,12 @@ export default class MyGamePage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '我的游戏', style: { color: '#fff', fontSize: 20 } }}
+          centerComponent={{ text: '关注', style: { color: '#fff', fontSize: 20 } }}
           rightComponent={<Ionicons name="ios-search" size={26} color="white" />}
           backgroundColor="#14B9C8"
         />
         <Text>
-        我的游戏
+        关注
         </Text>
       </View>
     );
