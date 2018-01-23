@@ -36,6 +36,8 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
+import SingleRecommend from '../components/SingleCommend';
+
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
 //     'Cmd+D or shake for dev menu',
@@ -75,9 +77,7 @@ export default class RecommendPage extends React.Component {
           rightComponent={<Ionicons name="ios-search" size={26} color="white" />}
           backgroundColor="#14B9C8"
         />
-        <Text>
-        游戏推荐
-        </Text>
+        <SingleRecommend />
       </View>
     );
   }
