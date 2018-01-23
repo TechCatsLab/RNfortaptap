@@ -37,41 +37,80 @@ import {
   View,
   Text,
   StyleSheet,
+  Image,
+  ScrollView,
 } from 'react-native';
-
-// const users = [
-//   {
-//     gfrom: '来自编辑的推荐',
-//     gtitle: '旅かえる',
-//     aimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//   },
-// ];
 
 export default class SingleCommend extends React.Component {
   render() {
+    const data = [
+      {
+        gId: 1,
+        gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+        gfrom: '来自编辑的推荐',
+        gtitle: '旅かえる',
+        gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
+      },
+      {
+        gId: 2,
+        gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+        gfrom: '来自编辑的推荐',
+        gtitle: '边境之旅',
+        gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        ginfo: '山川湖海，唯美旅途。',
+      },
+      {
+        gId: 3,
+        gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+        gfrom: '来自编辑的推荐',
+        gtitle: '飞跃仙境',
+        gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
+      },
+      {
+        gId: 4,
+        gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+        gfrom: '来自编辑的推荐',
+        gtitle: 'Dancing Ball!',
+        gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
+      },
+    ];
     return (
       <View>
-        <Card>
-          <View style={styles.header}>
-            <View style={styles.leftheader}>
-              <Avatar
-                small
-                source={{ uri: "https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1" }}
-                activeOpacity={0.7}
-              />
-              <Text style={styles.from}>来自编辑的推荐</Text>
-            </View>
-            <View style={styles.rightheader}>
-              <Ionicons
-                name="md-more"
-                size={26}
-              />
-            </View>
-          </View>
-          <View>
-            <Text style={styles.title}>旅かえる</Text>
-          </View>
-        </Card>
+        <ScrollView>
+          {
+            data.map(item => (
+              <Card key={item.gId}>
+                <View style={styles.header}>
+                  <View style={styles.leftheader}>
+                    <Avatar
+                      small
+                      source={{ uri: item.gicon }}
+                      activeOpacity={0.7}
+                    />
+                    <Text style={styles.from}>{item.gfrom}</Text>
+                  </View>
+                  <View style={styles.rightheader}>
+                    <Ionicons
+                      name="md-more"
+                      size={26}
+                    />
+                  </View>
+                </View>
+                <View>
+                  <Text style={styles.title}>{item.gtitle}</Text>
+                </View>
+                <Image
+                  source={{ uri: item.gimage }}
+                  style={{ width: '100%', height: 150 }}
+                />
+                <Text style={styles.info}>{item.ginfo}</Text>
+              </Card>
+            ))
+          }
+        </ScrollView>
       </View>
     );
   }
@@ -89,17 +128,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // borderRadius: 15,
   },
-  rightheader: {
-    margin: 10,
-  },
   from: {
     marginLeft: 10,
     fontSize: 12,
     color: '#888888',
   },
+  rightheader: {
+    margin: 10,
+  },
   title: {
     fontSize: 15,
     fontWeight: 'bold',
+  },
+  info: {
+    marginTop: 5,
+    fontSize: 12,
   },
 });
 
