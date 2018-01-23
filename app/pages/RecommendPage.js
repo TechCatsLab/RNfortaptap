@@ -31,12 +31,11 @@
 import React from 'react';
 import {
   View,
-  Text,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
-import SingleRecommend from '../components/SingleCommend';
+import SingleRecommend from '../components/Home/SingleCommend';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
