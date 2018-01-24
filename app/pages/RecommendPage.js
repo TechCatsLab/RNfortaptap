@@ -36,6 +36,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
 import SingleRecommend from '../components/Home/SingleCommend';
+import exlarge from '../res/FontSize/exlarge';
+import BasicIcon from '../res/IconSize/BasicIcon';
+import BasicColor from '../res/Color/BasicColor';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -46,16 +49,13 @@ import SingleRecommend from '../components/Home/SingleCommend';
 
 export default class RecommendPage extends React.Component {
   static navigationOptions = {
-    // HeaderLeft: <Ionicons name="ios-search" size={26} />,
     header: null,
     headerTitle: 'TapTap',
-    // headerRight: <Ionicons name="ios-search" size={26} />,
     tabBarLabel: '游戏推荐',
-    // headerRight: <Ionicons name="ios-star" size={26} />,
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-star' : 'ios-star-outline'}
-        size={26}
+        size={BasicIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -72,9 +72,9 @@ export default class RecommendPage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: 'TapTap', style: { color: '#fff', fontSize: 26 } }}
-          rightComponent={<Ionicons name="ios-search" size={26} color="white" />}
-          backgroundColor="#14B9C8"
+          centerComponent={{ text: 'TapTap', style: { color: '#fff', fontSize: exlarge.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          backgroundColor={BasicColor.color}
         />
         <SingleRecommend />
       </View>

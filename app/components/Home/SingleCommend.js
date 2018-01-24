@@ -41,6 +41,10 @@ import {
   ScrollView,
 } from 'react-native';
 
+import BasicIcon from '../../res/IconSize/BasicIcon';
+import small from '../../res/FontSize/small';
+import medium from '../../res/FontSize/medium';
+
 export default class SingleCommend extends React.Component {
   render() {
     const data = [
@@ -95,7 +99,7 @@ export default class SingleCommend extends React.Component {
                   <View style={styles.rightheader}>
                     <Ionicons
                       name="md-more"
-                      size={26}
+                      size={BasicIcon.size}
                     />
                   </View>
                 </View>
@@ -126,23 +130,23 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    // borderRadius: 15,
   },
   from: {
     marginLeft: 10,
-    fontSize: 12,
     color: '#888888',
+    fontSize: small.fontSize,
   },
   rightheader: {
     margin: 10,
   },
   title: {
-    fontSize: 15,
     fontWeight: 'bold',
+    fontSize: medium.fontSize,
+    marginBottom: 3,
   },
   info: {
     marginTop: 5,
-    fontSize: 12,
+    fontSize: small.fontSize,
   },
 });
 

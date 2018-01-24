@@ -38,6 +38,8 @@ import {
   Button,
 } from 'react-native-elements';
 
+import BasicColor from '../../res/Color/BasicColor';
+
 export default class RankHeader extends React.Component {
   render() {
     const labelData = [
@@ -85,6 +87,7 @@ export default class RankHeader extends React.Component {
                       marginTop: 10,
                       marginBottom: 10,
                       borderRadius: 15,
+                      backgroundColor: BasicColor.color,
                     }}
                     backgroundColor="#DDD"
                   />

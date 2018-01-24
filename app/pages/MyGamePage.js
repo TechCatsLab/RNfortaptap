@@ -35,6 +35,10 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
+import BasicIcon from '../res/IconSize/BasicIcon';
+import large from '../res/FontSize/large';
+import BasicColor from '../res/Color/BasicColor';
+
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
 //     'Cmd+D or shake for dev menu',
@@ -50,7 +54,7 @@ export default class MyGamePage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-game-controller-b' : 'ios-game-controller-b-outline'}
-        size={26}
+        size={BasicIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -67,9 +71,9 @@ export default class MyGamePage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '我的游戏', style: { color: '#fff', fontSize: 20 } }}
-          rightComponent={<Ionicons name="ios-search" size={26} color="white" />}
-          backgroundColor="#14B9C8"
+          centerComponent={{ text: '我的游戏', style: { color: '#fff', fontSize: large.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          backgroundColor={BasicColor.color}
         />
         <Text>
         我的游戏

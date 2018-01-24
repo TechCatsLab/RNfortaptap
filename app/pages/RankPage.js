@@ -36,6 +36,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
 import Rank from '../components/Rank/Rank';
+import BasicIcon from '../res/IconSize/BasicIcon';
+import BasicColor from '../res/Color/BasicColor';
+import large from '../res/FontSize/large';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -52,7 +55,7 @@ export default class RankPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-trophy' : 'ios-trophy-outline'}
-        size={26}
+        size={BasicIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -69,8 +72,8 @@ export default class RankPage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '排行榜', style: { color: '#fff', fontSize: 20 } }}
-          rightComponent={<Ionicons name="ios-search" size={26} color="white" />}
+          centerComponent={{ text: '排行榜', style: { color: '#fff', fontSize: large.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
           backgroundColor="#14B9C8"
         />
         <Rank />
