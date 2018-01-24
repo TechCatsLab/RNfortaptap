@@ -35,7 +35,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
-import SingleRecommend from '../components/Home/SingleCommend';
+import SingleRecommend from '../components/Home/SingleRecommend';
 import exlarge from '../res/FontSize/exlarge';
 import BasicIcon from '../res/IconSize/BasicIcon';
 import BasicColor from '../res/Color/BasicColor';

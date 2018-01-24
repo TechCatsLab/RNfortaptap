@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2018 SmartestEE Co., Ltd..
+ * Copyright (c) 2018 SmartestEE Co., Ltd.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,30 +24,14 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/23        Cheng Jifeng
+ *     Initial: 2018/01/24        Cheng Jifeng
  */
 
-import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import {
-  Avatar,
-  Card,
-} from 'react-native-elements';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-} from 'react-native';
+export default {
+  namespace: 'recommend',
 
-import BasicIcon from '../../res/IconSize/BasicIcon';
-import small from '../../res/FontSize/small';
-import medium from '../../res/FontSize/medium';
-
-export default class SingleCommend extends React.Component {
-  render() {
-    const data = [
+  state: {
+    data: [
       {
         gId: 1,
         gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
@@ -80,73 +64,14 @@ export default class SingleCommend extends React.Component {
         gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
         ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
       },
-    ];
-    return (
-      <View>
-        <ScrollView>
-          {
-            data.map(item => (
-              <Card key={item.gId}>
-                <View style={styles.header}>
-                  <View style={styles.leftheader}>
-                    <Avatar
-                      small
-                      source={{ uri: item.gicon }}
-                      activeOpacity={0.7}
-                    />
-                    <Text style={styles.from}>{item.gfrom}</Text>
-                  </View>
-                  <View style={styles.rightheader}>
-                    <Ionicons
-                      name="md-more"
-                      size={BasicIcon.size}
-                    />
-                  </View>
-                </View>
-                <View>
-                  <Text style={styles.title}>{item.gtitle}</Text>
-                </View>
-                <Image
-                  source={{ uri: item.gimage }}
-                  style={{ width: '100%', height: 150 }}
-                />
-                <Text style={styles.info}>{item.ginfo}</Text>
-              </Card>
-            ))
-          }
-        </ScrollView>
-      </View>
-    );
-  }
-}
+    ],
+  },
 
-const styles = StyleSheet.create({
-  header: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  leftheader: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  from: {
-    marginLeft: 10,
-    color: '#888888',
-    fontSize: small.fontSize,
-  },
-  rightheader: {
-    margin: 10,
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: medium.fontSize,
-    marginBottom: 3,
-  },
-  info: {
-    marginTop: 5,
-    fontSize: small.fontSize,
-  },
-});
+  effects: {
 
+  },
+
+  reducers: {
+
+  },
+};
