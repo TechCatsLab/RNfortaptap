@@ -28,7 +28,7 @@
  */
 
 import React from 'react';
-import { connect } from 'dva';
+// import { connect } from 'dva';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   Avatar,
@@ -101,6 +101,10 @@ export default class SingleRecommend extends React.Component {
                       small
                       source={{ uri: item.gicon }}
                       activeOpacity={0.7}
+                      avatarStyle={{
+                        backgroundColor: '#fff',
+                        borderRadius: 5,
+                      }}
                     />
                     <Text style={styles.from}>{item.gfrom}</Text>
                   </View>
@@ -159,6 +163,9 @@ const styles = StyleSheet.create({
   info: {
     marginTop: 5,
     fontSize: small.fontSize,
+  },
+  img: {
+    backgroundColor: '#000',
   },
 });
 

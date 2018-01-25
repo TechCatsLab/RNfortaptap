@@ -51,8 +51,8 @@ export default class Rank extends React.Component {
 const styles = StyleSheet.create({
   line: {
     width: '100%',
-    height: 1,
-    backgroundColor: '#000',
+    height: 0.5,
+    backgroundColor: '#ddd',
   },
   view: {
     backgroundColor: '#fff',
