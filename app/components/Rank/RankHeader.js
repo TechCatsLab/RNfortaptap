@@ -39,7 +39,8 @@ import {
 } from 'react-native-elements';
 
 import BasicColor from '../../res/Color/BasicColor';
-import medium from '../../res/FontSize/medium';
+// import medium from '../../res/FontSize/medium';
+import small from '../../res/FontSize/small';
 
 export default class RankHeader extends React.Component {
   render() {
@@ -105,7 +106,7 @@ export default class RankHeader extends React.Component {
             <Text style={styles.textrank}>|</Text>
             <Text style={styles.textrank}>热卖榜</Text>
             <Text style={styles.textrank}>|</Text>
-            <Text>热玩榜</Text>
+            <Text style={styles.textrank}>热玩榜</Text>
           </View>
         </View>
       </View>
@@ -126,6 +127,6 @@ const styles = StyleSheet.create({
   },
   textrank: {
     marginRight: 10,
-    fontSize: medium.fontSize,
+    fontSize: small.fontSize,
   },
 });

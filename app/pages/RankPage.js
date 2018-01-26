@@ -74,7 +74,7 @@ export default class RankPage extends React.Component {
           }
           centerComponent={{ text: '排行榜', style: { color: '#fff', fontSize: large.fontSize } }}
           rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
-          backgroundColor="#14B9C8"
+          backgroundColor={BasicColor.color}
         />
         <Rank />
         <Text>
