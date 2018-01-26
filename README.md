@@ -17,9 +17,7 @@
 按`ESC`退出编辑模式，再按`Shift + :`输入`wq!`保存退出
 再次输入`. ~/.bash_profile`保存我们刚编辑的内容。
  3. 验证
- 再次输入`adb devices`这时可以看到如下说明adb已经配置成功：
-`List of devices attached
-750BBLQ224VM	unauthorized`
+ 再次输入`adb devices`这时就不会再出现`command not found`了
 ## tips:
 1. `adb kill-server`断开连接
 2. `adb start-server`重新连接
