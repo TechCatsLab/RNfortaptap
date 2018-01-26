@@ -69,7 +69,7 @@ export default class RankContent extends React.Component {
           },
           {
             key: 2,
-            number:2,
+            number: 2,
             img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
             title: '楚留香（预下载）',
             label1: '画质党',
