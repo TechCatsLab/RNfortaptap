@@ -40,17 +40,19 @@ import {
   StyleSheet,
   Image,
   FlatList,
+  ScrollView,
 } from 'react-native';
 
 import BasicIcon from '../../res/IconSize/BasicIcon';
 import small from '../../res/FontSize/small';
 import medium from '../../res/FontSize/medium';
-// import windowSize from '../../res/WindowSize/window';
+import tiny from '../../res/FontSize/tiny';
+import mediumIcon from '../../res/IconSize/mediumIcon';
 
 export default class SingleRecommend extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <FlatList
           data={[
             {
@@ -79,6 +81,62 @@ export default class SingleRecommend extends React.Component {
             },
             {
               key: 4,
+              gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: 'Dancing Ball!',
+              gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
+            },
+            {
+              key: 5,
+              gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: '旅かえる',
+              gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
+            },
+            {
+              key: 6,
+              gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: '边境之旅',
+              gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '山川湖海，唯美旅途。',
+            },
+            {
+              key: 7,
+              gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: '飞跃仙境',
+              gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
+            },
+            {
+              key: 8,
+              gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: 'Dancing Ball!',
+              gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
+            },
+            {
+              key: 9,
+              gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: '边境之旅',
+              gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '山川湖海，唯美旅途。',
+            },
+            {
+              key: 10,
+              gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+              gfrom: '来自编辑的推荐',
+              gtitle: '飞跃仙境',
+              gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+              ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
+            },
+            {
+              key: 11,
               gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
               gfrom: '来自编辑的推荐',
               gtitle: 'Dancing Ball!',
@@ -117,22 +175,30 @@ export default class SingleRecommend extends React.Component {
               <View>
                 <Text style={styles.title}>{item.gtitle}</Text>
               </View>
-              <Image
-                source={{ uri: item.gimage }}
-                style={{ width: '100%', height: 150 }}
-              />
+              <View style={styles.imageView}>
+                <Image
+                  source={{ uri: item.gimage }}
+                  style={styles.mainImage}
+                />
+                <View style={styles.gradeLayout}>
+                  <Ionicons name="md-star" size={mediumIcon.size} color="black" />
+                  <Text style={styles.gradeText}>9.8</Text>
+                  <Ionicons name="ios-chatbubbles" size={mediumIcon.size} color="black" />
+                  <Text style={styles.gradeText}>999</Text>
+                </View>
+              </View>
               <Text style={styles.info}>{item.ginfo}</Text>
             </Card>
           )}
         />
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flexGrow: 1,
   },
   header: {
     display: 'flex',
@@ -161,8 +227,27 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: small.fontSize,
   },
-  img: {
-    backgroundColor: '#000',
+  imageView: {
+    position: 'relative',
+  },
+  mainImage: {
+    width: '100%',
+    height: 150,
+  },
+  gradeLayout: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 5,
+  },
+  gradeText: {
+    fontSize: tiny.fontSize,
+    margin: 5,
+  },
+  grade: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
   },
 });
 

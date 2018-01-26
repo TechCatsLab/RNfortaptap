@@ -24,39 +24,11 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/23        Cheng Jifeng
+ *     Initial: 2018/01/24        Cheng Jifeng
  */
 
-import React from 'react';
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+const smallIcon = {
+  size: 12,
+};
 
-import RankContent from './RankContent';
-import RankHeader from './RankHeader';
-
-export default class Rank extends React.Component {
-  render() {
-    return (
-      <ScrollView style={styles.container}>
-        <RankHeader />
-        <View style={styles.line} />
-        <RankContent />
-      </ScrollView>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: '#fff',
-  },
-  line: {
-    width: '100%',
-    height: 0.5,
-    backgroundColor: '#ddd',
-  },
-});
+export default smallIcon;

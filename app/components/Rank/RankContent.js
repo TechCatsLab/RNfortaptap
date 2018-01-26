@@ -66,6 +66,7 @@ export default class RankContent extends React.Component {
             label2: '日文',
             label3: '经营',
             label4: '可爱',
+            star: 4.8,
           },
           {
             key: 2,
@@ -76,6 +77,7 @@ export default class RankContent extends React.Component {
             label2: '高画质',
             label3: '高自由度',
             label4: '预约',
+            star: 4.6,
           },
           {
             key: 3,
@@ -86,6 +88,7 @@ export default class RankContent extends React.Component {
             label2: '生存',
             label3: '末日',
             label4: '网易',
+            star: 3,
           },
           {
             key: 4,
@@ -96,6 +99,7 @@ export default class RankContent extends React.Component {
             label2: '多人在线',
             label3: '网易',
             label4: '联机',
+            star: 4,
           },
           {
             key: 5,
@@ -106,6 +110,7 @@ export default class RankContent extends React.Component {
             label2: '日系',
             label3: '美少女',
             label4: '可爱',
+            star: 4,
           },
           {
             key: 6,
@@ -116,6 +121,7 @@ export default class RankContent extends React.Component {
             label2: '日文',
             label3: '经营',
             label4: '可爱',
+            star: 4.8,
           },
           {
             key: 7,
@@ -126,6 +132,7 @@ export default class RankContent extends React.Component {
             label2: '高画质',
             label3: '高自由度',
             label4: '预约',
+            star: 4.6,
           },
           {
             key: 8,
@@ -136,6 +143,7 @@ export default class RankContent extends React.Component {
             label2: '生存',
             label3: '末日',
             label4: '网易',
+            star: 3,
           },
           {
             key: 9,
@@ -146,6 +154,7 @@ export default class RankContent extends React.Component {
             label2: '多人在线',
             label3: '网易',
             label4: '联机',
+            star: 4.4,
           },
           {
             key: 10,
@@ -156,6 +165,51 @@ export default class RankContent extends React.Component {
             label2: '日系',
             label3: '美少女',
             label4: '可爱',
+            star: 4,
+          },
+          {
+            key: 11,
+            number: 11,
+            img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
+            title: '楚留香（预下载）',
+            label1: '画质党',
+            label2: '高画质',
+            label3: '高自由度',
+            label4: '预约',
+            star: 4.6,
+          },
+          {
+            key: 12,
+            number: 12,
+            img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
+            title: '终结者2：审判日',
+            label1: '吃鸡',
+            label2: '生存',
+            label3: '末日',
+            label4: '网易',
+            star: 3,
+          },
+          {
+            key: 13,
+            number: 13,
+            img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
+            title: '荒野行动',
+            label1: '吃鸡',
+            label2: '多人在线',
+            label3: '网易',
+            label4: '联机',
+            star: 4.4,
+          },
+          {
+            key: 14,
+            number: 14,
+            img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
+            title: 'アリス・ギア・アイギス',
+            label1: '动漫',
+            label2: '日系',
+            label3: '美少女',
+            label4: '可爱',
+            star: 4,
           },
         ]}
         renderItem={({ item }) => (
@@ -183,7 +237,7 @@ export default class RankContent extends React.Component {
                 ratingCount={5}
                 imageSize={10}
                 readonly={false}
-                startingValue={4.8}
+                startingValue={item.star}
               />
               <View style={styles.labelLayout}>
                 <Text style={styles.label}>{item.label1}</Text>
@@ -215,6 +269,7 @@ const styles = StyleSheet.create({
     color: BasicColor.color,
     fontSize: tiny.fontSize,
     marginRight: 10,
+    fontWeight: blod.size,
   },
   labelLayout: {
     flexDirection: 'row',
@@ -223,8 +278,8 @@ const styles = StyleSheet.create({
   overAll: {
     display: 'flex',
     flexDirection: 'row',
-    // justifyContent: 'space-between',
-    marginTop: 10,
+    marginBottom: 5,
+    position: 'relative',
   },
   leftContent: {
     display: 'flex',
@@ -243,12 +298,8 @@ const styles = StyleSheet.create({
     fontWeight: blod.size,
   },
   rightIcon: {
-    // display: 'flex',
-    // flexDirection: 'row',
-    // justifyContent: 'flex-end',
-    marginTop: 10,
-  },
-  container: {
-    flex: 1,
+    position: 'absolute',
+    top: 10,
+    right: 13,
   },
 });
