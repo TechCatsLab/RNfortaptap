@@ -36,6 +36,7 @@ import {
 import {
   Header,
   Avatar,
+  Divider,
 } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -43,7 +44,6 @@ import iconSize from '../res/IconSize/iconSize';
 import fontSize from '../res/FontSize/fontSize';
 import BasicColor from '../res/Color/BasicColor';
 import Carousel from '../components/Discover/HomeCarousel';
-import Line from '../components/Rank/Line';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -82,11 +82,11 @@ export default class FindPage extends React.Component {
           backgroundColor={BasicColor.color}
         />
         <Carousel />
-        <Line />
+        <Divider />
         <Text style={{ height: 100 }}>qeqwe</Text>
-        <Line />
+        <Divider />
         <Text style={{ height: 100 }}>qeqwe</Text>
-        <Line />
+        <Divider />
         <Text style={{ height: 100 }}>qeqwe</Text>
         <Text style={{ height: 100 }}>qeqwe</Text>
       </View>

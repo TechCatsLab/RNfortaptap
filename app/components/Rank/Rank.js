@@ -32,17 +32,19 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
+import {
+  Divider,
+} from 'react-native-elements';
 
 import RankContent from './RankContent';
 import RankHeader from './RankHeader';
-import Line from './Line';
 
 export default class Rank extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
         <RankHeader />
-        <Line />
+        <Divider />
         <RankContent />
       </ScrollView>
     );
@@ -53,10 +55,5 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: '#fff',
-  },
-  line: {
-    width: '100%',
-    height: 0.5,
-    backgroundColor: '#ddd',
   },
 });
