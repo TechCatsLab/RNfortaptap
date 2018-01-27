@@ -24,11 +24,15 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/24        Cheng Jifeng
+ *     Initial: 2018/01/27        Cheng Jifeng
  */
 
-const tiny = {
-  fontSize: 10,
-};
+import Slides from '../res/img/img';
 
-export default tiny;
+export default {
+  namespace: 'carousel',
+
+  state: {
+    slides: Slides.slides,
+  },
+};

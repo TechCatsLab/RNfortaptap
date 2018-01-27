@@ -36,8 +36,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
 import SingleRecommend from '../components/Home/SingleRecommend';
-import exlarge from '../res/FontSize/exlarge';
-import BasicIcon from '../res/IconSize/BasicIcon';
+import fontSize from '../res/FontSize/fontSize';
+import iconSize from '../res/IconSize/iconSize';
 import BasicColor from '../res/Color/BasicColor';
 
 // const instructions = Platform.select({
@@ -55,7 +55,7 @@ export default class RecommendPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-star' : 'ios-star-outline'}
-        size={BasicIcon.size}
+        size={iconSize.xlargeIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -72,8 +72,8 @@ export default class RecommendPage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: 'TapTap', style: { color: '#fff', fontSize: exlarge.fontSize } }}
-          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          centerComponent={{ text: 'TapTap', style: { color: '#fff', fontSize: fontSize.xlarge.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
           backgroundColor={BasicColor.color}
         />
         <SingleRecommend />

@@ -35,8 +35,8 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
-import BasicIcon from '../res/IconSize/BasicIcon';
-import large from '../res/FontSize/large';
+import iconSize from '../res/IconSize/iconSize';
+import fontSize from '../res/FontSize/fontSize';
 import BasicColor from '../res/Color/BasicColor';
 
 // const instructions = Platform.select({
@@ -54,7 +54,7 @@ export default class MyGamePage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-game-controller-b' : 'ios-game-controller-b-outline'}
-        size={BasicIcon.size}
+        size={iconSize.xlargeIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -71,8 +71,8 @@ export default class MyGamePage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '我的游戏', style: { color: '#fff', fontSize: large.fontSize } }}
-          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          centerComponent={{ text: '我的游戏', style: { color: '#fff', fontSize: fontSize.large.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
           backgroundColor={BasicColor.color}
         />
         <Text>

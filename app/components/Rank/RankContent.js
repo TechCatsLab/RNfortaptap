@@ -40,11 +40,10 @@ import {
 } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import medium from '../../res/FontSize/medium';
-import tiny from '../../res/FontSize/tiny';
+import fontSize from '../../res/FontSize/fontSize';
 import BasicColor from '../../res/Color/BasicColor';
 import blod from '../../res/FontWeight/bold';
-import BasicIcon from '../../res/IconSize/BasicIcon';
+import iconSize from '../../res/IconSize/iconSize';
 
 // const WATER_IMAGE = require('../../res/image/star.png');
 
@@ -249,7 +248,7 @@ export default class RankContent extends React.Component {
             {/* </View> */}
             <Ionicons
               name="md-more"
-              size={BasicIcon.size}
+              size={iconSize.xlargeIcon.size}
               style={styles.rightIcon}
             />
           </View>
@@ -261,13 +260,13 @@ export default class RankContent extends React.Component {
 
 const styles = StyleSheet.create({
   number: {
-    fontSize: medium.fontSize,
+    fontSize: fontSize.medium.fontSize,
     margin: 10,
   },
   label: {
     borderColor: '#14B9C8',
     color: BasicColor.color,
-    fontSize: tiny.fontSize,
+    fontSize: fontSize.tiny.fontSize,
     marginRight: 10,
     fontWeight: blod.size,
   },
@@ -293,7 +292,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   title: {
-    fontSize: medium.fontSize,
+    fontSize: fontSize.medium.fontSize,
     marginBottom: 3,
     fontWeight: blod.size,
   },

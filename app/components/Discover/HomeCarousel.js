@@ -24,11 +24,54 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/24        Cheng Jifeng
+ *     Initial: 2018/01/27        Cheng Jifeng
  */
 
-const large = {
-  fontSize: 20,
+import React, { Component } from 'react';
+import {
+  Image,
+  View,
+} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+import { connect } from 'react-redux';
+
+import Dimension from '../../res/WindowSize/window';
+
+const renderSlide = ({ item }) => {
+  return (
+    <Image
+      source={{ uri: item }}
+      style={styles.slide}
+    />);
 };
 
-export default large;
+class HomeCarousel extends Component {
+  render() {
+    return (
+      <View style={styles.carousel}>
+        <Carousel
+          autoplay
+          loop
+          autoplayDelay={4000}
+          autoplayInterval={4000}
+          data={this.props.slides}
+          renderItem={renderSlide}
+          sliderWidth={Dimension.ScreenWidth}
+          itemWidth={Dimension.ScreenWidth}
+        />
+      </View>
+    );
+  }
+}
+
+const styles = {
+  carousel: {
+    height: Dimension.Height(330),
+  },
+  slide: {
+    width: Dimension.Width(640),
+    height: Dimension.Height(330),
+  },
+};
+
+export default connect(({ carousel }) => ({ slides: carousel.slides }))(HomeCarousel);

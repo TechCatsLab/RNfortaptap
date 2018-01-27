@@ -36,16 +36,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
 import Rank from '../components/Rank/Rank';
-import BasicIcon from '../res/IconSize/BasicIcon';
+import iconSize from '../res/IconSize/iconSize';
 import BasicColor from '../res/Color/BasicColor';
-import large from '../res/FontSize/large';
-
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n' +
-//     'Cmd+D or shake for dev menu',
-//   android: 'Double tap R on your keyboard to reload,\n' +
-//     'Shake or press menu button for dev menu',
-// });
+import fontSize from '../res/FontSize/fontSize';
 
 export default class RankPage extends React.Component {
   static navigationOptions = {
@@ -55,7 +48,7 @@ export default class RankPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-trophy' : 'ios-trophy-outline'}
-        size={BasicIcon.size}
+        size={iconSize.xlargeIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -72,8 +65,8 @@ export default class RankPage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '排行榜', style: { color: '#fff', fontSize: large.fontSize } }}
-          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          centerComponent={{ text: '排行榜', style: { color: '#fff', fontSize: fontSize.large.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
           backgroundColor={BasicColor.color}
         />
         <Rank />

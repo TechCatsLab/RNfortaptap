@@ -27,8 +27,22 @@
  *     Initial: 2018/01/24        Cheng Jifeng
  */
 
-const tiny = {
-  fontSize: 10,
+const fontSize = {
+  tiny: {
+    fontSize: 10,
+  },
+  small: {
+    fontSize: 12,
+  },
+  medium: {
+    fontSize: 15,
+  },
+  large: {
+    fontSize: 20,
+  },
+  xlarge: {
+    fontSize: 26,
+  },
 };
 
-export default tiny;
+export default fontSize;

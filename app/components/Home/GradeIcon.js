@@ -35,9 +35,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import mediumIcon from '../../res/IconSize/mediumIcon';
-import tinyIcon from '../../res/IconSize/tinyIcon';
-import tiny from '../../res/FontSize/tiny';
+import iconSize from '../../res/IconSize/iconSize';
+import fontSize from '../../res/FontSize/fontSize';
 
 // export default class GradeIcon extends React.Component {
 //   render() {
@@ -54,9 +53,9 @@ import tiny from '../../res/FontSize/tiny';
 function GradeIcon(props) {
   return (
     <View style={styles.gradeLayout}>
-      <Ionicons name="md-star" size={tinyIcon.size} color="black" />
+      <Ionicons name="md-star" size={iconSize.tinyIcon.size} color="black" />
       <Text style={styles.gradeText}>{props.grade}</Text>
-      <Ionicons name="ios-chatbubbles" size={tinyIcon.size} color="black" />
+      <Ionicons name="ios-chatbubbles" size={iconSize.tinyIcon.size} color="black" />
       <Text style={styles.gradeText}>{props.message}</Text>
     </View>
   );
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   gradeText: {
-    fontSize: tiny.fontSize,
+    fontSize: fontSize.tiny.fontSize,
     margin: 5,
   },
 });

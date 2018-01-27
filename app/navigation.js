@@ -33,11 +33,11 @@ import {
 
 import RecommendScreen from './pages/RecommendPage';
 import RankScreen from './pages/RankPage';
-import FindScreen from './pages/FindPage';
+import DiscoverScreen from './pages/DiscoverPage';
 import AttentionScreen from './pages/AttentionPage';
 import MyGameScreen from './pages/MyGamePage';
 import BasicColor from './res/Color/BasicColor';
-import tiny from './res/FontSize/tiny';
+import fontSize from './res/FontSize/fontSize';
 
 const BasicApp = TabNavigator({
   Recommand: {
@@ -47,7 +47,7 @@ const BasicApp = TabNavigator({
     screen: RankScreen,
   },
   Find: {
-    screen: FindScreen,
+    screen: DiscoverScreen,
   },
   Like: {
     screen: AttentionScreen,
@@ -65,7 +65,7 @@ const BasicApp = TabNavigator({
     activeTintColor: 'white',
     pressOpacity: 4,
     labelStyle: {
-      fontSize: tiny.fontSize,
+      fontSize: fontSize.tiny.fontSize,
     },
     style: {
       backgroundColor: BasicColor.color,

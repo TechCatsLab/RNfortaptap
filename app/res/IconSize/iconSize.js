@@ -24,11 +24,25 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/24        Cheng Jifeng
+ *     Initial: 2018/01/27        Cheng Jifeng
  */
 
-const exlarge = {
-  fontSize: 26,
+const fontSize = {
+  tinyIcon: {
+    size: 10,
+  },
+  smallIcon: {
+    size: 12,
+  },
+  mediumIcon: {
+    size: 15,
+  },
+  largeIcon: {
+    size: 18,
+  },
+  xlargeIcon: {
+    size: 26,
+  },
 };
 
-export default exlarge;
+export default fontSize;

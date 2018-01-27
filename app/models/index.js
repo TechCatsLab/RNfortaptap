@@ -29,8 +29,10 @@
 
 import init from './init';
 import router from './router';
+import carousel from './carousel';
 
 export const Models = [
   init,
   router,
+  carousel,
 ];

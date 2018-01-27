@@ -38,9 +38,10 @@ import {
 } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import BasicIcon from '../res/IconSize/BasicIcon';
-import large from '../res/FontSize/large';
+import iconSize from '../res/IconSize/iconSize';
+import fontSize from '../res/FontSize/fontSize';
 import BasicColor from '../res/Color/BasicColor';
+import Carousel from '../components/Discover/HomeCarousel';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -57,7 +58,7 @@ export default class FindPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-search' : 'ios-search-outline'}
-        size={BasicIcon.size}
+        size={iconSize.xlargeIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -74,13 +75,11 @@ export default class FindPage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '发现', style: { color: '#fff', fontSize: large.fontSize } }}
-          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          centerComponent={{ text: '发现', style: { color: '#fff', fontSize: fontSize.large.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
           backgroundColor={BasicColor.color}
         />
-        <Text>
-        发现
-        </Text>
+        <Carousel />
       </View>
     );
   }

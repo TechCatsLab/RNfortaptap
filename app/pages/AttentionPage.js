@@ -36,8 +36,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
 import BasicColor from '../res/Color/BasicColor';
-import BasicIcon from '../res/IconSize/BasicIcon';
-import large from '../res/FontSize/large';
+import iconSize from '../res/IconSize/iconSize';
+import fontSize from '../res/FontSize/fontSize';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -54,7 +54,7 @@ export default class AttentionPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-heart' : 'ios-heart-outline'}
-        size={BasicIcon.size}
+        size={iconSize.xlargeIcon.size}
         style={{ color: tintColor }}
       />
     ),
@@ -71,8 +71,8 @@ export default class AttentionPage extends React.Component {
               activeOpacity={0.7}
             />
           }
-          centerComponent={{ text: '关注', style: { color: '#fff', fontSize: large.fontSize } }}
-          rightComponent={<Ionicons name="ios-search" size={BasicIcon.size} color="white" />}
+          centerComponent={{ text: '关注', style: { color: '#fff', fontSize: fontSize.large.fontSize } }}
+          rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
           backgroundColor={BasicColor.color}
         />
         <Text>
