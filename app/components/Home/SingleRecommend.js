@@ -46,8 +46,9 @@ import {
 import BasicIcon from '../../res/IconSize/BasicIcon';
 import small from '../../res/FontSize/small';
 import medium from '../../res/FontSize/medium';
-import tiny from '../../res/FontSize/tiny';
-import mediumIcon from '../../res/IconSize/mediumIcon';
+// import tiny from '../../res/FontSize/tiny';
+// import mediumIcon from '../../res/IconSize/mediumIcon';
+import GradeIcon from '../Home/GradeIcon';
 
 export default class SingleRecommend extends React.Component {
   render() {
@@ -62,6 +63,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '旅かえる',
               gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
+              grade: 9.8,
+              message: 999,
             },
             {
               key: 2,
@@ -70,6 +73,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '边境之旅',
               gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '山川湖海，唯美旅途。',
+              grade: 8.0,
+              message: 600,
             },
             {
               key: 3,
@@ -78,6 +83,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '飞跃仙境',
               gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
+              grade: 8.4,
+              message: 630,
             },
             {
               key: 4,
@@ -86,6 +93,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: 'Dancing Ball!',
               gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
+              grade: 8.0,
+              message: 700,
             },
             {
               key: 5,
@@ -94,6 +103,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '旅かえる',
               gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
+              grade: 9.8,
+              message: 999,
             },
             {
               key: 6,
@@ -102,6 +113,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '边境之旅',
               gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '山川湖海，唯美旅途。',
+              grade: 8.0,
+              message: 600,
             },
             {
               key: 7,
@@ -110,6 +123,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '飞跃仙境',
               gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
+              grade: 8.4,
+              message: 630,
             },
             {
               key: 8,
@@ -118,6 +133,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: 'Dancing Ball!',
               gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
+              grade: 8.0,
+              message: 700,
             },
             {
               key: 9,
@@ -126,6 +143,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '边境之旅',
               gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '山川湖海，唯美旅途。',
+              grade: 8.0,
+              message: 600,
             },
             {
               key: 10,
@@ -134,6 +153,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: '飞跃仙境',
               gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
+              grade: 8.4,
+              message: 630,
             },
             {
               key: 11,
@@ -142,6 +163,8 @@ export default class SingleRecommend extends React.Component {
               gtitle: 'Dancing Ball!',
               gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
               ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
+              grade: 8.0,
+              message: 700,
             },
           ]}
           renderItem={({ item }) => (
@@ -155,7 +178,7 @@ export default class SingleRecommend extends React.Component {
               <View style={styles.header}>
                 <View style={styles.leftheader}>
                   <Avatar
-                    small
+                    tiny
                     source={{ uri: item.gicon }}
                     activeOpacity={0.7}
                     avatarStyle={{
@@ -175,17 +198,16 @@ export default class SingleRecommend extends React.Component {
               <View>
                 <Text style={styles.title}>{item.gtitle}</Text>
               </View>
-              <View style={styles.imageView}>
+              <View>
                 <Image
                   source={{ uri: item.gimage }}
                   style={styles.mainImage}
                 />
-                <View style={styles.gradeLayout}>
-                  <Ionicons name="md-star" size={mediumIcon.size} color="black" />
-                  <Text style={styles.gradeText}>9.8</Text>
-                  <Ionicons name="ios-chatbubbles" size={mediumIcon.size} color="black" />
-                  <Text style={styles.gradeText}>999</Text>
-                </View>
+                <GradeIcon
+                  style={styles.grade}
+                  grade={item.grade}
+                  message={item.message}
+                />
               </View>
               <Text style={styles.info}>{item.ginfo}</Text>
             </Card>
@@ -227,27 +249,14 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: small.fontSize,
   },
-  imageView: {
-    position: 'relative',
+  grade: {
+    position: 'absolute',
+    bottom: 10,
+    right: 20,
   },
   mainImage: {
     width: '100%',
     height: 150,
-  },
-  gradeLayout: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin: 5,
-  },
-  gradeText: {
-    fontSize: tiny.fontSize,
-    margin: 5,
-  },
-  grade: {
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
   },
 });
 

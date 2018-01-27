@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
   overAll: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 5,
+    marginBottom: 3,
     position: 'relative',
   },
   leftContent: {
