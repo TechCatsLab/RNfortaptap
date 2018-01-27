@@ -31,6 +31,7 @@ import React from 'react';
 import {
   View,
   Text,
+  StyleSheet,
 } from 'react-native';
 import {
   Header,
@@ -42,6 +43,7 @@ import iconSize from '../res/IconSize/iconSize';
 import fontSize from '../res/FontSize/fontSize';
 import BasicColor from '../res/Color/BasicColor';
 import Carousel from '../components/Discover/HomeCarousel';
+import Line from '../components/Rank/Line';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -65,7 +67,7 @@ export default class FindPage extends React.Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Header
           leftComponent={
             <Avatar
@@ -80,7 +82,20 @@ export default class FindPage extends React.Component {
           backgroundColor={BasicColor.color}
         />
         <Carousel />
+        <Line />
+        <Text style={{ height: 100 }}>qeqwe</Text>
+        <Line />
+        <Text style={{ height: 100 }}>qeqwe</Text>
+        <Line />
+        <Text style={{ height: 100 }}>qeqwe</Text>
+        <Text style={{ height: 100 }}>qeqwe</Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
+});

@@ -24,36 +24,24 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/23        Cheng Jifeng
+ *     Initial: 2018/01/27        Cheng Jifeng
  */
 
 import React from 'react';
 import {
+  View,
   StyleSheet,
-  ScrollView,
 } from 'react-native';
 
-import RankContent from './RankContent';
-import RankHeader from './RankHeader';
-import Line from './Line';
-
-export default class Rank extends React.Component {
+export default class Line extends React.Component {
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <RankHeader />
-        <Line />
-        <RankContent />
-      </ScrollView>
+      <View style={styles.line} />
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: '#fff',
-  },
   line: {
     width: '100%',
     height: 0.5,

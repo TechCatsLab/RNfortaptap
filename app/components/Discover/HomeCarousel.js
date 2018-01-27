@@ -31,11 +31,13 @@ import React, { Component } from 'react';
 import {
   Image,
   View,
+  StyleSheet,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import { connect } from 'react-redux';
 
 import Dimension from '../../res/WindowSize/window';
+import ScrollClassify from '../Rank/ScrollClassify';
 
 const renderSlide = ({ item }) => {
   return (
@@ -59,19 +61,21 @@ class HomeCarousel extends Component {
           sliderWidth={Dimension.ScreenWidth}
           itemWidth={Dimension.ScreenWidth}
         />
+        <ScrollClassify />
       </View>
     );
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   carousel: {
     height: Dimension.Height(330),
+    backgroundColor: 'white',
   },
   slide: {
     width: Dimension.Width(640),
     height: Dimension.Height(330),
   },
-};
+});
 
 export default connect(({ carousel }) => ({ slides: carousel.slides }))(HomeCarousel);
