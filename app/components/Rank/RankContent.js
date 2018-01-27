@@ -39,6 +39,7 @@ import {
   Rating,
 } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { connect } from 'react-redux';
 
 import fontSize from '../../res/FontSize/fontSize';
 import BasicColor from '../../res/Color/BasicColor';
@@ -47,215 +48,59 @@ import iconSize from '../../res/IconSize/iconSize';
 
 // const WATER_IMAGE = require('../../res/image/star.png');
 
-export default class RankContent extends React.Component {
-  _separator = () => {
-    return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
-  }
-  render() {
-    return (
-      <FlatList
-        ItemSeparatorComponent={this._separator}
-        data={[
-          {
-            key: 1,
-            number: 1,
-            img: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageMogr2/auto-orient/strip',
-            title: '旅行青蛙',
-            label1: '治愈',
-            label2: '日文',
-            label3: '经营',
-            label4: '可爱',
-            star: 4.8,
-          },
-          {
-            key: 2,
-            number: 2,
-            img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
-            title: '楚留香（预下载）',
-            label1: '画质党',
-            label2: '高画质',
-            label3: '高自由度',
-            label4: '预约',
-            star: 4.6,
-          },
-          {
-            key: 3,
-            number: 3,
-            img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
-            title: '终结者2：审判日',
-            label1: '吃鸡',
-            label2: '生存',
-            label3: '末日',
-            label4: '网易',
-            star: 3,
-          },
-          {
-            key: 4,
-            number: 4,
-            img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
-            title: '荒野行动',
-            label1: '吃鸡',
-            label2: '多人在线',
-            label3: '网易',
-            label4: '联机',
-            star: 4,
-          },
-          {
-            key: 5,
-            number: 5,
-            img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
-            title: 'アリス・ギア・アイギス',
-            label1: '动漫',
-            label2: '日系',
-            label3: '美少女',
-            label4: '可爱',
-            star: 4,
-          },
-          {
-            key: 6,
-            number: 6,
-            img: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageMogr2/auto-orient/strip',
-            title: '旅行青蛙',
-            label1: '治愈',
-            label2: '日文',
-            label3: '经营',
-            label4: '可爱',
-            star: 4.8,
-          },
-          {
-            key: 7,
-            number: 7,
-            img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
-            title: '楚留香（预下载）',
-            label1: '画质党',
-            label2: '高画质',
-            label3: '高自由度',
-            label4: '预约',
-            star: 4.6,
-          },
-          {
-            key: 8,
-            number: 8,
-            img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
-            title: '终结者2：审判日',
-            label1: '吃鸡',
-            label2: '生存',
-            label3: '末日',
-            label4: '网易',
-            star: 3,
-          },
-          {
-            key: 9,
-            number: 9,
-            img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
-            title: '荒野行动',
-            label1: '吃鸡',
-            label2: '多人在线',
-            label3: '网易',
-            label4: '联机',
-            star: 4.4,
-          },
-          {
-            key: 10,
-            number: 10,
-            img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
-            title: 'アリス・ギア・アイギス',
-            label1: '动漫',
-            label2: '日系',
-            label3: '美少女',
-            label4: '可爱',
-            star: 4,
-          },
-          {
-            key: 11,
-            number: 11,
-            img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
-            title: '楚留香（预下载）',
-            label1: '画质党',
-            label2: '高画质',
-            label3: '高自由度',
-            label4: '预约',
-            star: 4.6,
-          },
-          {
-            key: 12,
-            number: 12,
-            img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
-            title: '终结者2：审判日',
-            label1: '吃鸡',
-            label2: '生存',
-            label3: '末日',
-            label4: '网易',
-            star: 3,
-          },
-          {
-            key: 13,
-            number: 13,
-            img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
-            title: '荒野行动',
-            label1: '吃鸡',
-            label2: '多人在线',
-            label3: '网易',
-            label4: '联机',
-            star: 4.4,
-          },
-          {
-            key: 14,
-            number: 14,
-            img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
-            title: 'アリス・ギア・アイギス',
-            label1: '动漫',
-            label2: '日系',
-            label3: '美少女',
-            label4: '可爱',
-            star: 4,
-          },
-        ]}
-        renderItem={({ item }) => (
-          <View style={styles.overAll} key={item.key}>
-            {/* <View> */}
-            <View style={styles.leftContent}>
-              <Text style={styles.number}>{item.number}</Text>
-              <Avatar
-                medium
-                source={{ uri: item.img }}
-                activeOpacity={0.7}
-                avatarStyle={{
-                  borderRadius: 8,
-                  backgroundColor: 'white',
-                }}
-              />
-            </View>
-            <View style={styles.centerContent}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Rating
-                // showRating
-                // type="custom"
-                // ratingImage={WATER_IMAGE}
-                fractions={1}
-                ratingCount={5}
-                imageSize={10}
-                readonly={false}
-                startingValue={item.star}
-              />
-              <View style={styles.labelLayout}>
-                <Text style={styles.label}>{item.label1}</Text>
-                <Text style={styles.label}>{item.label2}</Text>
-                <Text style={styles.label}>{item.label3}</Text>
-                <Text style={styles.label}>{item.label4}</Text>
-              </View>
-            </View>
-            {/* </View> */}
-            <Ionicons
-              name="md-more"
-              size={iconSize.xlargeIcon.size}
-              style={styles.rightIcon}
+const _separator = () => {
+  return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
+};
+
+function RankContent(props) {
+  return (
+    <FlatList
+      ItemSeparatorComponent={_separator}
+      data={props.rankContent}
+      renderItem={({ item }) => (
+        <View style={styles.overAll} key={item.key}>
+          {/* <View> */}
+          <View style={styles.leftContent}>
+            <Text style={styles.number}>{item.number}</Text>
+            <Avatar
+              medium
+              source={{ uri: item.img }}
+              activeOpacity={0.7}
+              avatarStyle={{
+                borderRadius: 8,
+                backgroundColor: 'white',
+              }}
             />
           </View>
-        )}
-      />
-    );
-  }
+          <View style={styles.centerContent}>
+            <Text style={styles.title}>{item.title}</Text>
+            <Rating
+              // showRating
+              // type="custom"
+              // ratingImage={WATER_IMAGE}
+              fractions={1}
+              ratingCount={5}
+              imageSize={10}
+              readonly={false}
+              startingValue={item.star}
+            />
+            <View style={styles.labelLayout}>
+              <Text style={styles.label}>{item.label1}</Text>
+              <Text style={styles.label}>{item.label2}</Text>
+              <Text style={styles.label}>{item.label3}</Text>
+              <Text style={styles.label}>{item.label4}</Text>
+            </View>
+          </View>
+          {/* </View> */}
+          <Ionicons
+            name="md-more"
+            size={iconSize.xlargeIcon.size}
+            style={styles.rightIcon}
+          />
+        </View>
+      )}
+    />
+  );
 }
 
 const styles = StyleSheet.create({
@@ -302,3 +147,7 @@ const styles = StyleSheet.create({
     right: 13,
   },
 });
+
+export default connect(({ rank }) => ({
+  rankContent: rank.rankContent,
+}))(RankContent);

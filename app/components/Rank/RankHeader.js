@@ -47,16 +47,16 @@ export default class RankHeader extends React.Component {
       <View style={styles.view}>
         <View>
           <ScrollClassify />
-          <View style={styles.allranktype}>
-            <Text style={styles.textrank}>下载榜</Text>
-            <Text style={styles.textrank}>|</Text>
-            <Text style={styles.textrank}>新品榜</Text>
-            <Text style={styles.textrank}>|</Text>
-            <Text style={styles.textrank}>预约榜</Text>
-            <Text style={styles.textrank}>|</Text>
-            <Text style={styles.textrank}>热卖榜</Text>
-            <Text style={styles.textrank}>|</Text>
-            <Text style={styles.textrank}>热玩榜</Text>
+          <View style={styles.allRankType}>
+            <Text style={styles.textRank}>下载榜</Text>
+            <Text style={styles.textRank}>|</Text>
+            <Text style={styles.textRank}>新品榜</Text>
+            <Text style={styles.textRank}>|</Text>
+            <Text style={styles.textRank}>预约榜</Text>
+            <Text style={styles.textRank}>|</Text>
+            <Text style={styles.textRank}>热卖榜</Text>
+            <Text style={styles.textRank}>|</Text>
+            <Text style={styles.textRank}>热玩榜</Text>
           </View>
         </View>
       </View>
@@ -65,17 +65,13 @@ export default class RankHeader extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  headtype: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  allranktype: {
+  allRankType: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     margin: 5,
   },
-  textrank: {
+  textRank: {
     marginRight: 10,
     fontSize: fontSize.small.fontSize,
   },

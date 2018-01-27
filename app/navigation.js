@@ -59,7 +59,6 @@ const BasicApp = TabNavigator({
   tabBarPosition: 'bottom',
   animationEnabled: true,
   lazy: true,
-  // pressColor: 'red',
   tabBarOptions: {
     showIcon: true,
     activeTintColor: 'white',

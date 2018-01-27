@@ -28,7 +28,6 @@
  */
 
 import React from 'react';
-// import { connect } from 'dva';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   Avatar,
@@ -42,347 +41,61 @@ import {
   FlatList,
   ScrollView,
 } from 'react-native';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 import fontSize from '../../res/FontSize/fontSize';
 import GradeIcon from '../Home/GradeIcon';
 import iconSize from '../../res/IconSize/iconSize';
 
-// function SingleRecommend(props) {
-//   return (
-//     <ScrollView style={styles.container}>
-//       <FlatList
-//         // data={this.props.gameInfo}
-//         data={[
-//           {
-//             key: 1,
-//             gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '旅かえる',
-//             gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
-//             grade: 9.8,
-//             message: 999,
-//           },
-//           {
-//             key: 2,
-//             gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '边境之旅',
-//             gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '山川湖海，唯美旅途。',
-//             grade: 8.0,
-//             message: 600,
-//           },
-//           {
-//             key: 3,
-//             gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '飞跃仙境',
-//             gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
-//             grade: 8.4,
-//             message: 630,
-//           },
-//           {
-//             key: 4,
-//             gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: 'Dancing Ball!',
-//             gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
-//             grade: 8.0,
-//             message: 700,
-//           },
-//           {
-//             key: 5,
-//             gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '旅かえる',
-//             gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
-//             grade: 9.8,
-//             message: 999,
-//           },
-//           {
-//             key: 6,
-//             gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '边境之旅',
-//             gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '山川湖海，唯美旅途。',
-//             grade: 8.0,
-//             message: 600,
-//           },
-//           {
-//             key: 7,
-//             gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '飞跃仙境',
-//             gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
-//             grade: 8.4,
-//             message: 630,
-//           },
-//           {
-//             key: 8,
-//             gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: 'Dancing Ball!',
-//             gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
-//             grade: 8.0,
-//             message: 700,
-//           },
-//           {
-//             key: 9,
-//             gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '边境之旅',
-//             gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '山川湖海，唯美旅途。',
-//             grade: 8.0,
-//             message: 600,
-//           },
-//           {
-//             key: 10,
-//             gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: '飞跃仙境',
-//             gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
-//             grade: 8.4,
-//             message: 630,
-//           },
-//           {
-//             key: 11,
-//             gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-//             gfrom: '来自编辑的推荐',
-//             gtitle: 'Dancing Ball!',
-//             gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-//             ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
-//             grade: 8.0,
-//             message: 700,
-//           },
-//         ]}
-//         renderItem={({ item }) => (
-//           <Card
-//             // containerStyle={{
-//             //   width: windowSize.ScreenWidth,
-//             //   // margin: 'auto',
-//             // }}
-//             key={item.key}
-//           >
-//             <View style={styles.header}>
-//               <View style={styles.leftheader}>
-//                 <Avatar
-//                   tiny
-//                   source={{ uri: item.gicon }}
-//                   activeOpacity={0.7}
-//                   avatarStyle={{
-//                     backgroundColor: '#fff',
-//                     borderRadius: 5,
-//                   }}
-//                 />
-//                 <Text style={styles.from}>{item.gfrom}</Text>
-//               </View>
-//               <View style={styles.rightheader}>
-//                 <Ionicons
-//                   name="md-more"
-//                   size={BasicIcon.size}
-//                 />
-//               </View>
-//             </View>
-//             <View>
-//               <Text style={styles.title}>{item.gtitle}</Text>
-//             </View>
-//             <View>
-//               <Image
-//                 source={{ uri: item.gimage }}
-//                 style={styles.mainImage}
-//               />
-//               <GradeIcon
-//                 style={styles.grade}
-//                 grade={item.grade}
-//                 message={item.message}
-//               />
-//             </View>
-//             <Text style={styles.info}>{item.ginfo}</Text>
-//           </Card>
-//         )}
-//       />
-//     </ScrollView>
-//   );
-// }
-
-export default class SingleRecommend extends React.Component {
-  render() {
-    // const { gameInfo } = this.props;
-    return (
-      <ScrollView style={styles.container}>
-        <FlatList
-          // data={this.props.gameInfo}
-          data={[
-            {
-              key: 1,
-              gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '旅かえる',
-              gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
-              grade: 9.8,
-              message: 999,
-            },
-            {
-              key: 2,
-              gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '边境之旅',
-              gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '山川湖海，唯美旅途。',
-              grade: 8.0,
-              message: 600,
-            },
-            {
-              key: 3,
-              gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '飞跃仙境',
-              gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
-              grade: 8.4,
-              message: 630,
-            },
-            {
-              key: 4,
-              gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: 'Dancing Ball!',
-              gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
-              grade: 8.0,
-              message: 700,
-            },
-            {
-              key: 5,
-              gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '旅かえる',
-              gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
-              grade: 9.8,
-              message: 999,
-            },
-            {
-              key: 6,
-              gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '边境之旅',
-              gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '山川湖海，唯美旅途。',
-              grade: 8.0,
-              message: 600,
-            },
-            {
-              key: 7,
-              gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '飞跃仙境',
-              gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
-              grade: 8.4,
-              message: 630,
-            },
-            {
-              key: 8,
-              gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: 'Dancing Ball!',
-              gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
-              grade: 8.0,
-              message: 700,
-            },
-            {
-              key: 9,
-              gicon: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '边境之旅',
-              gimage: 'https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '山川湖海，唯美旅途。',
-              grade: 8.0,
-              message: 600,
-            },
-            {
-              key: 10,
-              gicon: 'https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: '飞跃仙境',
-              gimage: 'https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '跟随桃乐丝的梦境，找寻未知的自己。',
-              grade: 8.4,
-              message: 630,
-            },
-            {
-              key: 11,
-              gicon: 'https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
-              gfrom: '来自编辑的推荐',
-              gtitle: 'Dancing Ball!',
-              gimage: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-              ginfo: '独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！',
-              grade: 8.0,
-              message: 700,
-            },
-          ]}
-          renderItem={({ item }) => (
-            <Card
-              // containerStyle={{
-              //   width: windowSize.ScreenWidth,
-              //   // margin: 'auto',
-              // }}
-              key={item.key}
-            >
-              <View style={styles.header}>
-                <View style={styles.leftheader}>
-                  <Avatar
-                    tiny
-                    source={{ uri: item.gicon }}
-                    activeOpacity={0.7}
-                    avatarStyle={{
-                      backgroundColor: '#fff',
-                      borderRadius: 5,
-                    }}
-                  />
-                  <Text style={styles.from}>{item.gfrom}</Text>
-                </View>
-                <View style={styles.rightheader}>
-                  <Ionicons
-                    name="md-more"
-                    size={iconSize.xlargeIcon.size}
-                  />
-                </View>
-              </View>
-              <View>
-                <Text style={styles.title}>{item.gtitle}</Text>
-              </View>
-              <View>
-                <Image
-                  source={{ uri: item.gimage }}
-                  style={styles.mainImage}
+function SingleRecommend(props) {
+  return (
+    <ScrollView style={styles.container}>
+      <FlatList
+        data={props.gameInfo}
+        renderItem={({ item }) => (
+          <Card
+            key={item.data}
+          >
+            <View style={styles.header}>
+              <View style={styles.leftHeader}>
+                <Avatar
+                  tiny
+                  source={{ uri: item.gicon }}
+                  activeOpacity={0.7}
+                  avatarStyle={{
+                    backgroundColor: '#fff',
+                    borderRadius: 5,
+                  }}
                 />
-                <GradeIcon
-                  style={styles.grade}
-                  grade={item.grade}
-                  message={item.message}
+                <Text style={styles.from}>{item.gfrom}</Text>
+              </View>
+              <View style={styles.rightHeader}>
+                <Ionicons
+                  name="md-more"
+                  size={iconSize.xlargeIcon.size}
                 />
               </View>
-              <Text style={styles.info}>{item.ginfo}</Text>
-            </Card>
-          )}
-        />
-      </ScrollView>
-    );
-  }
+            </View>
+            <View>
+              <Text style={styles.title}>{item.gtitle}</Text>
+            </View>
+            <View>
+              <Image
+                source={{ uri: item.gimage }}
+                style={styles.mainImage}
+              />
+              <GradeIcon
+                style={styles.grade}
+                grade={item.grade}
+                message={item.message}
+              />
+            </View>
+            <Text style={styles.info}>{item.ginfo}</Text>
+          </Card>
+        )}
+      />
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -394,7 +107,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  leftheader: {
+  leftHeader: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -404,7 +117,7 @@ const styles = StyleSheet.create({
     color: '#888888',
     fontSize: fontSize.small.fontSize,
   },
-  rightheader: {
+  rightHeader: {
     margin: 10,
   },
   title: {
@@ -429,6 +142,6 @@ const styles = StyleSheet.create({
 
 // export default SingleRecommend;
 
-// export default connect(state => ({
-//   gameInfo: state.home.gameInfo,
-// }))(SingleRecommend);
+export default connect(({ home }) => ({
+  gameInfo: home.gameInfo,
+}))(SingleRecommend);
