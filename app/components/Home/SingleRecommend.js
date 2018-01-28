@@ -49,7 +49,10 @@ import iconSize from '../../res/IconSize/iconSize';
 
 function SingleRecommend(props) {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+    >
       <FlatList
         data={props.gameInfo}
         renderItem={({ item }) => (

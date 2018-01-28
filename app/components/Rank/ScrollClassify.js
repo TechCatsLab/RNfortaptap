@@ -42,6 +42,7 @@ export default class Classify extends React.Component {
     return (
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         data={[
           {
             key: '0',
