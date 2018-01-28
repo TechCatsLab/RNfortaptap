@@ -28,25 +28,49 @@
  */
 
 import React from 'react';
-// import {
-//   View,
-// } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+} from 'react-native';
 import {
   Avatar,
 } from 'react-native-elements';
 
-function BriefInfo(props) {
+import FontSize from '../../res/FontSize/fontSize';
+import blod from '../../res/FontWeight/bold';
+import windowSize from '../../res/WindowSize/window';
+
+function SingleDiscoverInfo(props) {
   return (
-    <Avatar
-      medium
-      source={{ uri: props.img }}
-      activeOpacity={0.7}
-      avatarStyle={{
-        borderRadius: 8,
-        backgroundColor: 'white',
-      }}
-    />
+    <View style={styles.singleInfo}>
+      <Avatar
+        large
+        source={{ uri: props.img }}
+        activeOpacity={0.7}
+        avatarStyle={{
+          borderRadius: 8,
+          backgroundColor: 'white',
+        }}
+      />
+      <Text style={styles.text}>{props.title}</Text>
+    </View>
   );
 }
 
-export default BriefInfo;
+const styles = StyleSheet.create({
+  singleInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: 15,
+    width: windowSize.ScreenWidth * 0.18,
+  },
+  text: {
+    fontSize: FontSize.tiny.fontSize,
+    fontWeight: blod.size,
+    marginTop: 5,
+    marginBottom: 10,
+  },
+});
+
+export default SingleDiscoverInfo;

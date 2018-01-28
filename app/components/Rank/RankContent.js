@@ -34,10 +34,9 @@ import {
   StyleSheet,
   FlatList,
 } from 'react-native';
-// import {
-//   Avatar,
-//   Rating,
-// } from 'react-native-elements';
+import {
+  Avatar,
+} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 
@@ -45,7 +44,7 @@ import fontSize from '../../res/FontSize/fontSize';
 // import BasicColor from '../../res/Color/BasicColor';
 // import blod from '../../res/FontWeight/bold';
 import iconSize from '../../res/IconSize/iconSize';
-import BriefImage from './BrifImage';
+// import BriefImage from './BrifImage';
 import BriefInfo from './BriefInfo';
 
 // const WATER_IMAGE = require('../../res/image/star.png');
@@ -63,7 +62,16 @@ function RankContent(props) {
         <View style={styles.overAll} key={item.key}>
           <View style={styles.leftContent}>
             <Text style={styles.number}>{item.number}</Text>
-            <BriefImage img={item.img} />
+            <Avatar
+              medium
+              source={{ uri: item.img }}
+              activeOpacity={0.7}
+              avatarStyle={{
+                borderRadius: 8,
+                backgroundColor: 'white',
+              }}
+            />
+            {/* <BriefImage img={item.img} /> */}
           </View>
           <BriefInfo
             title={item.title}

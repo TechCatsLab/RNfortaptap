@@ -37,7 +37,6 @@ import Carousel from 'react-native-snap-carousel';
 import { connect } from 'react-redux';
 
 import Dimension from '../../res/WindowSize/window';
-import ScrollClassify from '../Rank/ScrollClassify';
 
 const renderSlide = ({ item }) => {
   return (
@@ -61,7 +60,6 @@ class HomeCarousel extends Component {
           sliderWidth={Dimension.ScreenWidth}
           itemWidth={Dimension.ScreenWidth}
         />
-        <ScrollClassify />
       </View>
     );
   }

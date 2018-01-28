@@ -30,8 +30,8 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 import {
   Header,
@@ -44,13 +44,8 @@ import iconSize from '../res/IconSize/iconSize';
 import fontSize from '../res/FontSize/fontSize';
 import BasicColor from '../res/Color/BasicColor';
 import Carousel from '../components/Discover/HomeCarousel';
-
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n' +
-//     'Cmd+D or shake for dev menu',
-//   android: 'Double tap R on your keyboard to reload,\n' +
-//     'Shake or press menu button for dev menu',
-// });
+import ScrollClassify from '../components/Rank/ScrollClassify';
+import DiscoverClassify from '../components/Discover/DiscoverClassify';
 
 export default class FindPage extends React.Component {
   static navigationOptions = {
@@ -67,29 +62,27 @@ export default class FindPage extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Header
-          leftComponent={
-            <Avatar
-              small
-              rounded
-              source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-              activeOpacity={0.7}
-            />
-          }
-          centerComponent={{ text: '发现', style: { color: '#fff', fontSize: fontSize.large.fontSize } }}
-          rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
-          backgroundColor={BasicColor.color}
-        />
-        <Carousel />
-        <Divider />
-        <Text style={{ height: 100 }}>qeqwe</Text>
-        <Divider />
-        <Text style={{ height: 100 }}>qeqwe</Text>
-        <Divider />
-        <Text style={{ height: 100 }}>qeqwe</Text>
-        <Text style={{ height: 100 }}>qeqwe</Text>
-      </View>
+      <ScrollView style={styles.container}>
+        <View>
+          <Header
+            leftComponent={
+              <Avatar
+                small
+                rounded
+                source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+                activeOpacity={0.7}
+              />
+            }
+            centerComponent={{ text: '发现', style: { color: '#fff', fontSize: fontSize.large.fontSize } }}
+            rightComponent={<Ionicons name="ios-search" size={iconSize.xlargeIcon.size} color="white" />}
+            backgroundColor={BasicColor.color}
+          />
+          <Carousel />
+          <ScrollClassify />
+          <Divider />
+          <DiscoverClassify />
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -97,5 +90,6 @@ export default class FindPage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
+    flexGrow: 1,
   },
 });

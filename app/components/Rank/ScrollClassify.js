@@ -37,7 +37,7 @@ import {
 
 import BasicColor from '../../res/Color/BasicColor';
 
-export default class Classify extends React.Component {
+export default class ScrollClassify extends React.Component {
   render() {
     return (
       <FlatList

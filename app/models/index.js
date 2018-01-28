@@ -32,6 +32,7 @@ import router from './router';
 import carousel from './carousel';
 import home from './home';
 import rank from './rank';
+import discoverInfo from './discoverInfo';
 
 export const Models = [
   init,
@@ -39,4 +40,5 @@ export const Models = [
   carousel,
   home,
   rank,
+  discoverInfo,
 ];
