@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2018 SmartestEE Co., Ltd..
+ * Copyright (c) 2018 SmartestEE Co., Ltd.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,45 +28,49 @@
  */
 
 export default {
-  namespace: 'discoverInfo',
+  namespace: 'scrollRow',
 
   state: {
-    discoverContent: [
+    eachContent: [
       {
         key: 1,
-        type: '每日新发现',
         img: 'https://img.tapimg.com/market/lcs/0ac98bad530ef14886ba5f8ea599741b_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
         title: 'TALLNUM（Unreleased）',
       },
       {
         key: 2,
-        type: '每日新发现',
-        img: 'https://img.tapimg.com/market/lcs/0ac98bad530ef14886ba5f8ea599741b_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
-        title: 'TALLNUM（Unreleased）',
+        img: 'https://img.tapimg.com/market/lcs/3853da5a3c6c7ddf43bca0b0f9d973d0_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: 'DUNIDLE - Idle Pixel RPG',
       },
       {
         key: 3,
-        type: '每日新发现',
-        img: 'https://img.tapimg.com/market/lcs/0ac98bad530ef14886ba5f8ea599741b_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
-        title: 'TALLNUM（Unreleased）',
+        img: 'https://img.tapimg.com/market/icons/b061972a21356a7b0469ca7fc6249238_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: 'Zold:out',
       },
       {
         key: 4,
-        type: '每日新发现',
-        img: 'https://img.tapimg.com/market/lcs/0ac98bad530ef14886ba5f8ea599741b_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
-        title: 'TALLNUM（Unreleased）',
+        img: 'https://img.tapimg.com/market/lcs/f3732c8be8c821ab628e8004d887321a_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: 'Unbalance',
       },
       {
         key: 5,
-        type: '每日新发现',
         img: 'https://img.tapimg.com/market/lcs/0ac98bad530ef14886ba5f8ea599741b_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
         title: 'TALLNUM（Unreleased）',
       },
       {
         key: 6,
-        type: '每日新发现',
-        img: 'https://img.tapimg.com/market/lcs/0ac98bad530ef14886ba5f8ea599741b_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
-        title: 'TALLNUM（Unreleased）',
+        img: 'https://img.tapimg.com/market/lcs/3853da5a3c6c7ddf43bca0b0f9d973d0_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: 'DUNIDLE - Idle Pixel RPG',
+      },
+      {
+        key: 7,
+        img: 'https://img.tapimg.com/market/icons/b061972a21356a7b0469ca7fc6249238_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: 'Zold:out',
+      },
+      {
+        key: 8,
+        img: 'https://img.tapimg.com/market/lcs/f3732c8be8c821ab628e8004d887321a_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: 'Unbalance',
       },
     ],
   },

@@ -32,10 +32,12 @@ import {
   View,
   Text,
   StyleSheet,
+  FlatList,
 } from 'react-native';
 import {
   Avatar,
 } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 import FontSize from '../../res/FontSize/fontSize';
 import blod from '../../res/FontWeight/bold';
@@ -43,18 +45,25 @@ import windowSize from '../../res/WindowSize/window';
 
 function SingleDiscoverInfo(props) {
   return (
-    <View style={styles.singleInfo}>
-      <Avatar
-        large
-        source={{ uri: props.img }}
-        activeOpacity={0.7}
-        avatarStyle={{
-          borderRadius: 8,
-          backgroundColor: 'white',
-        }}
-      />
-      <Text style={styles.text}>{props.title}</Text>
-    </View>
+    <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      data={props.eachContent}
+      renderItem={({ item }) => (
+        <View key={item.key} style={styles.singleInfo}>
+          <Avatar
+            large
+            source={{ uri: item.img }}
+            activeOpacity={0.7}
+            avatarStyle={{
+              borderRadius: 8,
+              backgroundColor: 'white',
+            }}
+          />
+          <Text style={styles.text}>{item.title}</Text>
+        </View>
+      )}
+    />
   );
 }
 
@@ -73,4 +82,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SingleDiscoverInfo;
+export default connect(({ scrollRow }) => ({
+  eachContent: scrollRow.eachContent,
+}))(SingleDiscoverInfo);

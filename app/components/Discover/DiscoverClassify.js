@@ -29,66 +29,35 @@
 
 import React from 'react';
 import {
-  Text,
   View,
-  StyleSheet,
-  ScrollView,
-  FlatList,
 } from 'react-native';
-import { connect } from 'react-redux';
 
-import FontSize from '../../res/FontSize/fontSize';
-import blod from '../../res/FontWeight/bold';
-import basicColor from '../../res/Color/BasicColor';
+import {
+  Divider,
+} from 'react-native-elements';
+
 import SingleDiscoverInfo from './SingleDiscoverInfo';
+import DiscoverHeader from './DiscoverHeader';
 
-const _separator = () => {
-  return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
-};
+// const _separator = () => {
+//   return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
+// };
 
-function DiscoverClassify(props) {
+export default function DiscoverClassify() {
   return (
-    <FlatList
-      ItemSeparatorComponent={_separator}
-      data={props.discoverContent}
-      renderItem={({ item }) => (
-        <View key={item.data}>
-          <View style={styles.head}>
-            <Text style={styles.type}>{item.type}</Text>
-            <Text style={styles.moreInfo}>查看更多</Text>
-          </View>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          >
-            <SingleDiscoverInfo img={item.img} title={item.title} />
-          </ScrollView>
-        </View>
-      )}
-    />
+    <View>
+      <DiscoverHeader type="每日新发现" />
+      <SingleDiscoverInfo />
+      <Divider />
+      <DiscoverHeader type="新游预约" />
+      <SingleDiscoverInfo />
+      <Divider />
+      <DiscoverHeader type="游戏测试" />
+      <SingleDiscoverInfo />
+      <Divider />
+      <DiscoverHeader type="近期最热" />
+      <SingleDiscoverInfo />
+      <Divider />
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  head: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 5,
-  },
-  type: {
-    fontSize: FontSize.medium.fontSize,
-    fontWeight: blod.size,
-    marginLeft: 5,
-    color: 'black',
-  },
-  moreInfo: {
-    fontSize: FontSize.tiny.fontSize,
-    color: basicColor.color,
-    marginRight: 10,
-  },
-});
-
-export default connect(({ discoverInfo }) => ({
-  discoverContent: discoverInfo.discoverContent,
-}))(DiscoverClassify);

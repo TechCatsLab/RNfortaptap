@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2018 SmartestEE Co., Ltd.
+ * Copyright (c) 2018 SmartestEE Co., Ltd..
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,21 +24,51 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Cheng Jifeng
+ *     Initial: 2018/01/28        Cheng Jifeng
  */
 
-import init from './init';
-import router from './router';
-import carousel from './carousel';
-import home from './home';
-import rank from './rank';
-import scrollRow from './scrollRow';
+import React from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+} from 'react-native';
 
-export const Models = [
-  init,
-  router,
-  carousel,
-  home,
-  rank,
-  scrollRow,
-];
+import FontSize from '../../res/FontSize/fontSize';
+import blod from '../../res/FontWeight/bold';
+import basicColor from '../../res/Color/BasicColor';
+
+// const _separator = () => {
+//   return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
+// };
+
+export default function DiscoverHeader(props) {
+  return (
+    <View>
+      <View style={styles.head}>
+        <Text style={styles.type}>{props.type}</Text>
+        <Text style={styles.moreInfo}>查看更多</Text>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  head: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
+  },
+  type: {
+    fontSize: FontSize.medium.fontSize,
+    fontWeight: blod.size,
+    marginLeft: 10,
+    color: 'black',
+  },
+  moreInfo: {
+    fontSize: FontSize.tiny.fontSize,
+    color: basicColor.color,
+    marginRight: 10,
+  },
+});
