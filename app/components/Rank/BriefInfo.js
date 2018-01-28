@@ -24,7 +24,7 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/23        Cheng Jifeng
+ *     Initial: 2018/01/28        Cheng Jifeng
  */
 
 import React from 'react';
@@ -32,81 +32,74 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList,
 } from 'react-native';
-// import {
-//   Avatar,
-//   Rating,
-// } from 'react-native-elements';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { connect } from 'react-redux';
+import {
+  Rating,
+} from 'react-native-elements';
 
 import fontSize from '../../res/FontSize/fontSize';
-// import BasicColor from '../../res/Color/BasicColor';
-// import blod from '../../res/FontWeight/bold';
-import iconSize from '../../res/IconSize/iconSize';
-import BriefImage from './BrifImage';
-import BriefInfo from './BriefInfo';
+import BasicColor from '../../res/Color/BasicColor';
+import blod from '../../res/FontWeight/bold';
 
-// const WATER_IMAGE = require('../../res/image/star.png');
-
-const _separator = () => {
-  return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
-};
-
-function RankContent(props) {
+function BrifInfo(props) {
   return (
-    <FlatList
-      ItemSeparatorComponent={_separator}
-      data={props.rankContent}
-      renderItem={({ item }) => (
-        <View style={styles.overAll} key={item.key}>
-          <View style={styles.leftContent}>
-            <Text style={styles.number}>{item.number}</Text>
-            <BriefImage img={item.img} />
-          </View>
-          <BriefInfo
-            title={item.title}
-            star={item.star}
-            label1={item.label1}
-            label2={item.label2}
-            label3={item.label3}
-            label4={item.label4}
-          />
-          <Ionicons
-            name="md-more"
-            size={iconSize.xlargeIcon.size}
-            style={styles.rightIcon}
-          />
+    <View style={styles.overAll}>
+      <View style={styles.centerContent}>
+        <Text style={styles.title}>{props.title}</Text>
+        <Rating
+          fractions={1}
+          ratingCount={5}
+          imageSize={10}
+          readonly={false}
+          startingValue={props.star}
+        />
+        <View style={styles.labelLayout}>
+          <Text style={styles.label}>{props.label1}</Text>
+          <Text style={styles.label}>{props.label2}</Text>
+          <Text style={styles.label}>{props.label3}</Text>
+          <Text style={styles.label}>{props.label4}</Text>
         </View>
-      )}
-    />
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  number: {
-    fontSize: fontSize.medium.fontSize,
-    margin: 10,
+  label: {
+    borderColor: '#14B9C8',
+    color: BasicColor.color,
+    fontSize: fontSize.tiny.fontSize,
+    marginRight: 10,
+    fontWeight: blod.size,
   },
+  labelLayout: {
+    flexDirection: 'row',
+    marginTop: 3,
+  },
+
   overAll: {
     display: 'flex',
     flexDirection: 'row',
     marginBottom: 3,
     position: 'relative',
   },
+
   leftContent: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
-  rightIcon: {
-    position: 'absolute',
-    top: 10,
-    right: 13,
+  centerContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: 10,
+  },
+  title: {
+    fontSize: fontSize.medium.fontSize,
+    marginBottom: 3,
+    fontWeight: blod.size,
   },
 });
 
-export default connect(({ rank }) => ({
-  rankContent: rank.rankContent,
-}))(RankContent);
+export default BrifInfo;

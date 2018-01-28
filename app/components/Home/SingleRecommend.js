@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
   mainImage: {
     width: '100%',
     height: 150,
+    // position: 'absolute',
   },
 });
 

@@ -24,39 +24,29 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/23        Cheng Jifeng
+ *     Initial: 2018/01/28        Cheng Jifeng
  */
 
 import React from 'react';
+// import {
+//   View,
+// } from 'react-native';
 import {
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
-import {
-  Divider,
+  Avatar,
 } from 'react-native-elements';
 
-import RankContent from './RankContent';
-import RankHeader from './RankHeader';
-
-export default class Rank extends React.Component {
-  render() {
-    return (
-      <ScrollView
-        style={styles.container}
-        showsVerticalScrollIndicator={false}
-      >
-        <RankHeader />
-        <Divider />
-        <RankContent />
-      </ScrollView>
-    );
-  }
+function BriefInfo(props) {
+  return (
+    <Avatar
+      medium
+      source={{ uri: props.img }}
+      activeOpacity={0.7}
+      avatarStyle={{
+        borderRadius: 8,
+        backgroundColor: 'white',
+      }}
+    />
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: '#fff',
-  },
-});
+export default BriefInfo;
