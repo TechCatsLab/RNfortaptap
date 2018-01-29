@@ -47,7 +47,8 @@ import Colors from '../../res/Colors';
 
 import Carousel from '../../components/Carousel';
 import LabelClassify from '../../components/LabelClassify';
-import EspecialView from './Components/EspecialView';
+import GameType from './Components/GameType';
+import Head from './Components/Head';
 
 class FindPage extends React.Component {
   static navigationOptions = {
@@ -95,7 +96,20 @@ class FindPage extends React.Component {
           <Carousel slides={this.props.slides} />
           <LabelClassify labels={this.props.labels} />
           <Divider />
-          <EspecialView content={this.props.content} />
+          <View>
+            <Head type="每日新发现" />
+            <GameType content={this.props.content} />
+            <Divider />
+            <Head type="新游预约" />
+            <GameType content={this.props.content} />
+            <Divider />
+            <Head type="游戏测试" />
+            <GameType content={this.props.content} />
+            <Divider />
+            <Head type="近期最热" />
+            <GameType content={this.props.content} />
+            <Divider />
+          </View>
         </View>
       </ScrollView>
     );

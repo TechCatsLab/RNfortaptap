@@ -38,7 +38,7 @@ import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';
 import Colors from '../../../res/Colors';
 
-export default function Header(props) {
+export default function Head(props) {
   return (
     <View>
       <View style={styles.head}>
