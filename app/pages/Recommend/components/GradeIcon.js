@@ -24,61 +24,50 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Cheng Jifeng
+ *     Initial: 2018/01/27        Cheng Jifeng
  */
 
+import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
-  TabNavigator,
-} from 'react-navigation';
+  View,
+  Text,
+  StyleSheet,
+} from 'react-native';
 
+import IconsSize from '../../../res/Icons/size';
+import FontsSize from '../../../res/Fonts/size';
 
-import Colors from './res/Colors';
-import FontsSize from './res/Fonts/size';
+function GradeIcon(props) {
+  return (
+    <View style={styles.layout}>
+      <Ionicons
+        name="md-star"
+        size={IconsSize.tinyIcon.size}
+        color="black"
+      />
+      <Text style={styles.text}>{props.grade}</Text>
+      <Ionicons
+        name="ios-chatbubbles"
+        size={IconsSize.tinyIcon.size}
+        color="black"
+      />
+      <Text style={styles.text}>{props.message}</Text>
+    </View>
+  );
+}
 
-import RecommendScreen from './pages/Recommend/RecommendPage';
-import RankScreen from './pages/Rank/RankPage';
-import DiscoverScreen from './pages/Discover/DiscoverPage';
-import AttentionScreen from './pages/Attention/AttentionPage';
-import MyGameScreen from './pages/MyGame/MyGamePage';
-
-const BasicApp = TabNavigator({
-  Recommand: {
-    screen: RecommendScreen,
+const styles = StyleSheet.create({
+  layout: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 5,
   },
-  Rank: {
-    screen: RankScreen,
-  },
-  Find: {
-    screen: DiscoverScreen,
-  },
-  Like: {
-    screen: AttentionScreen,
-  },
-  MyGame: {
-    screen: MyGameScreen,
-  },
-}, {
-  tabBarPosition: 'bottom',
-  animationEnabled: true,
-  lazy: true,
-  tabBarOptions: {
-    showIcon: true,
-    activeTintColor: 'white',
-    pressOpacity: 4,
-    labelStyle: {
-      fontSize: FontsSize.tiny.fontSize,
-    },
-    style: {
-      backgroundColor: Colors.color,
-    },
-    indicatorStyle: {
-      height: 0,
-    },
+  text: {
+    fontSize: FontsSize.tiny.fontSize,
+    margin: 5,
   },
 });
 
-const Navigations = {
-  Main: { screen: BasicApp },
-};
-
-export default Navigations;
+export default GradeIcon;

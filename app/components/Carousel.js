@@ -24,61 +24,52 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Cheng Jifeng
+ *     Initial: 2018/01/27        Cheng Jifeng
  */
 
+import React from 'react';
 import {
-  TabNavigator,
-} from 'react-navigation';
+  Image,
+  View,
+  StyleSheet,
+} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
+import Styles from '../res/Styles';
 
-import Colors from './res/Colors';
-import FontsSize from './res/Fonts/size';
-
-import RecommendScreen from './pages/Recommend/RecommendPage';
-import RankScreen from './pages/Rank/RankPage';
-import DiscoverScreen from './pages/Discover/DiscoverPage';
-import AttentionScreen from './pages/Attention/AttentionPage';
-import MyGameScreen from './pages/MyGame/MyGamePage';
-
-const BasicApp = TabNavigator({
-  Recommand: {
-    screen: RecommendScreen,
-  },
-  Rank: {
-    screen: RankScreen,
-  },
-  Find: {
-    screen: DiscoverScreen,
-  },
-  Like: {
-    screen: AttentionScreen,
-  },
-  MyGame: {
-    screen: MyGameScreen,
-  },
-}, {
-  tabBarPosition: 'bottom',
-  animationEnabled: true,
-  lazy: true,
-  tabBarOptions: {
-    showIcon: true,
-    activeTintColor: 'white',
-    pressOpacity: 4,
-    labelStyle: {
-      fontSize: FontsSize.tiny.fontSize,
-    },
-    style: {
-      backgroundColor: Colors.color,
-    },
-    indicatorStyle: {
-      height: 0,
-    },
-  },
-});
-
-const Navigations = {
-  Main: { screen: BasicApp },
+const renderSlide = ({ item }) => {
+  return (
+    <Image
+      source={{ uri: item }}
+      style={styles.slide}
+    />
+  );
 };
 
-export default Navigations;
+export default (props) => {
+  return (
+    <View style={styles.carousel}>
+      <Carousel
+        autoplay
+        loop
+        autoplayDelay={4000}
+        autoplayInterval={4000}
+        data={props.slides}
+        renderItem={renderSlide}
+        sliderWidth={Styles.ScreenWidth}
+        itemWidth={Styles.ScreenWidth}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  carousel: {
+    height: Styles.Height(330),
+    backgroundColor: 'white',
+  },
+  slide: {
+    width: Styles.Width(640),
+    height: Styles.Height(330),
+  },
+});

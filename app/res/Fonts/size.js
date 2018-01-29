@@ -24,61 +24,25 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Cheng Jifeng
+ *     Initial: 2018/01/24        Cheng Jifeng
  */
 
-import {
-  TabNavigator,
-} from 'react-navigation';
-
-
-import Colors from './res/Colors';
-import FontsSize from './res/Fonts/size';
-
-import RecommendScreen from './pages/Recommend/RecommendPage';
-import RankScreen from './pages/Rank/RankPage';
-import DiscoverScreen from './pages/Discover/DiscoverPage';
-import AttentionScreen from './pages/Attention/AttentionPage';
-import MyGameScreen from './pages/MyGame/MyGamePage';
-
-const BasicApp = TabNavigator({
-  Recommand: {
-    screen: RecommendScreen,
+const FontsSize = {
+  tiny: {
+    fontSize: 10,
   },
-  Rank: {
-    screen: RankScreen,
+  small: {
+    fontSize: 12,
   },
-  Find: {
-    screen: DiscoverScreen,
+  medium: {
+    fontSize: 15,
   },
-  Like: {
-    screen: AttentionScreen,
+  large: {
+    fontSize: 20,
   },
-  MyGame: {
-    screen: MyGameScreen,
+  xlarge: {
+    fontSize: 26,
   },
-}, {
-  tabBarPosition: 'bottom',
-  animationEnabled: true,
-  lazy: true,
-  tabBarOptions: {
-    showIcon: true,
-    activeTintColor: 'white',
-    pressOpacity: 4,
-    labelStyle: {
-      fontSize: FontsSize.tiny.fontSize,
-    },
-    style: {
-      backgroundColor: Colors.color,
-    },
-    indicatorStyle: {
-      height: 0,
-    },
-  },
-});
-
-const Navigations = {
-  Main: { screen: BasicApp },
 };
 
-export default Navigations;
+export default FontsSize;

@@ -24,61 +24,47 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Cheng Jifeng
+ *     Initial: 2018/01/28        Cheng Jifeng
  */
 
+import React from 'react';
 import {
-  TabNavigator,
-} from 'react-navigation';
+  Text,
+  View,
+  StyleSheet,
+} from 'react-native';
 
+import FontsSize from '../../../res/Fonts/size';
+import FontsWeight from '../../../res/Fonts/weight';
+import Colors from '../../../res/Colors';
 
-import Colors from './res/Colors';
-import FontsSize from './res/Fonts/size';
+export default function Header(props) {
+  return (
+    <View>
+      <View style={styles.head}>
+        <Text style={styles.type}>{props.type}</Text>
+        <Text style={styles.moreInfo}>查看更多</Text>
+      </View>
+    </View>
+  );
+}
 
-import RecommendScreen from './pages/Recommend/RecommendPage';
-import RankScreen from './pages/Rank/RankPage';
-import DiscoverScreen from './pages/Discover/DiscoverPage';
-import AttentionScreen from './pages/Attention/AttentionPage';
-import MyGameScreen from './pages/MyGame/MyGamePage';
-
-const BasicApp = TabNavigator({
-  Recommand: {
-    screen: RecommendScreen,
+const styles = StyleSheet.create({
+  head: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
   },
-  Rank: {
-    screen: RankScreen,
+  type: {
+    fontSize: FontsSize.medium.fontSize,
+    fontWeight: FontsWeight.blod.size,
+    marginLeft: 10,
+    color: 'black',
   },
-  Find: {
-    screen: DiscoverScreen,
-  },
-  Like: {
-    screen: AttentionScreen,
-  },
-  MyGame: {
-    screen: MyGameScreen,
-  },
-}, {
-  tabBarPosition: 'bottom',
-  animationEnabled: true,
-  lazy: true,
-  tabBarOptions: {
-    showIcon: true,
-    activeTintColor: 'white',
-    pressOpacity: 4,
-    labelStyle: {
-      fontSize: FontsSize.tiny.fontSize,
-    },
-    style: {
-      backgroundColor: Colors.color,
-    },
-    indicatorStyle: {
-      height: 0,
-    },
+  moreInfo: {
+    fontSize: FontsSize.tiny.fontSize,
+    color: Colors.color,
+    marginRight: 10,
   },
 });
-
-const Navigations = {
-  Main: { screen: BasicApp },
-};
-
-export default Navigations;

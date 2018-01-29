@@ -27,12 +27,14 @@
  *     Initial: 2018/01/27        Cheng Jifeng
  */
 
-import Slides from '../res/img/img';
-
 export default {
   namespace: 'carousel',
 
   state: {
-    slides: Slides.slides,
+    slides: [
+      'https://img.tapimg.com/market/images/0183cdbf8043346db45d77fb44a6ef37.jpg?imageView2/1/w/2080/h/800/q/80/format/jpg/interlace/1/ignore-error/1',
+      'https://img.tapimg.com/market/images/fff832326afd70919aadc1c02b99c816.png?imageView2/1/w/2080/h/800/q/80/format/jpg/interlace/1/ignore-error/1',
+      'https://img.tapimg.com/market/images/fb871999780188cc9b689abf4e09123c.jpg?imageView2/1/w/2080/h/800/q/80/format/jpg/interlace/1/ignore-error/1',
+    ],
   },
 };

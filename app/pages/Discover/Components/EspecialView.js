@@ -24,61 +24,36 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/16        Cheng Jifeng
+ *     Initial: 2018/01/28        Cheng Jifeng
  */
 
+import React from 'react';
 import {
-  TabNavigator,
-} from 'react-navigation';
+  View,
+} from 'react-native';
 
+import {
+  Divider,
+} from 'react-native-elements';
 
-import Colors from './res/Colors';
-import FontsSize from './res/Fonts/size';
+import Header from './Header';
+import GameType from './GameType';
 
-import RecommendScreen from './pages/Recommend/RecommendPage';
-import RankScreen from './pages/Rank/RankPage';
-import DiscoverScreen from './pages/Discover/DiscoverPage';
-import AttentionScreen from './pages/Attention/AttentionPage';
-import MyGameScreen from './pages/MyGame/MyGamePage';
-
-const BasicApp = TabNavigator({
-  Recommand: {
-    screen: RecommendScreen,
-  },
-  Rank: {
-    screen: RankScreen,
-  },
-  Find: {
-    screen: DiscoverScreen,
-  },
-  Like: {
-    screen: AttentionScreen,
-  },
-  MyGame: {
-    screen: MyGameScreen,
-  },
-}, {
-  tabBarPosition: 'bottom',
-  animationEnabled: true,
-  lazy: true,
-  tabBarOptions: {
-    showIcon: true,
-    activeTintColor: 'white',
-    pressOpacity: 4,
-    labelStyle: {
-      fontSize: FontsSize.tiny.fontSize,
-    },
-    style: {
-      backgroundColor: Colors.color,
-    },
-    indicatorStyle: {
-      height: 0,
-    },
-  },
-});
-
-const Navigations = {
-  Main: { screen: BasicApp },
-};
-
-export default Navigations;
+export default function EspecialView() {
+  return (
+    <View>
+      <Header type="每日新发现" />
+      <GameType />
+      <Divider />
+      <Header type="新游预约" />
+      <GameType />
+      <Divider />
+      <Header type="游戏测试" />
+      <GameType />
+      <Divider />
+      <Header type="近期最热" />
+      <GameType />
+      <Divider />
+    </View>
+  );
+}
