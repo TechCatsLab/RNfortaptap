@@ -52,11 +52,12 @@ export default function GameType(props) {
       renderItem={({ item }) => (
         <View key={item.key} style={styles.singleInfo}>
           <Avatar
-            large
             source={{ uri: item.img }}
             activeOpacity={0.7}
+            width={Styles.ScreenWidth * 10/46} // eslint-disable-line
+            height={Styles.ScreenWidth * 10/46} // eslint-disable-line
             avatarStyle={{
-              borderRadius: 8,
+              borderRadius: 10,
               backgroundColor: Colors.white,
             }}
           />
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     marginLeft: 15,
-    width: Styles.ScreenWidth * 0.18,
+    width: Styles.ScreenWidth * 10/46, // eslint-disable-line
   },
   text: {
     fontSize: FontsSize.tiny,
