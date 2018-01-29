@@ -31,7 +31,7 @@ export default {
   namespace: 'home',
 
   state: {
-    gameInfo: [
+    games: [
       {
         key: 1,
         gicon: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',

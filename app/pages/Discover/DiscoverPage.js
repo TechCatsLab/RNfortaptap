@@ -57,14 +57,13 @@ class FindPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-search' : 'ios-search-outline'}
-        size={IconsSize.xlargeIcon.size}
+        size={IconsSize.xlarge}
         style={{ color: tintColor }}
       />
     ),
   }
 
   render() {
-    const { slides } = this.props;
     return (
       <ScrollView style={styles.container}>
         <View>
@@ -81,22 +80,22 @@ class FindPage extends React.Component {
               text: '发现',
               style: {
                 color: '#fff',
-                fontSize: FontsSize.large.fontSize,
+                fontSize: FontsSize.large,
               },
             }}
             rightComponent={
               <Ionicons
                 name="ios-search"
-                size={IconsSize.xlargeIcon.size}
+                size={IconsSize.xlarge}
                 color="white"
               />
             }
-            backgroundColor={Colors.color}
+            backgroundColor={Colors.primary}
           />
-          <Carousel slides={slides} />
-          <LabelClassify />
+          <Carousel slides={this.props.slides} />
+          <LabelClassify labels={this.props.labels} />
           <Divider />
-          <EspecialView />
+          <EspecialView content={this.props.content} />
         </View>
       </ScrollView>
     );
@@ -105,11 +104,13 @@ class FindPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     flexGrow: 1,
   },
 });
 
-export default connect(({ carousel }) => ({
-  slides: carousel.slides,
+export default connect(({ discover }) => ({
+  content: discover.content,
+  slides: discover.slides,
+  labels: discover.labels,
 }))(FindPage);

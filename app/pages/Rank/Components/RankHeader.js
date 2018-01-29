@@ -35,14 +35,12 @@ import {
 } from 'react-native';
 
 import FontsSize from '../../../res/Fonts/size';
-import LabelClassify from '../../../components/LabelClassify';
 
 export default class RankHeader extends React.Component {
   render() {
     return (
       <View style={styles.view}>
         <View>
-          <LabelClassify />
           <View style={styles.allRankType}>
             <Text style={styles.textRank}>下载榜</Text>
             <Text style={styles.textRank}>|</Text>
@@ -69,6 +67,6 @@ const styles = StyleSheet.create({
   },
   textRank: {
     marginRight: 10,
-    fontSize: FontsSize.small.fontSize,
+    fontSize: FontsSize.small,
   },
 });

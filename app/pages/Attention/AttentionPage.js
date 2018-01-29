@@ -30,7 +30,6 @@
 import React from 'react';
 import {
   View,
-  Text,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
@@ -47,7 +46,7 @@ export default class AttentionPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-heart' : 'ios-heart-outline'}
-        size={IconsSize.xlargeIcon.size}
+        size={IconsSize.xlarge}
         style={{ color: tintColor }}
       />
     ),
@@ -69,17 +68,17 @@ export default class AttentionPage extends React.Component {
             text: '动态',
             style: {
               color: '#fff',
-              fontSize: FontsSize.large.fontSize,
+              fontSize: FontsSize.large,
             },
           }}
           rightComponent={
             <Ionicons
               name="ios-search"
-              size={IconsSize.xlargeIcon.size}
+              size={IconsSize.xlarge}
               color="white"
             />
           }
-          backgroundColor={Colors.color}
+          backgroundColor={Colors.primary}
         />
       </View>
     );

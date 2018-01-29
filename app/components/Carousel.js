@@ -35,6 +35,7 @@ import {
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
+import Colors from '../res/Colors';
 import Styles from '../res/Styles';
 
 const renderSlide = ({ item }) => {
@@ -66,7 +67,7 @@ export default (props) => {
 const styles = StyleSheet.create({
   carousel: {
     height: Styles.Height(330),
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
   },
   slide: {
     width: Styles.Width(640),

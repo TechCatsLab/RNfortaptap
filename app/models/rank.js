@@ -31,7 +31,7 @@ export default {
   namespace: 'rank',
 
   state: {
-    rankContent: [
+    content: [
       {
         key: 1,
         number: 1,
@@ -185,6 +185,36 @@ export default {
         label3: '美少女',
         label4: '可爱',
         star: 4,
+      },
+    ],
+    labels: [
+      {
+        key: '0',
+        content: '热门',
+      },
+      {
+        key: '1',
+        content: '美国',
+      },
+      {
+        key: '2',
+        content: '日本',
+      },
+      {
+        key: '3',
+        content: '韩国',
+      },
+      {
+        key: '4',
+        content: '台湾',
+      },
+      {
+        key: '5',
+        content: '香港',
+      },
+      {
+        key: '6',
+        content: '厂商',
       },
     ],
   },

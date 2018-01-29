@@ -63,13 +63,13 @@ const BasicApp = TabNavigator({
   lazy: true,
   tabBarOptions: {
     showIcon: true,
-    activeTintColor: 'white',
+    activeTintColor: Colors.white,
     pressOpacity: 4,
     labelStyle: {
-      fontSize: FontsSize.tiny.fontSize,
+      fontSize: FontsSize.tiny,
     },
     style: {
-      backgroundColor: Colors.color,
+      backgroundColor: Colors.primary,
     },
     indicatorStyle: {
       height: 0,

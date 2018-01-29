@@ -33,6 +33,7 @@ import carousel from './carousel';
 import home from './home';
 import rank from './rank';
 import scrollRow from './scrollRow';
+import discover from './discover';
 
 export const Models = [
   init,
@@ -41,4 +42,5 @@ export const Models = [
   home,
   rank,
   scrollRow,
+  discover,
 ];

@@ -35,59 +35,30 @@ import {
   Button,
 } from 'react-native-elements';
 
-import BasicColor from '../res/Colors';
+import Colors from '../res/Colors';
 
-export default class LabelClassify extends React.Component {
-  render() {
-    return (
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={[
-          {
-            key: '0',
-            content: '热门',
-          },
-          {
-            key: '1',
-            content: '美国',
-          },
-          {
-            key: '2',
-            content: '日本',
-          },
-          {
-            key: '3',
-            content: '韩国',
-          },
-          {
-            key: '4',
-            content: '台湾',
-          },
-          {
-            key: '5',
-            content: '香港',
-          },
-          {
-            key: '6',
-            content: '厂商',
-          },
-        ]}
-        renderItem={({ item }) => (
-          <Button
-            key={item.key}
-            title={item.content}
-            buttonStyle={{
-              width: 60,
-              height: 30,
-              marginTop: 10,
-              marginBottom: 10,
-              borderRadius: 15,
-              backgroundColor: BasicColor.color,
-            }}
-          />
-        )}
-      />
-    );
-  }
+function LabelClassify(props) {
+  return (
+    <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      data={props.labels}
+      renderItem={({ item }) => (
+        <Button
+          key={item.key}
+          title={item.content}
+          buttonStyle={{
+            width: 60,
+            height: 30,
+            marginTop: 10,
+            marginBottom: 10,
+            borderRadius: 15,
+            backgroundColor: Colors.primary,
+          }}
+        />
+      )}
+    />
+  );
 }
+
+export default LabelClassify;

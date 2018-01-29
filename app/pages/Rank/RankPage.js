@@ -39,6 +39,7 @@ import {
   Avatar,
   Divider,
 } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
@@ -46,8 +47,9 @@ import FontsSize from '../../res/Fonts/size';
 
 import RankHeader from './Components/RankHeader';
 import RankContent from './Components/RankContent';
+import LabelClassify from '../../components/LabelClassify';
 
-export default class RankPage extends React.Component {
+class RankPage extends React.Component {
   static navigationOptions = {
     header: null,
     tabBarLabel: '排行榜',
@@ -55,7 +57,7 @@ export default class RankPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-trophy' : 'ios-trophy-outline'}
-        size={IconsSize.xlargeIcon.size}
+        size={IconsSize.xlarge}
         style={{ color: tintColor }}
       />
     ),
@@ -77,22 +79,23 @@ export default class RankPage extends React.Component {
             text: '排行榜',
             style: {
               color: '#fff',
-              fontSize: FontsSize.large.fontSize,
+              fontSize: FontsSize.large,
             },
           }}
           rightComponent={
             <Ionicons
               name="ios-search"
-              size={IconsSize.xlargeIcon.size}
+              size={IconsSize.xlarge}
               color="white"
             />
           }
-          backgroundColor={Colors.color}
+          backgroundColor={Colors.primary}
         />
         <ScrollView
           style={styles.content}
           showsVerticalScrollIndicator={false}
         >
+          <LabelClassify labels={this.props.labels} />
           <RankHeader />
           <Divider />
           <RankContent />
@@ -105,6 +108,10 @@ export default class RankPage extends React.Component {
 const styles = StyleSheet.create({
   content: {
     flexGrow: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
   },
 });
+
+export default connect(({ rank }) => ({
+  labels: rank.labels,
+}))(RankPage);

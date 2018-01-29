@@ -28,21 +28,11 @@
  */
 
 const FontsSize = {
-  tiny: {
-    fontSize: 10,
-  },
-  small: {
-    fontSize: 12,
-  },
-  medium: {
-    fontSize: 15,
-  },
-  large: {
-    fontSize: 20,
-  },
-  xlarge: {
-    fontSize: 26,
-  },
+  tiny: 10,
+  small: 12,
+  medium: 15,
+  large: 20,
+  xlarge: 26,
 };
 
 export default FontsSize;

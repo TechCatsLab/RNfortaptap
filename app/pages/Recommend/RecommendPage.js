@@ -34,6 +34,7 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
@@ -41,7 +42,7 @@ import Colors from '../../res/Colors';
 
 import SingleRecommend from './components/SingleRecommend';
 
-export default class RecommendPage extends React.Component {
+class RecommendPage extends React.Component {
   static navigationOptions = {
     header: null,
     headerTitle: 'TapTap',
@@ -49,7 +50,7 @@ export default class RecommendPage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-star' : 'ios-star-outline'}
-        size={IconsSize.xlargeIcon.size}
+        size={IconsSize.xlarge}
         style={{ color: tintColor }}
       />
     ),
@@ -69,19 +70,23 @@ export default class RecommendPage extends React.Component {
           }
           centerComponent={{
             text: 'TapTap',
-            style: { color: '#fff', fontSize: FontsSize.xlarge.fontSize },
+            style: { color: '#fff', fontSize: FontsSize.xlarge },
           }}
           rightComponent={
             <Ionicons
               name="ios-search"
-              size={IconsSize.xlargeIcon.size}
+              size={IconsSize.xlarge}
               color="white"
             />
           }
-          backgroundColor={Colors.color}
+          backgroundColor={Colors.primary}
         />
-        <SingleRecommend />
+        <SingleRecommend games={this.props.games} />
       </View>
     );
   }
 }
+
+export default connect(({ home }) => ({
+  games: home.games,
+}))(RecommendPage);

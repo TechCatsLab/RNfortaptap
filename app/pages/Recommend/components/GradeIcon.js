@@ -43,13 +43,13 @@ function GradeIcon(props) {
     <View style={styles.layout}>
       <Ionicons
         name="md-star"
-        size={IconsSize.tinyIcon.size}
+        size={IconsSize.tiny}
         color="black"
       />
       <Text style={styles.text}>{props.grade}</Text>
       <Ionicons
         name="ios-chatbubbles"
-        size={IconsSize.tinyIcon.size}
+        size={IconsSize.tiny}
         color="black"
       />
       <Text style={styles.text}>{props.message}</Text>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   text: {
-    fontSize: FontsSize.tiny.fontSize,
+    fontSize: FontsSize.tiny,
     margin: 5,
   },
 });

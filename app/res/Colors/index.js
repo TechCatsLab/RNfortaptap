@@ -28,7 +28,8 @@
  */
 
 const Colors = {
-  color: '#14B9C8',
+  primary: '#14B9C8',
+  white: 'white',
 };
 
 export default Colors;

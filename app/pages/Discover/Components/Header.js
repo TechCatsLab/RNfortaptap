@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   type: {
-    fontSize: FontsSize.medium.fontSize,
-    fontWeight: FontsWeight.blod.size,
+    fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.blod,
     marginLeft: 10,
     color: 'black',
   },
   moreInfo: {
-    fontSize: FontsSize.tiny.fontSize,
-    color: Colors.color,
+    fontSize: FontsSize.tiny,
+    color: Colors.primary,
     marginRight: 10,
   },
 });

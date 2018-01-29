@@ -47,7 +47,7 @@ export default class MyGamePage extends React.Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-game-controller-b' : 'ios-game-controller-b-outline'}
-        size={IconsSize.xlargeIcon.size}
+        size={IconsSize.xlarge}
         style={{ color: tintColor }}
       />
     ),
@@ -69,17 +69,17 @@ export default class MyGamePage extends React.Component {
             text: '我的游戏',
             style: {
               color: '#fff',
-              fontSize: FontsSize.large.fontSize,
+              fontSize: FontsSize.large,
             },
           }}
           rightComponent={
             <Ionicons
               name="ios-search"
-              size={IconsSize.xlargeIcon.size}
+              size={IconsSize.xlarge}
               color="white"
             />
           }
-          backgroundColor={Colors.color}
+          backgroundColor={Colors.primary}
         />
         <Text>
         我的游戏

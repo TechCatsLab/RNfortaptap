@@ -41,21 +41,20 @@ import {
   FlatList,
   ScrollView,
 } from 'react-native';
-import { connect } from 'react-redux';
 
 import FontsSize from '../../../res/Fonts/size';
 import IconsSize from '../../../res/Icons/size';
 
 import GradeIcon from './GradeIcon';
 
-function SingleRecommend(props) {
+export default function SingleRecommend(props) {
   return (
     <ScrollView
       style={styles.container}
       showsVerticalScrollIndicator={false}
     >
       <FlatList
-        data={props.gameInfo}
+        data={props.games}
         renderItem={({ item }) => (
           <Card
             key={item.data}
@@ -76,7 +75,7 @@ function SingleRecommend(props) {
               <View style={styles.rightHeader}>
                 <Ionicons
                   name="md-more"
-                  size={IconsSize.xlargeIcon.size}
+                  size={IconsSize.xlarge}
                 />
               </View>
             </View>
@@ -119,19 +118,19 @@ const styles = StyleSheet.create({
   from: {
     marginLeft: 10,
     color: '#888888',
-    fontSize: FontsSize.small.fontSize,
+    fontSize: FontsSize.small,
   },
   rightHeader: {
     margin: 10,
   },
   title: {
     fontWeight: 'bold',
-    fontSize: FontsSize.medium.fontSize,
+    fontSize: FontsSize.medium,
     marginBottom: 3,
   },
   info: {
     marginTop: 5,
-    fontSize: FontsSize.small.fontSize,
+    fontSize: FontsSize.small,
   },
   grade: {
     position: 'absolute',
@@ -143,7 +142,3 @@ const styles = StyleSheet.create({
     height: 150,
   },
 });
-
-export default connect(({ home }) => ({
-  gameInfo: home.gameInfo,
-}))(SingleRecommend);

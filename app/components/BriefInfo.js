@@ -66,24 +66,22 @@ function BrifInfo(props) {
 
 const styles = StyleSheet.create({
   label: {
-    borderColor: '#14B9C8',
-    color: Colors.color,
-    fontSize: FontsSize.tiny.fontSize,
+    borderColor: Colors.primary,
+    color: Colors.primary,
+    fontSize: FontsSize.tiny,
     marginRight: 10,
-    fontWeight: FontsWeight.blod.size,
+    fontWeight: FontsWeight.blod,
   },
   labelLayout: {
     flexDirection: 'row',
     marginTop: 3,
   },
-
   overAll: {
     display: 'flex',
     flexDirection: 'row',
     marginBottom: 3,
     position: 'relative',
   },
-
   leftContent: {
     display: 'flex',
     flexDirection: 'row',
@@ -96,9 +94,9 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   title: {
-    fontSize: FontsSize.medium.fontSize,
+    fontSize: FontsSize.medium,
     marginBottom: 3,
-    fontWeight: FontsWeight.blod.size,
+    fontWeight: FontsWeight.blod,
   },
 });
 

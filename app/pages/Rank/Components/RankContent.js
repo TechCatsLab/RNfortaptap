@@ -40,8 +40,9 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 
-import fontSize from '../../../res/Fonts/size';
-import iconSize from '../../../res/Icons/size';
+import FontsSize from '../../../res/Fonts/size';
+import IconsSize from '../../../res/Icons/size';
+import Colors from '../../../res/Colors';
 
 import BriefInfo from '../../../components/BriefInfo';
 
@@ -53,7 +54,7 @@ function RankContent(props) {
   return (
     <FlatList
       ItemSeparatorComponent={_separator}
-      data={props.rankContent}
+      data={props.content}
       renderItem={({ item }) => (
         <View style={styles.overAll} key={item.key}>
           <View style={styles.leftContent}>
@@ -64,7 +65,7 @@ function RankContent(props) {
               activeOpacity={0.7}
               avatarStyle={{
                 borderRadius: 8,
-                backgroundColor: 'white',
+                backgroundColor: Colors.white,
               }}
             />
             {/* <BriefImage img={item.img} /> */}
@@ -79,7 +80,7 @@ function RankContent(props) {
           />
           <Ionicons
             name="md-more"
-            size={iconSize.xlargeIcon.size}
+            size={IconsSize.xlarge}
             style={styles.rightIcon}
           />
         </View>
@@ -90,7 +91,7 @@ function RankContent(props) {
 
 const styles = StyleSheet.create({
   number: {
-    fontSize: fontSize.medium.fontSize,
+    fontSize: FontsSize.medium,
     margin: 10,
   },
   overAll: {
@@ -112,5 +113,5 @@ const styles = StyleSheet.create({
 });
 
 export default connect(({ rank }) => ({
-  rankContent: rank.rankContent,
+  content: rank.content,
 }))(RankContent);

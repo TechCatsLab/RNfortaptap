@@ -28,9 +28,7 @@
  */
 
 const FontsWeight = {
-  blod: {
-    size: 'bold',
-  },
+  blod: 'bold',
 };
 
 export default FontsWeight;

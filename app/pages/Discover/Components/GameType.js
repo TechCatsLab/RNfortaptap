@@ -37,18 +37,18 @@ import {
 import {
   Avatar,
 } from 'react-native-elements';
-import { connect } from 'react-redux';
 
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';
+import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-function GameType(props) {
+export default function GameType(props) {
   return (
     <FlatList
       horizontal
       showsHorizontalScrollIndicator={false}
-      data={props.eachContent}
+      data={props.content}
       renderItem={({ item }) => (
         <View key={item.key} style={styles.singleInfo}>
           <Avatar
@@ -57,7 +57,7 @@ function GameType(props) {
             activeOpacity={0.7}
             avatarStyle={{
               borderRadius: 8,
-              backgroundColor: 'white',
+              backgroundColor: Colors.white,
             }}
           />
           <Text style={styles.text}>{item.title}</Text>
@@ -75,13 +75,9 @@ const styles = StyleSheet.create({
     width: Styles.ScreenWidth * 0.18,
   },
   text: {
-    fontSize: FontsSize.tiny.fontSize,
-    fontWeight: FontsWeight.blod.size,
+    fontSize: FontsSize.tiny,
+    fontWeight: FontsWeight.blod,
     marginTop: 5,
     marginBottom: 10,
   },
 });
-
-export default connect(({ scrollRow }) => ({
-  eachContent: scrollRow.eachContent,
-}))(GameType);
