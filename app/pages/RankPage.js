@@ -70,9 +70,6 @@ export default class RankPage extends React.Component {
           backgroundColor={BasicColor.color}
         />
         <Rank />
-        <Text>
-        排行榜
-        </Text>
       </View>
     );
   }

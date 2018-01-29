@@ -38,10 +38,6 @@ import FontSize from '../../res/FontSize/fontSize';
 import blod from '../../res/FontWeight/bold';
 import basicColor from '../../res/Color/BasicColor';
 
-// const _separator = () => {
-//   return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
-// };
-
 export default function DiscoverHeader(props) {
   return (
     <View>

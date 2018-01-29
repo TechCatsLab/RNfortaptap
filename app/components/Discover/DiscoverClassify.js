@@ -39,10 +39,6 @@ import {
 import SingleDiscoverInfo from './SingleDiscoverInfo';
 import DiscoverHeader from './DiscoverHeader';
 
-// const _separator = () => {
-//   return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
-// };
-
 export default function DiscoverClassify() {
   return (
     <View>

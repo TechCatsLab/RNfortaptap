@@ -38,18 +38,6 @@ import {
 import iconSize from '../../res/IconSize/iconSize';
 import fontSize from '../../res/FontSize/fontSize';
 
-// export default class GradeIcon extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.gradeLayout}>
-//         <Ionicons name="md-star" size={mediumIcon.size} color="black" />
-//         <Text style={styles.gradeText}>9.8</Text>
-//         <Ionicons name="ios-chatbubbles" size={mediumIcon.size} color="black" />
-//         <Text style={styles.gradeText}>999</Text>
-//       </View>
-//     );
-//   }
-// }
 function GradeIcon(props) {
   return (
     <View style={styles.gradeLayout}>
