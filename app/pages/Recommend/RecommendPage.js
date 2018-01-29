@@ -87,6 +87,6 @@ class RecommendPage extends React.Component {
   }
 }
 
-export default connect(({ home }) => ({
-  games: home.games,
+export default connect(({ recommend }) => ({
+  games: recommend.games,
 }))(RecommendPage);

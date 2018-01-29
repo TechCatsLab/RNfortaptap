@@ -24,60 +24,85 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/28        Cheng Jifeng
+ *     Initial: 2018/01/29        Cheng Jifeng
  */
 
 import React from 'react';
 import {
   View,
-  Text,
-  StyleSheet,
   FlatList,
+  ScrollView,
+  StyleSheet,
+  Image,
+  Text,
 } from 'react-native';
+
 import {
-  Avatar,
+  Card,
+  Button,
 } from 'react-native-elements';
 
-import FontsSize from '../../../res/Fonts/size';
-import FontsWeight from '../../../res/Fonts/weight';
-import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
+import Colors from '../../../res/Colors';
+import FontsSize from '../../../res/Fonts/size';
+import FontsWeght from '../../../res/Fonts/weight';
 
-export default function GameType(props) {
+function Player(props) {
   return (
     <FlatList
       horizontal
       showsHorizontalScrollIndicator={false}
-      data={props.daily}
+      data={props.users}
       renderItem={({ item }) => (
-        <View key={item.key} style={styles.singleInfo}>
-          <Avatar
-            large
+        <Card
+          containerStyle={{
+            width: Styles.ScreenWidth * 12/46, //eslint-disable-line
+            height: Styles.ScreenHeight * 18/82, //eslint-disable-line
+            borderRadius: 10,
+            marginBottom: 25,
+          }}
+          wrapperStyle={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Image
+            style={{
+              width: Styles.ScreenWidth * 7/46, //eslint-disable-line
+              height: Styles.ScreenWidth * 7/46, //eslint-disable-line
+              borderRadius: 50,
+            }}
             source={{ uri: item.img }}
-            activeOpacity={0.7}
-            avatarStyle={{
+          />
+          <Text style={styles.nickname}>{item.name}</Text>
+          <Text style={styles.tag}>{item.tag}</Text>
+          <Button
+            title="关注"
+            buttonStyle={{
+              width: Styles.ScreenWidth * 9/46, //eslint-disable-line
+              height: Styles.ScreenWidth * 3/46, //eslint-disable-line
+              backgroundColor: Colors.primary,
               borderRadius: 8,
-              backgroundColor: Colors.white,
             }}
           />
-          <Text style={styles.text}>{item.title}</Text>
-        </View>
+        </Card>
       )}
     />
   );
 }
 
 const styles = StyleSheet.create({
-  singleInfo: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginLeft: 15,
-    width: Styles.ScreenWidth * 0.18,
+  nickname: {
+    fontSize: FontsSize.small,
+    fontWeight: FontsWeght.blod,
+    marginTop: 3,
   },
-  text: {
+  tag: {
     fontSize: FontsSize.tiny,
-    fontWeight: FontsWeight.blod,
-    marginTop: 5,
-    marginBottom: 10,
+    marginBottom: 3,
   },
 });
+
+export default Player;

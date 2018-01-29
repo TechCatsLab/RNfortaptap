@@ -24,17 +24,45 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/27        Cheng Jifeng
+ *     Initial: 2018/01/29        Cheng Jifeng
  */
 
-export default {
-  namespace: 'carousel',
+import React from 'react';
+import {
+  View,
+  Image,
+  StyleSheet,
+  FlatList,
+} from 'react-native';
 
-  state: {
-    slides: [
-      'https://img.tapimg.com/market/images/0183cdbf8043346db45d77fb44a6ef37.jpg?imageView2/1/w/2080/h/800/q/80/format/jpg/interlace/1/ignore-error/1',
-      'https://img.tapimg.com/market/images/fff832326afd70919aadc1c02b99c816.png?imageView2/1/w/2080/h/800/q/80/format/jpg/interlace/1/ignore-error/1',
-      'https://img.tapimg.com/market/images/fb871999780188cc9b689abf4e09123c.jpg?imageView2/1/w/2080/h/800/q/80/format/jpg/interlace/1/ignore-error/1',
-    ],
+import Styles from '../../../res/Styles';
+
+function Quality(props) {
+  return (
+    <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      data={props.qualityImg}
+      renderItem={({ item }) => (
+        <View>
+          <Image
+            style={styles.image}
+            source={{ uri: item.img }}
+          />
+        </View>
+      )}
+    />
+  );
+}
+
+const styles = StyleSheet.create({
+  image: {
+    width: Styles.ScreenWidth * 0.4,
+    height: Styles.ScreenWidth * 0.2,
+    marginLeft: 10,
+    marginTop: 15,
+    marginBottom: 15,
+    borderRadius: 10,
   },
-};
+});
+export default Quality;

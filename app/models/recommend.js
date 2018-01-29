@@ -28,7 +28,7 @@
  */
 
 export default {
-  namespace: 'home',
+  namespace: 'recommend',
 
   state: {
     games: [
@@ -38,7 +38,7 @@ export default {
         gfrom: '来自编辑的推荐',
         gtitle: '旅かえる',
         gimage: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
-        ginfo: '四叶草已经收了三次了，我的蛙怎么还不回家啊……',
+        ginfo: '三叶草已经收了四次了，我的蛙怎么还不回家啊……',
         grade: 9.8,
         message: 999,
       },

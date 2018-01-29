@@ -60,11 +60,15 @@ const styles = StyleSheet.create({
     fontSize: FontsSize.medium,
     fontWeight: FontsWeight.blod,
     marginLeft: 10,
+    marginTop: 10,
+    marginBottom: 10,
     color: 'black',
   },
   moreInfo: {
     fontSize: FontsSize.tiny,
     color: Colors.primary,
     marginRight: 10,
+    marginBottom: 10,
+    marginTop: 10,
   },
 });

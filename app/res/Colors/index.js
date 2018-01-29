@@ -29,7 +29,7 @@
 
 const Colors = {
   primary: '#14B9C8',
-  white: 'white',
+  white: '#fff',
 };
 
 export default Colors;

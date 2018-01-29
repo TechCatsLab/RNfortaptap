@@ -49,6 +49,8 @@ import Carousel from '../../components/Carousel';
 import LabelClassify from '../../components/LabelClassify';
 import GameType from './Components/GameType';
 import Head from './Components/Head';
+import Quality from './Components/Quality';
+import Player from './Components/Player';
 
 class FindPage extends React.Component {
   static navigationOptions = {
@@ -98,16 +100,18 @@ class FindPage extends React.Component {
           <Divider />
           <View>
             <Head type="每日新发现" />
-            <GameType content={this.props.content} />
+            <GameType daily={this.props.daily} />
             <Divider />
             <Head type="新游预约" />
-            <GameType content={this.props.content} />
+            <GameType daily={this.props.order} />
+            <Divider />
+            <Quality qualityImg={this.props.qualityImg} />
+            <Divider />
+            <Head type="推荐玩家" />
+            <Player users={this.props.users} />
             <Divider />
             <Head type="游戏测试" />
-            <GameType content={this.props.content} />
-            <Divider />
-            <Head type="近期最热" />
-            <GameType content={this.props.content} />
+            <GameType daily={this.props.beta} />
             <Divider />
           </View>
         </View>
@@ -123,8 +127,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(({ discover }) => ({
-  content: discover.content,
+export default connect(({ discover, player }) => ({
+  daily: discover.daily,
+  order: discover.order,
   slides: discover.slides,
   labels: discover.labels,
+  qualityImg: discover.qualityImg,
+  beta: discover.beta,
+  // users: discover.users,
+  users: player.users,
 }))(FindPage);

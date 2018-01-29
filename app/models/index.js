@@ -29,18 +29,18 @@
 
 import init from './init';
 import router from './router';
-import carousel from './carousel';
-import home from './home';
+import recommend from './recommend';
 import rank from './rank';
 import scrollRow from './scrollRow';
 import discover from './discover';
+import player from './player';
 
 export const Models = [
   init,
   router,
-  carousel,
-  home,
+  recommend,
   rank,
   scrollRow,
   discover,
+  player,
 ];
