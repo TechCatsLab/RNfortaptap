@@ -29,23 +29,24 @@
 
 import React from 'react';
 import {
-  View,
   FlatList,
-  ScrollView,
   StyleSheet,
   Image,
   Text,
+  View,
 } from 'react-native';
 
 import {
   Card,
   Button,
 } from 'react-native-elements';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import Styles from '../../../res/Styles';
 import Colors from '../../../res/Colors';
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeght from '../../../res/Fonts/weight';
+import IconsSize from '../../../res/Icons/size';
 
 function Player(props) {
   return (
@@ -60,6 +61,7 @@ function Player(props) {
             height: Styles.ScreenHeight * 18/82, //eslint-disable-line
             borderRadius: 10,
             marginBottom: 25,
+            backgroundColor: Colors.white,
           }}
           wrapperStyle={{
             display: 'flex',
@@ -70,21 +72,30 @@ function Player(props) {
         >
           <Image
             style={{
-              width: Styles.ScreenWidth * 7/46, //eslint-disable-line
-              height: Styles.ScreenWidth * 7/46, //eslint-disable-line
+              width: Styles.ScreenWidth * 6/46, //eslint-disable-line
+              height: Styles.ScreenWidth * 6/46, //eslint-disable-line
               borderRadius: 50,
+              borderWidth: 2,
+              borderColor: 'white',
             }}
             source={{ uri: item.img }}
           />
           <Text style={styles.nickname}>{item.name}</Text>
-          <Text style={styles.tag}>{item.tag}</Text>
+          <View style={styles.describe}>
+            <MaterialIcons
+              name="brightness-auto"
+              size={11}
+              color={Colors.primary}
+            />
+            <Text style={styles.tag}>{item.tag}</Text>
+          </View>
           <Button
             title="关注"
             buttonStyle={{
-              width: Styles.ScreenWidth * 9/46, //eslint-disable-line
-              height: Styles.ScreenWidth * 3/46, //eslint-disable-line
+              width: Styles.ScreenWidth * 8/46, //eslint-disable-line
+              height: Styles.ScreenWidth * 2.5/46, //eslint-disable-line
               backgroundColor: Colors.primary,
-              borderRadius: 8,
+              borderRadius: 10,
             }}
           />
         </Card>
@@ -98,6 +109,11 @@ const styles = StyleSheet.create({
     fontSize: FontsSize.small,
     fontWeight: FontsWeght.blod,
     marginTop: 3,
+  },
+  describe: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   tag: {
     fontSize: FontsSize.tiny,

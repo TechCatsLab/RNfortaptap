@@ -31,6 +31,7 @@
 import React from 'react';
 import {
   View,
+  StyleSheet,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
@@ -58,7 +59,7 @@ class RecommendPage extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Header
           leftComponent={
             <Avatar
@@ -86,6 +87,12 @@ class RecommendPage extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'rgba(244,244,244,0.8)',
+  },
+});
 
 export default connect(({ recommend }) => ({
   games: recommend.games,

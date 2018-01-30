@@ -100,10 +100,10 @@ class FindPage extends React.Component {
           <Divider />
           <View>
             <Head type="每日新发现" />
-            <GameType daily={this.props.daily} />
+            <GameType data={this.props.daily} />
             <Divider />
             <Head type="新游预约" />
-            <GameType daily={this.props.order} />
+            <GameType data={this.props.order} />
             <Divider />
             <Quality qualityImg={this.props.qualityImg} />
             <Divider />
@@ -111,7 +111,13 @@ class FindPage extends React.Component {
             <Player users={this.props.users} />
             <Divider />
             <Head type="游戏测试" />
-            <GameType daily={this.props.beta} />
+            <GameType data={this.props.beta} />
+            <Divider />
+            <Head type="近期最热" />
+            <GameType data={this.props.hot} />
+            <Divider />
+            <Head type="往期专题" />
+            <Quality qualityImg={this.props.previous} />
             <Divider />
           </View>
         </View>
@@ -134,6 +140,7 @@ export default connect(({ discover, player }) => ({
   labels: discover.labels,
   qualityImg: discover.qualityImg,
   beta: discover.beta,
-  // users: discover.users,
   users: player.users,
+  hot: discover.hot,
+  previous: discover.previous,
 }))(FindPage);

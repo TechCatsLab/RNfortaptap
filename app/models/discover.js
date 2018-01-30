@@ -39,31 +39,51 @@ export default {
     labels: [
       {
         key: 0,
-        content: '热门',
+        content: '新游预约',
       },
       {
         key: 1,
-        content: '美国',
+        content: '单机',
       },
       {
         key: 2,
-        content: '日本',
+        content: '角色扮演',
       },
       {
         key: 3,
-        content: '韩国',
+        content: '动作',
       },
       {
         key: 4,
-        content: '台湾',
-      },
-      {
-        key: '5',
-        content: '香港',
+        content: 'MOBA',
       },
       {
         key: 5,
-        content: '厂商',
+        content: '策略',
+      },
+      {
+        key: 6,
+        content: '卡牌',
+      },
+      {
+        key: 7,
+        content: '生存',
+      },
+      {
+        key: 8,
+        content: '模拟',
+      },
+      {
+        key: 9,
+        content: '竞速',
+      },
+      {
+        key: 10,
+        content: '益智',
+      },
+      {
+        key: 11,
+        content: '二次元',
       },
     ],
     daily: [
@@ -162,6 +182,38 @@ export default {
         title: '海岛战争',
       },
     ],
+    hot: [
+      {
+        key: 0,
+        img: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: '旅かえる',
+      },
+      {
+        key: 1,
+        img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: '荒野行动',
+      },
+      {
+        key: 2,
+        img: 'https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: '边境之旅',
+      },
+      {
+        key: 3,
+        img: 'https://img.tapimg.com/market/lcs/fa920fd0d34f3923e65368f48e7f4f34_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: '猎魂觉醒',
+      },
+      {
+        key: 4,
+        img: 'https://img.tapimg.com/market/lcs/70fc2a9ac7c320bc69eab32b88bc1b26_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: '还有这种操作2',
+      },
+      {
+        key: 5,
+        img: 'https://img.tapimg.com/market/lcs/8d4a575250317b50f30f31c54c58dfa3_360.png?imageView2/1/w/256/q/40/interlace/1/ignore-error/1',
+        title: '终结者2：审判日',
+      },
+    ],
     qualityImg: [
       {
         key: 0,
@@ -178,6 +230,36 @@ export default {
       {
         key: 3,
         img: 'https://img.tapimg.com/market/images/96fb8f3f1b8c789b9fca12e6ee72d2ad.jpg',
+      },
+    ],
+    previous: [
+      {
+        key: 0,
+        img: 'https://img.tapimg.com/market/images/0183cdbf8043346db45d77fb44a6ef37.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 1,
+        img: 'https://img.tapimg.com/market/images/82748411f43e0fbe9f2ee054e6bca1b5.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 2,
+        img: 'https://img.tapimg.com/market/images/2e7530db631f57b352a262e927a22917.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 3,
+        img: 'https://img.tapimg.com/market/images/fff832326afd70919aadc1c02b99c816.png?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 4,
+        img: 'https://img.tapimg.com/market/images/09943209699f11dac1a0025e4397df7f.jpg?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 5,
+        img: 'https://img.tapimg.com/market/images/892ed0e962aeacf1678a6947cac1647d.jpg?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 6,
+        img: 'https://img.tapimg.com/market/images/b07c1213f45b57f44c7364a9e4e81991.jpg?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
       },
     ],
     users: [

@@ -48,7 +48,6 @@ function LabelClassify(props) {
           key={item.key}
           title={item.content}
           buttonStyle={{
-            width: 60,
             height: 30,
             marginTop: 10,
             marginBottom: 10,

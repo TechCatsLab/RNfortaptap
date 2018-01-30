@@ -48,7 +48,7 @@ export default function GameType(props) {
     <FlatList
       horizontal
       showsHorizontalScrollIndicator={false}
-      data={props.daily}
+      data={props.data}
       renderItem={({ item }) => (
         <View key={item.key} style={styles.singleInfo}>
           <Avatar
