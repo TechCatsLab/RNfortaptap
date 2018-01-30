@@ -41,6 +41,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 
 import FontsSize from '../../../res/Fonts/size';
+import FontsWeight from '../../../res/Fonts/weight';
 import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
 
@@ -92,7 +93,9 @@ function RankContent(props) {
 const styles = StyleSheet.create({
   number: {
     fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.bold,
     margin: 10,
+    width: 20,
   },
   overAll: {
     display: 'flex',

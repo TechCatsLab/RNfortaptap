@@ -24,13 +24,29 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/24        Cheng Jifeng
+ *     Initial: 2018/01/30        Cheng Jifeng
  */
 
-const Colors = {
-  primary: '#14B9C8',
-  white: '#fff',
-  gray: 'rgba(244,244,244,0.8)',
-};
+import React from 'react';
+import {
+  ScrollView,
+  View,
+  Text,
+} from 'react-native';
+import {
+  Card,
+  Image,
+} from 'react-native-elements';
 
-export default Colors;
+import BriefInfo from '../../../components/BriefInfo';
+
+function Wall() {
+  return (
+    <Card>
+      <BriefInfo title="光荣使命:使命行动" star={5} />
+      <Text>adqweqwr</Text>
+    </Card>
+  );
+}
+
+export default Wall;

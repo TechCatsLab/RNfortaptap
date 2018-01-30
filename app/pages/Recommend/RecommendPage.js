@@ -32,9 +32,13 @@ import React from 'react';
 import {
   View,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Header, Avatar } from 'react-native-elements';
+import {
+  Header,
+  Avatar,
+} from 'react-native-elements';
 import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
@@ -42,6 +46,8 @@ import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 
 import SingleRecommend from './components/SingleRecommend';
+import ClassifyHead from '../../components/ClassifyHead';
+import Wall from './components/Wall';
 
 class RecommendPage extends React.Component {
   static navigationOptions = {
@@ -82,7 +88,50 @@ class RecommendPage extends React.Component {
           }
           backgroundColor={Colors.primary}
         />
-        <SingleRecommend games={this.props.games} />
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={styles.scroll}
+        >
+          <SingleRecommend
+            gicon="https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gfrom="来自编辑的推荐"
+            title="旅かえる"
+            gimage="https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="三叶草已经收了四次了，我的蛙怎么还不回家啊……"
+            grade="9.8"
+            message="999"
+          />
+          <SingleRecommend
+            gicon="https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gfrom="来自编辑的推荐"
+            title="边境之旅"
+            gimage="https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="山川湖海，唯美旅途。"
+            grade="8.0"
+            message="600"
+          />
+          <ClassifyHead type="安利墙" />
+          <Wall />
+          <SingleRecommend
+            gicon="https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gfrom="来自编辑的推荐"
+            title="旅かえる"
+            gimage="https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="三叶草已经收了四次了，我的蛙怎么还不回家啊……"
+            grade="9.8"
+            message="999"
+          />
+          <SingleRecommend
+            gicon="https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gfrom="来自编辑的推荐"
+            title="边境之旅"
+            gimage="https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="山川湖海，唯美旅途。"
+            grade="8.0"
+            message="600"
+          />
+        </ScrollView>
+        {/* <SingleRecommend games={this.props.games} /> */}
       </View>
     );
   }
@@ -90,7 +139,10 @@ class RecommendPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(244,244,244,0.8)',
+    backgroundColor: Colors.gray,
+  },
+  scroll: {
+    flexGrow: 1,
   },
 });
 

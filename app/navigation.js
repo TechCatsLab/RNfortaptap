@@ -34,6 +34,7 @@ import {
 
 import Colors from './res/Colors';
 import FontsSize from './res/Fonts/size';
+import Styles from './res/Styles';
 
 import RecommendScreen from './pages/Recommend/RecommendPage';
 import RankScreen from './pages/Rank/RankPage';
@@ -70,6 +71,7 @@ const BasicApp = TabNavigator({
     },
     style: {
       backgroundColor: Colors.primary,
+      height: Styles.ScreenHeight * 0.1,
     },
     indicatorStyle: {
       height: 0,

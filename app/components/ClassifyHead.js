@@ -34,11 +34,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import FontsSize from '../../../res/Fonts/size';
-import FontsWeight from '../../../res/Fonts/weight';
-import Colors from '../../../res/Colors';
+import FontsSize from '../res/Fonts/size';
+import FontsWeight from '../res/Fonts/weight';
+import Colors from '../res/Colors';
 
-export default function Head(props) {
+export default function ClassifyHead(props) {
   return (
     <View>
       <View style={styles.head}>

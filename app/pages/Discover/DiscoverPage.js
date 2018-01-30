@@ -48,7 +48,7 @@ import Colors from '../../res/Colors';
 import Carousel from '../../components/Carousel';
 import LabelClassify from '../../components/LabelClassify';
 import GameType from './Components/GameType';
-import Head from './Components/Head';
+import ClassifyHead from '../../components/ClassifyHead';
 import Quality from './Components/Quality';
 import Player from './Components/Player';
 
@@ -99,24 +99,24 @@ class FindPage extends React.Component {
           <LabelClassify labels={this.props.labels} />
           <Divider />
           <View>
-            <Head type="每日新发现" />
+            <ClassifyHead type="每日新发现" />
             <GameType data={this.props.daily} />
             <Divider />
-            <Head type="新游预约" />
+            <ClassifyHead type="新游预约" />
             <GameType data={this.props.order} />
             <Divider />
             <Quality qualityImg={this.props.qualityImg} />
             <Divider />
-            <Head type="推荐玩家" />
+            <ClassifyHead type="推荐玩家" />
             <Player users={this.props.users} />
             <Divider />
-            <Head type="游戏测试" />
+            <ClassifyHead type="游戏测试" />
             <GameType data={this.props.beta} />
             <Divider />
-            <Head type="近期最热" />
+            <ClassifyHead type="近期最热" />
             <GameType data={this.props.hot} />
             <Divider />
-            <Head type="往期专题" />
+            <ClassifyHead type="往期专题" />
             <Quality qualityImg={this.props.previous} />
             <Divider />
           </View>

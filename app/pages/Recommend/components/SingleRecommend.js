@@ -30,7 +30,6 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
-  Avatar,
   Card,
 } from 'react-native-elements';
 import {
@@ -49,55 +48,87 @@ import GradeIcon from './GradeIcon';
 
 export default function SingleRecommend(props) {
   return (
-    <ScrollView
-      style={styles.container}
-      showsVerticalScrollIndicator={false}
-    >
-      <FlatList
-        data={props.games}
-        renderItem={({ item }) => (
-          <Card
-            key={item.data}
-          >
-            <View style={styles.header}>
-              <View style={styles.leftHeader}>
-                <Avatar
-                  tiny
-                  source={{ uri: item.gicon }}
-                  activeOpacity={0.7}
-                  avatarStyle={{
-                    backgroundColor: '#fff',
-                    borderRadius: 5,
-                  }}
-                />
-                <Text style={styles.from}>{item.gfrom}</Text>
-              </View>
-              <View style={styles.rightHeader}>
-                <Ionicons
-                  name="md-more"
-                  size={IconsSize.xlarge}
-                />
-              </View>
-            </View>
-            <View>
-              <Text style={styles.title}>{item.gtitle}</Text>
-            </View>
-            <View>
-              <Image
-                source={{ uri: item.gimage }}
-                style={styles.mainImage}
-              />
-              <GradeIcon
-                style={styles.grade}
-                grade={item.grade}
-                message={item.message}
-              />
-            </View>
-            <Text style={styles.info}>{item.ginfo}</Text>
-          </Card>
-        )}
-      />
-    </ScrollView>
+    <View>
+      <Card>
+        <View style={styles.header}>
+          <View style={styles.leftHeader}>
+            <Image
+              source={{ uri: props.gicon }}
+              style={{
+                height: IconsSize.large,
+                width: IconsSize.large,
+              }}
+            />
+            <Text style={styles.from}>{props.gfrom}</Text>
+          </View>
+          <View style={styles.rightHeader}>
+            <Ionicons
+              name="md-more"
+              size={IconsSize.xlarge}
+            />
+          </View>
+        </View>
+        <Text style={styles.title}>{props.gtitle}</Text>
+        <View>
+          <Image
+            source={{ uri: props.gimage }}
+            style={styles.mainImage}
+          />
+          <GradeIcon
+            style={styles.grade}
+            grade={props.grade}
+            message={props.message}
+          />
+        </View>
+        <Text style={styles.info}>{props.ginfo}</Text>
+      </Card>
+    </View>
+
+    // <ScrollView
+    //   style={styles.container}
+    //   showsVerticalScrollIndicator={false}
+    // >
+    //   <FlatList
+    //     data={props.games}
+    //     renderItem={({ item }) => (
+    //       <Card
+    //         key={item.data}
+    //       >
+    //         <View style={styles.header}>
+    //           <View style={styles.leftHeader}>
+    //             <Image
+    //               source={{ uri: item.gicon }}
+    //               style={{
+    //                 height: IconsSize.large,
+    //                 width: IconsSize.large,
+    //               }}
+    //             />
+    //             <Text style={styles.from}>{item.gfrom}</Text>
+    //           </View>
+    //           <View style={styles.rightHeader}>
+    //             <Ionicons
+    //               name="md-more"
+    //               size={IconsSize.xlarge}
+    //             />
+    //           </View>
+    //         </View>
+    //         <Text style={styles.title}>{item.gtitle}</Text>
+    //         <View>
+    //           <Image
+    //             source={{ uri: item.gimage }}
+    //             style={styles.mainImage}
+    //           />
+    //           <GradeIcon
+    //             style={styles.grade}
+    //             grade={item.grade}
+    //             message={item.message}
+    //           />
+    //         </View>
+    //         <Text style={styles.info}>{item.ginfo}</Text>
+    //       </Card>
+    //     )}
+    //   />
+    // </ScrollView>
   );
 }
 
