@@ -54,7 +54,7 @@ function PlayerAdmire(props) {
             source={{ uri: item.img }}
             style={{
               height: 100,
-              width: Styles.ScreenWidth * 0.6,
+              width: Styles.ScreenWidth * 0.75,
             }}
           />
           <Text style={styles.title}>{item.title}</Text>
@@ -88,8 +88,8 @@ function PlayerAdmire(props) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    width: Styles.ScreenWidth * 0.6,
-    height: Styles.ScreenWidth * 0.48,
+    width: Styles.ScreenWidth * 0.75,
+    height: Styles.ScreenWidth * 0.5,
     marginLeft: 15,
     marginVertical: 10,
   },
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: FontsSize.tiny,
     marginLeft: 10,
     color: Colors.black,
-    marginTop: 10,
+    marginVertical: 5,
     marginRight: 10,
   },
 });

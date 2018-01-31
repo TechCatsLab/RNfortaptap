@@ -62,6 +62,10 @@ export default class AttentionPage extends React.Component {
               rounded
               source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
               activeOpacity={0.7}
+              avatarStyle={{
+                borderWidth: 1,
+                borderColor: Colors.white,
+              }}
             />
           }
           centerComponent={{
