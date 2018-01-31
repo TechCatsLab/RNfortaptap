@@ -30,109 +30,61 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
-  Card,
-} from 'react-native-elements';
-import {
   View,
   Text,
   StyleSheet,
   Image,
-  FlatList,
-  ScrollView,
 } from 'react-native';
 
 import FontsSize from '../../../res/Fonts/size';
 import IconsSize from '../../../res/Icons/size';
+import Colors from '../../../res/Colors';
 
 import GradeIcon from './GradeIcon';
 
 export default function SingleRecommend(props) {
   return (
-    <View>
-      <Card>
-        <View style={styles.header}>
-          <View style={styles.leftHeader}>
-            <Image
-              source={{ uri: props.gicon }}
-              style={{
-                height: IconsSize.large,
-                width: IconsSize.large,
-              }}
-            />
-            <Text style={styles.from}>{props.gfrom}</Text>
-          </View>
-          <View style={styles.rightHeader}>
-            <Ionicons
-              name="md-more"
-              size={IconsSize.xlarge}
-            />
-          </View>
-        </View>
-        <Text style={styles.title}>{props.gtitle}</Text>
-        <View>
+    <View style={styles.card}>
+      <View style={styles.header}>
+        <View style={styles.leftHeader}>
           <Image
-            source={{ uri: props.gimage }}
-            style={styles.mainImage}
+            source={{ uri: props.gicon }}
+            style={{
+              height: IconsSize.large,
+              width: IconsSize.large,
+            }}
           />
-          <GradeIcon
-            style={styles.grade}
-            grade={props.grade}
-            message={props.message}
+          <Text style={styles.from}>{props.gfrom}</Text>
+        </View>
+        <View style={styles.rightHeader}>
+          <Ionicons
+            name="md-more"
+            size={IconsSize.xlarge}
           />
         </View>
-        <Text style={styles.info}>{props.ginfo}</Text>
-      </Card>
+      </View>
+      <Text style={styles.title}>{props.gtitle}</Text>
+      {/* <View> */}
+      <Image
+        source={{ uri: props.gimage }}
+        style={styles.mainImage}
+      />
+      <GradeIcon
+        style={styles.grade}
+        grade={props.grade}
+        message={props.message}
+      />
+      {/* </View> */}
+      <Text style={styles.info}>{props.ginfo}</Text>
     </View>
-
-    // <ScrollView
-    //   style={styles.container}
-    //   showsVerticalScrollIndicator={false}
-    // >
-    //   <FlatList
-    //     data={props.games}
-    //     renderItem={({ item }) => (
-    //       <Card
-    //         key={item.data}
-    //       >
-    //         <View style={styles.header}>
-    //           <View style={styles.leftHeader}>
-    //             <Image
-    //               source={{ uri: item.gicon }}
-    //               style={{
-    //                 height: IconsSize.large,
-    //                 width: IconsSize.large,
-    //               }}
-    //             />
-    //             <Text style={styles.from}>{item.gfrom}</Text>
-    //           </View>
-    //           <View style={styles.rightHeader}>
-    //             <Ionicons
-    //               name="md-more"
-    //               size={IconsSize.xlarge}
-    //             />
-    //           </View>
-    //         </View>
-    //         <Text style={styles.title}>{item.gtitle}</Text>
-    //         <View>
-    //           <Image
-    //             source={{ uri: item.gimage }}
-    //             style={styles.mainImage}
-    //           />
-    //           <GradeIcon
-    //             style={styles.grade}
-    //             grade={item.grade}
-    //             message={item.message}
-    //           />
-    //         </View>
-    //         <Text style={styles.info}>{item.ginfo}</Text>
-    //       </Card>
-    //     )}
-    //   />
-    // </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  card: {
+    backgroundColor: Colors.white,
+    marginBottom: 10,
+  },
   container: {
     flexGrow: 1,
   },
@@ -145,6 +97,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft: 10,
   },
   from: {
     marginLeft: 10,
@@ -158,18 +111,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: FontsSize.medium,
     marginBottom: 3,
+    marginLeft: 10,
   },
   info: {
-    marginTop: 5,
+    marginBottom: 10,
+    marginLeft: 10,
     fontSize: FontsSize.small,
   },
   grade: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 150,
     right: 20,
   },
   mainImage: {
-    width: '100%',
     height: 150,
   },
 });

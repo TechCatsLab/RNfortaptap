@@ -32,21 +32,112 @@ import {
   ScrollView,
   View,
   Text,
+  StyleSheet,
+  Image,
+  FlatList,
 } from 'react-native';
 import {
   Card,
-  Image,
+  Rating,
 } from 'react-native-elements';
+import Feather from 'react-native-vector-icons/Feather';
 
-import BriefInfo from '../../../components/BriefInfo';
+import Styles from '../../../res/Styles';
+import FontsSize from '../../../res/Fonts/size';
+import FontsWeight from '../../../res/Fonts/weight';
+import IconsSize from '../../../res/Icons/size';
+import Colors from '../../../res/Colors';
 
-function Wall() {
+function Wall(props) {
   return (
-    <Card>
-      <BriefInfo title="光荣使命:使命行动" star={5} />
-      <Text>adqweqwr</Text>
-    </Card>
+    <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      data={props.wall}
+      renderItem={({ item }) => (
+        <View style={styles.container}>
+          <View style={styles.head}>
+            <Image
+              style={{
+                width: 40,
+                height: 40,
+              }}
+              source={{ uri: item.img }}
+            />
+            <View style={styles.headRight}>
+              <Text style={styles.headTitle}>{item.title}</Text>
+              <Rating
+                fractions={1}
+                ratingCount={5}
+                imageSize={15}
+                readonly={false}
+                startingValue={5}
+              />
+            </View>
+          </View>
+          <Text style={styles.discuss}>{item.describe}</Text>
+          <View style={styles.bottomLeft}>
+            <Feather
+              name="thumbs-up"
+              size={IconsSize.small}
+            />
+          </View>
+          <View style={styles.bottomRight}>
+            <Text style={styles.name}>{item.user}</Text>
+          </View>
+        </View>
+      )}
+    />
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.white,
+    width: Styles.ScreenWidth * 36/46, // eslint-disable-line
+    height: Styles.ScreenWidth * 18/46, // eslint-disable-line
+    marginLeft: 10,
+    marginBottom: 20,
+  },
+  head: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginTop: 10,
+  },
+  headTitle: {
+    color: 'black',
+    fontWeight: FontsWeight.blod,
+    marginBottom: 5,
+  },
+  headRight: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginLeft: 10,
+  },
+  discuss: {
+    fontSize: FontsSize.small,
+    marginLeft: 5,
+    marginTop: 5,
+    padding: 5,
+    color: 'black',
+  },
+  bottomLeft: {
+    position: 'absolute',
+    bottom: 15,
+    left: 10,
+  },
+  bottomRight: {
+    position: 'absolute',
+    bottom: 15,
+    right: 10,
+  },
+  name: {
+    color: 'black',
+    marginRight: 10,
+  },
+});
 
 export default Wall;

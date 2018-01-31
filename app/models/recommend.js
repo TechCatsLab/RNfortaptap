@@ -143,6 +143,36 @@ export default {
         message: 700,
       },
     ],
+    wall: [
+      {
+        key: 0,
+        img: 'https://img.tapimg.com/market/lcs/60e76890fd888d2491bc8a048bdd0d45_360.png?imageView2/1/w/100/q/40/interlace/1/ignore-error/1',
+        title: 'Late Shift',
+        describe: '看别人玩过！超棒！像是看电影啊！小哥很帅啊而且！',
+        user: '无谶',
+      },
+      {
+        key: 1,
+        img: 'https://img.tapimg.com/market/icons/04242f784d642d5cc08b38247b30d0b9_360.png?imageView2/1/w/100/q/40/interlace/1/ignore-error/1',
+        title: '10 Project（测试服）',
+        describe: '这游戏总的来说还是可以的，虽说感觉上玩起来不够流畅，可能是优化得不是很...',
+        user: '。＆——狱。',
+      },
+      {
+        key: 2,
+        img: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/100/q/40/interlace/1/ignore-error/1',
+        title: '旅かえる',
+        describe: '我家萌萌不要我了好长时间没回来名信片都没寄',
+        user: '＊Sky～神烦＊',
+      },
+      {
+        key: 3,
+        img: 'https://img.tapimg.com/market/lcs/d9a78696d796114ee738d1c4cda20405_360.png?imageView2/1/w/100/q/40/interlace/1/ignore-error/1',
+        title: '粉碎狂热',
+        describe: '游戏很好因为刚入坑前期上手要求也不高到目前为止吧。感觉游戏还可以上来给...',
+        user: '淼淼淼淼淼',
+      },
+    ],
   },
 
   effects: {

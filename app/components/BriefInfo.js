@@ -49,7 +49,7 @@ function BrifInfo(props) {
         <Rating
           fractions={1}
           ratingCount={5}
-          imageSize={10}
+          imageSize={props.ratingSize}
           readonly={false}
           startingValue={props.star}
         />

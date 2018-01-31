@@ -74,6 +74,7 @@ function RankContent(props) {
           <BriefInfo
             title={item.title}
             star={item.star}
+            ratingSize={10}
             label1={item.label1}
             label2={item.label2}
             label3={item.label3}
