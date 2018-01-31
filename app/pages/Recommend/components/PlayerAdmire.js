@@ -24,67 +24,61 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/30        Cheng Jifeng
+ *     Initial: 2018/01/31        Cheng Jifeng
  */
 
 import React from 'react';
 import {
-  ScrollView,
   View,
   Text,
-  StyleSheet,
   Image,
+  StyleSheet,
   FlatList,
 } from 'react-native';
-import {
-  Card,
-  Rating,
-} from 'react-native-elements';
-import Feather from 'react-native-vector-icons/Feather';
+import Materiallcons from 'react-native-vector-icons/MaterialIcons';
 
-import Styles from '../../../res/Styles';
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';
-import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
 
-function Wall(props) {
+function PlayerAdmire(props) {
   return (
     <FlatList
       horizontal
       showsHorizontalScrollIndicator={false}
-      data={props.wall}
+      data={props.admire}
       renderItem={({ item }) => (
         <View style={styles.container}>
-          <View style={styles.head}>
+          <Image
+            source={{ uri: item.img }}
+            style={{
+              height: 100,
+              width: Styles.ScreenWidth * 0.6,
+            }}
+          />
+          <Text style={styles.title}>{item.title}</Text>
+          <View style={styles.player}>
             <Image
+              source={{ uri: item.avatar }}
               style={{
-                width: 40,
-                height: 40,
+                width: 20,
+                height: 20,
+                borderRadius: 50,
+                borderWidth: 1,
+                borderColor: Colors.gray,
+                marginLeft: 10,
+                marginRight: 5,
               }}
-              source={{ uri: item.img }}
             />
-            <View style={styles.headRight}>
-              <Text style={styles.headTitle}>{item.title}</Text>
-              <Rating
-                fractions={1}
-                ratingCount={5}
-                imageSize={15}
-                readonly={false}
-                startingValue={5}
-              />
-            </View>
-          </View>
-          <Text style={styles.discuss}>{item.describe}</Text>
-          <View style={styles.bottomLeft}>
-            <Feather
-              name="thumbs-up"
-              size={IconsSize.small}
+            <Text style={styles.playerName}>{item.nickname}</Text>
+            <Materiallcons
+              name="brightness-auto"
+              size={11}
+              color={Colors.orange}
             />
           </View>
-          <View style={styles.bottomRight}>
-            <Text style={styles.name}>———{item.user}</Text>
-          </View>
+          <Text style={styles.comment}>{item.describe}</Text>
         </View>
       )}
     />
@@ -94,50 +88,35 @@ function Wall(props) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    width: Styles.ScreenWidth * 36/46, // eslint-disable-line
-    height: Styles.ScreenWidth * 18/46, // eslint-disable-line
-    marginLeft: 10,
-    marginBottom: 20,
+    width: Styles.ScreenWidth * 0.6,
+    height: Styles.ScreenWidth * 0.48,
+    marginLeft: 15,
+    marginVertical: 10,
   },
-  head: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+  title: {
+    fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.blod,
+    color: Colors.black,
     marginLeft: 10,
     marginTop: 10,
   },
-  headTitle: {
-    color: Colors.black,
-    fontWeight: FontsWeight.blod,
-    marginBottom: 5,
-  },
-  headRight: {
+  player: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    marginLeft: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
   },
-  discuss: {
+  playerName: {
     fontSize: FontsSize.small,
-    marginLeft: 5,
-    marginTop: 5,
-    padding: 5,
+    marginRight: 5,
+  },
+  comment: {
+    fontSize: FontsSize.tiny,
+    marginLeft: 10,
     color: Colors.black,
-  },
-  bottomLeft: {
-    position: 'absolute',
-    bottom: 15,
-    left: 10,
-  },
-  bottomRight: {
-    position: 'absolute',
-    bottom: 15,
-    right: 10,
-  },
-  name: {
-    color: Colors.black,
+    marginTop: 10,
     marginRight: 10,
   },
 });
 
-export default Wall;
+export default PlayerAdmire;

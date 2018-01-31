@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10,
     marginBottom: 10,
-    color: 'black',
+    color: Colors.black,
   },
   moreInfo: {
     fontSize: FontsSize.tiny,

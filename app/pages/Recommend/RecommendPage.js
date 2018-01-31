@@ -48,6 +48,8 @@ import Colors from '../../res/Colors';
 import SingleRecommend from './components/SingleRecommend';
 import ClassifyHead from '../../components/ClassifyHead';
 import Wall from './components/Wall';
+import Quality from '../../pages/Discover/Components/Quality';
+import PlayerAdmire from './components/PlayerAdmire';
 
 class RecommendPage extends React.Component {
   static navigationOptions = {
@@ -99,7 +101,7 @@ class RecommendPage extends React.Component {
             gimage="https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
             ginfo="三叶草已经收了四次了，我的蛙怎么还不回家啊……"
             grade="9.8"
-            message="999"
+            message="16759"
           />
           <SingleRecommend
             gicon="https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
@@ -113,22 +115,44 @@ class RecommendPage extends React.Component {
           <ClassifyHead type="安利墙" />
           <Wall wall={this.props.wall} />
           <SingleRecommend
-            gicon="https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gicon="https://img.tapimg.com/market/lcs/d001b4b53e14f4c4498fe11c1564d945_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
             gfrom="来自编辑的推荐"
-            gtitle="旅かえる"
-            gimage="https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
-            ginfo="三叶草已经收了四次了，我的蛙怎么还不回家啊……"
-            grade="9.8"
-            message="999"
+            gtitle="飞跃仙境"
+            gimage="https://img.tapimg.com/market/images/50c65228848143de6361cf52808e40b8.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="跟随桃乐丝的梦境，找寻未知的自己。"
+            grade="8.4"
+            message="630"
           />
           <SingleRecommend
-            gicon="https://img.tapimg.com/market/lcs/80730d5b2027f95a316d1bb674b2c48f_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gicon="https://img.tapimg.com/market/lcs/a7cd8cfafcbbed27a4e4eabb15b3179d_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
             gfrom="来自编辑的推荐"
-            gtitle="边境之旅"
-            gimage="https://img.tapimg.com/market/images/83c8a1d5574c1dc1e9a80b019dc51394.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
-            ginfo="山川湖海，唯美旅途。"
+            gtitle="Dancing Ball!"
+            gimage="https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="独特的玩法与配乐，让你体验一场充满挑战的音乐之旅！"
             grade="8.0"
-            message="600"
+            message="700"
+          />
+          <ClassifyHead type="精选专题" />
+          <Quality qualityImg={this.props.previous} />
+          <ClassifyHead type="玩赏家推荐游戏" />
+          <PlayerAdmire admire={this.props.admire} />
+          <SingleRecommend
+            gicon="https://img.tapimg.com/market/lcs/042cadb5e3b7067b65959df21fa14ee4_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gfrom="来自编辑的推荐"
+            gtitle="我的世界"
+            gimage="https://img.tapimg.com/market/images/1426cd57509effc0fe3893647f8299df.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="花雨庭世界降临，新增多种网游玩法。"
+            grade="8.0"
+            message="18623"
+          />
+          <SingleRecommend
+            gicon="https://img.tapimg.com/market/icons/9cda95234d8b48a9422d974333a0ab41_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1"
+            gfrom="来自编辑的推荐"
+            gtitle="疯狂碰碰车"
+            gimage="https://img.tapimg.com/market/images/2368ac36604d6556c9c3c67572f5e805.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1"
+            ginfo="重拾童年碰碰车乐趣，百变车型制霸赛场。"
+            grade="8.7"
+            message="1117"
           />
         </ScrollView>
         {/* <SingleRecommend games={this.props.games} /> */}
@@ -149,4 +173,6 @@ const styles = StyleSheet.create({
 export default connect(({ recommend }) => ({
   games: recommend.games,
   wall: recommend.wall,
+  previous: recommend.previous,
+  admire: recommend.admire,
 }))(RecommendPage);

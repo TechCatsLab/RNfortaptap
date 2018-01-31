@@ -37,6 +37,7 @@ import {
 
 import IconsSize from '../../../res/Icons/size';
 import FontsSize from '../../../res/Fonts/size';
+import Colors from '../../../res/Colors';
 
 function GradeIcon(props) {
   return (
@@ -44,13 +45,13 @@ function GradeIcon(props) {
       <Ionicons
         name="md-star"
         size={IconsSize.tiny}
-        color="black"
+        color={Colors.black}
       />
       <Text style={styles.text}>{props.grade}</Text>
       <Ionicons
         name="ios-chatbubbles"
         size={IconsSize.tiny}
-        color="black"
+        color={Colors.black}
       />
       <Text style={styles.text}>{props.message}</Text>
     </View>

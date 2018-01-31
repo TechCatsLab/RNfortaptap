@@ -173,6 +173,78 @@ export default {
         user: '淼淼淼淼淼',
       },
     ],
+    previous: [
+      {
+        key: 0,
+        img: 'https://img.tapimg.com/market/images/0183cdbf8043346db45d77fb44a6ef37.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 1,
+        img: 'https://img.tapimg.com/market/images/82748411f43e0fbe9f2ee054e6bca1b5.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 2,
+        img: 'https://img.tapimg.com/market/images/2e7530db631f57b352a262e927a22917.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 3,
+        img: 'https://img.tapimg.com/market/images/fff832326afd70919aadc1c02b99c816.png?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 4,
+        img: 'https://img.tapimg.com/market/images/09943209699f11dac1a0025e4397df7f.jpg?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 5,
+        img: 'https://img.tapimg.com/market/images/892ed0e962aeacf1678a6947cac1647d.jpg?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+      {
+        key: 6,
+        img: 'https://img.tapimg.com/market/images/b07c1213f45b57f44c7364a9e4e81991.jpg?imageView2/1/w/672/h/268/q/40/format/jpg/interlace/1/ignore-error/1',
+      },
+    ],
+    admire: [
+      {
+        key: 0,
+        img: 'https://img.tapimg.com/market/images/c04ab999f692a4407d64156e51613834.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        title: '旅行青蛙',
+        avatar: 'https://img3.tapimg.com/avatars/aa55a2a789bc47713f1990a2107107d0.png?imageView2/1/w/300/q/80/format/jpg/interlace/1/ignore-error/1',
+        nickname: '屠梦人',
+        describe: '讲真，玩这个游戏让我有点手足无措。。。',
+      },
+      {
+        key: 1,
+        img: 'https://img.tapimg.com/market/images/73b7e8a199fbe015e993986b8ef36987.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        title: '肥皂大作战',
+        avatar: 'https://img3.tapimg.com/avatars/2b4a9f9bd8e9817c28880144438825fe.jpg?imageView2/1/w/300/q/80/format/jpg/interlace/1/ignore-error/1',
+        nickname: '浅水',
+        describe: '不得不承认，这是一个自带话题和毒性的游戏',
+      },
+      {
+        key: 2,
+        img: 'https://img.tapimg.com/market/images/6b5ecdb1bfc99f3fdaeea44cb4537446.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        title: 'Dancing Ball!',
+        avatar: 'https://img3.tapimg.com/avatars/a50a33cafea2b4569394c2c94e2f88d6.jpg?imageView2/1/w/300/q/80/format/jpg/interlace/1/ignore-error/1',
+        nickname: '桐生一马',
+        describe: '玩法上不只是肌肉记忆，还将节奏感完美融入。',
+      },
+      {
+        key: 3,
+        img: 'https://img.tapimg.com/market/images/922da7127b7221a7d592b3b54c7ec160.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        title: '养不大',
+        avatar: 'https://img3.tapimg.com/avatars/2b4a9f9bd8e9817c28880144438825fe.jpg?imageView2/1/w/60/q/40/interlace/1/ignore-error/1',
+        nickname: '浅水',
+        describe: '各种崽们的外观设计得非常的Q版可爱。',
+      },
+      {
+        key: 4,
+        img: 'https://img.tapimg.com/market/images/5755b310174dcc1a9d1deb71300056c4.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/40/interlace/1',
+        title: '决战平安京',
+        avatar: 'https://img3.tapimg.com/avatars/9f54e6f25b352b5184f141c1a53a0a3e.png?imageView2/1/w/300/q/80/format/jpg/interlace/1/ignore-error/1',
+        nickname: '南小鸟',
+        describe: '美术水平非常好，老YYS的粉儿应该很吃这一套。',
+      },
+    ],
   },
 
   effects: {
