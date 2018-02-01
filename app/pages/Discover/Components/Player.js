@@ -47,7 +47,7 @@ import FontsWeght from '../../../res/Fonts/weight';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-function Player(props) {
+export default (props) => {
   return (
     <FlatList
       horizontal
@@ -102,7 +102,7 @@ function Player(props) {
       )}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   nickname: {
@@ -120,5 +120,3 @@ const styles = StyleSheet.create({
     marginBottom: Styles.Height(3),
   },
 });
-
-export default Player;

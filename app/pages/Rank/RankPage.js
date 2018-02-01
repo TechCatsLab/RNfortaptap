@@ -108,7 +108,7 @@ class RankPage extends React.Component {
           <LabelClassify labels={this.props.labels} />
           <RankHeader />
           <Divider />
-          <RankContent />
+          <RankContent content={this.props.content} />
         </ScrollView>
       </View>
     );
@@ -123,5 +123,5 @@ const styles = StyleSheet.create({
 });
 
 export default connect(({ rank }) => ({
-  labels: rank.labels,
+  ...rank,
 }))(RankPage);

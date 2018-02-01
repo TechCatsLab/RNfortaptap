@@ -43,7 +43,7 @@ import FontsWeight from '../../../res/Fonts/weight';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-export default function GameType(props) {
+export default (props) => {
   return (
     <FlatList
       horizontal
@@ -66,7 +66,7 @@ export default function GameType(props) {
       )}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   singleInfo: {

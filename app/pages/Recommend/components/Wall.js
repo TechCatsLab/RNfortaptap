@@ -29,7 +29,6 @@
 
 import React from 'react';
 import {
-  ScrollView,
   View,
   Text,
   StyleSheet,
@@ -47,7 +46,7 @@ import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-function Wall(props) {
+export default (props) => {
   return (
     <FlatList
       horizontal
@@ -88,7 +87,7 @@ function Wall(props) {
       )}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -138,5 +137,3 @@ const styles = StyleSheet.create({
     marginRight: Styles.Width(10),
   },
 });
-
-export default Wall;

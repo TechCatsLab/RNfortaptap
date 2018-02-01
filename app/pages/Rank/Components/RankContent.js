@@ -38,7 +38,7 @@ import {
   Avatar,
 } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';
@@ -52,7 +52,7 @@ const _separator = () => {
   return <View style={{ height: 0.5, backgroundColor: Colors.black }} />;
 };
 
-function RankContent(props) {
+export default (props) => {
   return (
     <FlatList
       ItemSeparatorComponent={_separator}
@@ -89,7 +89,7 @@ function RankContent(props) {
       )}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   number: {
@@ -115,7 +115,3 @@ const styles = StyleSheet.create({
     right: Styles.Width(13),
   },
 });
-
-export default connect(({ rank }) => ({
-  content: rank.content,
-}))(RankContent);

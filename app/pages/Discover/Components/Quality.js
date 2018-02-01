@@ -37,7 +37,7 @@ import {
 
 import Styles from '../../../res/Styles';
 
-function Quality(props) {
+export default (props) => {
   return (
     <FlatList
       horizontal
@@ -53,7 +53,7 @@ function Quality(props) {
       )}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   image: {
@@ -64,4 +64,3 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 });
-export default Quality;

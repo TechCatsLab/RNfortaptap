@@ -40,7 +40,7 @@ import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-function GradeIcon(props) {
+export default (props) => {
   return (
     <View style={styles.layout}>
       <Ionicons
@@ -57,7 +57,7 @@ function GradeIcon(props) {
       <Text style={styles.text}>{props.message}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   layout: {
@@ -71,5 +71,3 @@ const styles = StyleSheet.create({
     margin: Styles.Width(5),
   },
 });
-
-export default GradeIcon;

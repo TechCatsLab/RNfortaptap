@@ -42,7 +42,7 @@ import FontsWeight from '../../../res/Fonts/weight';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-function PlayerAdmire(props) {
+export default (props) => {
   return (
     <FlatList
       horizontal
@@ -83,7 +83,7 @@ function PlayerAdmire(props) {
       )}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -118,5 +118,3 @@ const styles = StyleSheet.create({
     marginRight: Styles.Width(10),
   },
 });
-
-export default PlayerAdmire;

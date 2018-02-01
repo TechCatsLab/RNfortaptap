@@ -43,7 +43,7 @@ import Styles from '../../../res/Styles';
 
 import GradeIcon from './GradeIcon';
 
-export default function SingleRecommend(props) {
+export default (props) => {
   return (
     <View style={styles.card}>
       <View style={styles.header}>
@@ -77,7 +77,7 @@ export default function SingleRecommend(props) {
       <Text style={styles.info}>{props.ginfo}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   card: {
