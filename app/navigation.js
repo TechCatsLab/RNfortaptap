@@ -43,7 +43,7 @@ import AttentionScreen from './pages/Attention/AttentionPage';
 import MyGameScreen from './pages/MyGame/MyGamePage';
 
 const BasicApp = TabNavigator({
-  Recommand: {
+  Recommend: {
     screen: RecommendScreen,
   },
   Rank: {
@@ -59,6 +59,7 @@ const BasicApp = TabNavigator({
     screen: MyGameScreen,
   },
 }, {
+  initialRouteName: 'Recommend',
   tabBarPosition: 'bottom',
   animationEnabled: true,
   lazy: true,

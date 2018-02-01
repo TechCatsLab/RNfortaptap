@@ -75,7 +75,7 @@ export default (props) => {
               height: Styles.Width(90),
               borderRadius: 50,
               borderWidth: 2,
-              borderColor: 'white',
+              borderColor: Colors.white,
             }}
             source={{ uri: item.img }}
           />

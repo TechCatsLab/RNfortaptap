@@ -33,6 +33,7 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
@@ -70,7 +71,7 @@ export default class AttentionPage extends React.Component {
         centerComponent={{
           text: '动态',
           style: {
-            color: '#fff',
+            color: Colors.white,
             fontSize: FontsSize.large,
           },
         }}
@@ -78,7 +79,7 @@ export default class AttentionPage extends React.Component {
           <Ionicons
             name="ios-search"
             size={IconsSize.xlarge}
-            color="white"
+            color={Colors.white}
           />
         }
         backgroundColor={Colors.primary}
