@@ -44,6 +44,7 @@ import { connect } from 'react-redux';
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
+import Styles from '../../res/Styles';
 
 import Carousel from '../../components/Carousel';
 import LabelClassify from '../../components/LabelClassify';

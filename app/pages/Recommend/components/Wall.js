@@ -57,8 +57,8 @@ export default (props) => {
           <View style={styles.head}>
             <Image
               style={{
-                width: Styles.Width(40),
-                height: Styles.Height(40),
+                width: Styles.Width(80),
+                height: Styles.Height(80),
               }}
               source={{ uri: item.img }}
             />
@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: Styles.Width(10),
-    marginTop: Styles.Height(10),
+    marginLeft: Styles.Width(15),
+    marginTop: Styles.Height(15),
   },
   headTitle: {
     color: Colors.black,

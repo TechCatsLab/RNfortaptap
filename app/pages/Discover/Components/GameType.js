@@ -54,8 +54,8 @@ export default (props) => {
           <Avatar
             source={{ uri: item.img }}
             activeOpacity={0.7}
-            width={Styles.Width(100)}
-            height={Styles.Width(100)}
+            width={Styles.Width(130)}
+            height={Styles.Width(130)}
             avatarStyle={{
               borderRadius: 10,
               backgroundColor: Colors.white,
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
   singleInfo: {
     display: 'flex',
     flexDirection: 'column',
-    marginLeft: Styles.Width(15),
+    marginLeft: Styles.Width(20),
+    marginBottom: Styles.Height(20),
     width: Styles.Width(130),
   },
   text: {

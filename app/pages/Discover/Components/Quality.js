@@ -58,7 +58,7 @@ export default (props) => {
 const styles = StyleSheet.create({
   image: {
     width: Styles.Width(360),
-    height: Styles.Width(150),
+    height: Styles.Width(180),
     marginLeft: Styles.Width(20),
     marginVertical: Styles.Height(15),
     borderRadius: 10,
