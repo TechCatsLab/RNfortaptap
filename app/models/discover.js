@@ -217,11 +217,11 @@ export default {
     qualityImg: [
       {
         key: 0,
-        img: 'https://img.tapimg.com/market/images/695f17e0632b952d44d6e7d97158c9a0.jpg',
+        img: 'https://img.tapimg.com/market/images/0183cdbf8043346db45d77fb44a6ef37.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
       },
       {
         key: 1,
-        img: 'https://img.tapimg.com/market/images/035be48506ee19e05af7c18881e7bb3e.jpg',
+        img: 'https://img.tapimg.com/market/images/0183cdbf8043346db45d77fb44a6ef37.jpg?imageView2/1/w/780/h/300/q/40/format/jpg/interlace/1/ignore-error/1',
       },
       {
         key: 2,

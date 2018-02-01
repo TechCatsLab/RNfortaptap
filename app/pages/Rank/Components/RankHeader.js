@@ -35,6 +35,7 @@ import {
 } from 'react-native';
 
 import FontsSize from '../../../res/Fonts/size';
+import Styles from '../../../res/Styles';
 
 export default class RankHeader extends React.Component {
   render() {
@@ -63,10 +64,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    margin: 5,
+    marginHorizontal: Styles.Height(5),
+    marginVertical: Styles.Width(5),
   },
   textRank: {
-    marginRight: 10,
+    marginRight: Styles.Width(10),
     fontSize: FontsSize.small,
   },
 });

@@ -53,8 +53,8 @@ function PlayerAdmire(props) {
           <Image
             source={{ uri: item.img }}
             style={{
-              height: 100,
-              width: Styles.ScreenWidth * 0.75,
+              height: Styles.Height(200),
+              width: Styles.Width(480),
             }}
           />
           <Text style={styles.title}>{item.title}</Text>
@@ -62,13 +62,13 @@ function PlayerAdmire(props) {
             <Image
               source={{ uri: item.avatar }}
               style={{
-                width: 20,
-                height: 20,
+                width: Styles.Width(20),
+                height: Styles.Width(20),
                 borderRadius: 50,
                 borderWidth: 1,
                 borderColor: Colors.gray,
-                marginLeft: 10,
-                marginRight: 5,
+                marginLeft: Styles.Width(10),
+                marginRight: Styles.Height(5),
               }}
             />
             <Text style={styles.playerName}>{item.nickname}</Text>
@@ -88,34 +88,34 @@ function PlayerAdmire(props) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    width: Styles.ScreenWidth * 0.75,
-    height: Styles.ScreenWidth * 0.5,
-    marginLeft: 15,
-    marginVertical: 10,
+    width: Styles.Width(480),
+    height: Styles.Height(330),
+    marginLeft: Styles.Width(15),
+    marginVertical: Styles.Height(10),
   },
   title: {
     fontSize: FontsSize.medium,
     fontWeight: FontsWeight.blod,
     color: Colors.black,
-    marginLeft: 10,
-    marginTop: 10,
+    marginLeft: Styles.Width(10),
+    marginTop: Styles.Height(10),
   },
   player: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: Styles.Height(10),
   },
   playerName: {
-    fontSize: FontsSize.small,
-    marginRight: 5,
+    fontSize: FontsSize.tiny,
+    marginRight: Styles.Width(5),
   },
   comment: {
     fontSize: FontsSize.tiny,
-    marginLeft: 10,
+    marginLeft: Styles.Width(10),
     color: Colors.black,
-    marginVertical: 5,
-    marginRight: 10,
+    marginVertical: Styles.Height(5),
+    marginRight: Styles.Width(10),
   },
 });
 

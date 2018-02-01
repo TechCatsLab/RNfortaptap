@@ -38,7 +38,7 @@ import FontsSize from '../res/Fonts/size';
 import FontsWeight from '../res/Fonts/weight';
 import Colors from '../res/Colors';
 
-export default function ClassifyHead(props) {
+export default (props) => {
   return (
     <View>
       <View style={styles.head}>
@@ -47,7 +47,7 @@ export default function ClassifyHead(props) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   head: {

@@ -37,16 +37,15 @@ import {
   FlatList,
 } from 'react-native';
 import {
-  Card,
   Rating,
 } from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
 
-import Styles from '../../../res/Styles';
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';
 import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
 
 function Wall(props) {
   return (
@@ -59,8 +58,8 @@ function Wall(props) {
           <View style={styles.head}>
             <Image
               style={{
-                width: 40,
-                height: 40,
+                width: Styles.Width(40),
+                height: Styles.Height(40),
               }}
               source={{ uri: item.img }}
             />
@@ -94,17 +93,17 @@ function Wall(props) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    width: Styles.ScreenWidth * 36/46, // eslint-disable-line
-    height: Styles.ScreenWidth * 18/46, // eslint-disable-line
-    marginLeft: 10,
-    marginBottom: 20,
+    width: Styles.Width(500),
+    height: Styles.Height(250),
+    marginLeft: Styles.Width(10),
+    marginBottom: Styles.Height(10),
   },
   head: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10,
-    marginTop: 10,
+    marginLeft: Styles.Width(10),
+    marginTop: Styles.Height(10),
   },
   headTitle: {
     color: Colors.black,
@@ -115,28 +114,28 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    marginLeft: 10,
+    marginLeft: Styles.Width(10),
   },
   discuss: {
     fontSize: FontsSize.small,
-    marginLeft: 5,
-    marginTop: 5,
+    marginLeft: Styles.Width(5),
+    marginTop: Styles.Height(5),
     padding: 5,
     color: Colors.black,
   },
   bottomLeft: {
     position: 'absolute',
-    bottom: 15,
-    left: 10,
+    bottom: Styles.Height(15),
+    left: Styles.Width(10),
   },
   bottomRight: {
     position: 'absolute',
-    bottom: 15,
-    right: 10,
+    bottom: Styles.Height(15),
+    right: Styles.Width(10),
   },
   name: {
     color: Colors.black,
-    marginRight: 10,
+    marginRight: Styles.Width(10),
   },
 });
 

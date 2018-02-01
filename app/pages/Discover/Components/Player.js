@@ -42,11 +42,10 @@ import {
 } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-import Styles from '../../../res/Styles';
-import Colors from '../../../res/Colors';
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeght from '../../../res/Fonts/weight';
-import IconsSize from '../../../res/Icons/size';
+import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
 
 function Player(props) {
   return (
@@ -72,8 +71,8 @@ function Player(props) {
         >
           <Image
             style={{
-              width: Styles.ScreenWidth * 6/46, //eslint-disable-line
-              height: Styles.ScreenWidth * 6/46, //eslint-disable-line
+              width: Styles.Width(90),
+              height: Styles.Width(90),
               borderRadius: 50,
               borderWidth: 2,
               borderColor: 'white',
@@ -92,10 +91,11 @@ function Player(props) {
           <Button
             title="关注"
             buttonStyle={{
-              width: Styles.ScreenWidth * 8/46, //eslint-disable-line
-              height: Styles.ScreenWidth * 2.5/46, //eslint-disable-line
+              width: Styles.Width(111), //eslint-disable-line
+              height: Styles.Height(20), //eslint-disable-line
               backgroundColor: Colors.primary,
-              borderRadius: 10,
+              marginTop: Styles.Height(3),
+              borderRadius: 8,
             }}
           />
         </Card>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   nickname: {
     fontSize: FontsSize.small,
     fontWeight: FontsWeght.blod,
-    marginTop: 3,
+    marginTop: Styles.Height(3),
   },
   describe: {
     display: 'flex',
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   tag: {
     fontSize: FontsSize.tiny,
-    marginBottom: 3,
+    marginBottom: Styles.Height(3),
   },
 });
 

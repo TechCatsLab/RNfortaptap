@@ -44,12 +44,13 @@ import { connect } from 'react-redux';
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
+import Styles from '../../res/Styles';
 
 import SingleRecommend from './components/SingleRecommend';
 import ClassifyHead from '../../components/ClassifyHead';
-import Wall from './components/Wall';
 import Quality from '../../pages/Discover/Components/Quality';
 import PlayerAdmire from './components/PlayerAdmire';
+import Wall from './components/Wall';
 
 class RecommendPage extends React.Component {
   static navigationOptions = {
@@ -65,35 +66,41 @@ class RecommendPage extends React.Component {
     ),
   }
 
+  renderHeader = () => {
+    return (
+      <Header
+        leftComponent={
+          <Avatar
+            small
+            rounded
+            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+            activeOpacity={0.7}
+            avatarStyle={{
+              borderWidth: Styles.Height(1),
+              borderColor: Colors.white,
+            }}
+          />
+        }
+        centerComponent={{
+          text: 'TapTap',
+          style: { color: Colors.white, fontSize: FontsSize.xlarge },
+        }}
+        rightComponent={
+          <Ionicons
+            name="ios-search"
+            size={IconsSize.xlarge}
+            color="white"
+          />
+        }
+        backgroundColor={Colors.primary}
+      />
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Header
-          leftComponent={
-            <Avatar
-              small
-              rounded
-              source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-              activeOpacity={0.7}
-              avatarStyle={{
-                borderWidth: 1,
-                borderColor: Colors.white,
-              }}
-            />
-          }
-          centerComponent={{
-            text: 'TapTap',
-            style: { color: '#fff', fontSize: FontsSize.xlarge },
-          }}
-          rightComponent={
-            <Ionicons
-              name="ios-search"
-              size={IconsSize.xlarge}
-              color="white"
-            />
-          }
-          backgroundColor={Colors.primary}
-        />
+        { this.renderHeader() }
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={styles.scroll}
@@ -159,7 +166,6 @@ class RecommendPage extends React.Component {
             message="1117"
           />
         </ScrollView>
-        {/* <SingleRecommend games={this.props.games} /> */}
       </View>
     );
   }

@@ -39,6 +39,7 @@ import {
 import FontsSize from '../../../res/Fonts/size';
 import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
 
 import GradeIcon from './GradeIcon';
 
@@ -64,7 +65,6 @@ export default function SingleRecommend(props) {
         </View>
       </View>
       <Text style={styles.title}>{props.gtitle}</Text>
-      {/* <View> */}
       <Image
         source={{ uri: props.gimage }}
         style={styles.mainImage}
@@ -74,7 +74,6 @@ export default function SingleRecommend(props) {
         grade={props.grade}
         message={props.message}
       />
-      {/* </View> */}
       <Text style={styles.info}>{props.ginfo}</Text>
     </View>
   );
@@ -83,7 +82,7 @@ export default function SingleRecommend(props) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: Colors.white,
-    marginBottom: 10,
+    marginBottom: Styles.Height(10),
   },
   container: {
     flexGrow: 1,
@@ -97,33 +96,34 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10,
+    marginLeft: Styles.Width(10),
   },
   from: {
-    marginLeft: 10,
+    marginLeft: Styles.Width(10),
     color: '#888888',
     fontSize: FontsSize.small,
   },
   rightHeader: {
-    margin: 10,
+    marginVertical: Styles.Height(10),
+    marginHorizontal: Styles.Width(10),
   },
   title: {
     fontWeight: 'bold',
     fontSize: FontsSize.medium,
-    marginBottom: 3,
-    marginLeft: 10,
+    marginBottom: Styles.Height(3),
+    marginLeft: Styles.Width(10),
   },
   info: {
-    marginBottom: 10,
-    marginLeft: 10,
+    marginBottom: Styles.Height(10),
+    marginLeft: Styles.Width(10),
     fontSize: FontsSize.small,
   },
   grade: {
     position: 'absolute',
-    bottom: 150,
-    right: 20,
+    bottom: Styles.Height(150),
+    right: Styles.Width(20),
   },
   mainImage: {
-    height: 150,
+    height: Styles.Height(250),
   },
 });

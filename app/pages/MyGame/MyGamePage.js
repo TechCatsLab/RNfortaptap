@@ -35,8 +35,8 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 
-import IconsSize from '../../res/Icons/size';
 import FontsSize from '../../res/Fonts/size';
+import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 
 export default class MyGamePage extends React.Component {
@@ -53,38 +53,43 @@ export default class MyGamePage extends React.Component {
     ),
   }
 
+  renderHeader = () => {
+    return (
+      <Header
+        leftComponent={
+          <Avatar
+            small
+            rounded
+            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+            activeOpacity={0.7}
+            avatarStyle={{
+              borderWidth: 1,
+              borderColor: Colors.white,
+            }}
+          />
+        }
+        centerComponent={{
+          text: '我的游戏',
+          style: {
+            color: '#fff',
+            fontSize: FontsSize.large,
+          },
+        }}
+        rightComponent={
+          <Ionicons
+            name="ios-search"
+            size={IconsSize.xlarge}
+            color="white"
+          />
+        }
+        backgroundColor={Colors.primary}
+      />
+    );
+  }
   render() {
     return (
       <View>
-        <Header
-          leftComponent={
-            <Avatar
-              small
-              rounded
-              source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-              activeOpacity={0.7}
-              avatarStyle={{
-                borderWidth: 1,
-                borderColor: Colors.white,
-              }}
-            />
-          }
-          centerComponent={{
-            text: '我的游戏',
-            style: {
-              color: '#fff',
-              fontSize: FontsSize.large,
-            },
-          }}
-          rightComponent={
-            <Ionicons
-              name="ios-search"
-              size={IconsSize.xlarge}
-              color="white"
-            />
-          }
-          backgroundColor={Colors.primary}
-        />
+        { this.renderHeader() }
         <Text>
         我的游戏
         </Text>

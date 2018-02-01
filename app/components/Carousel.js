@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   slide: {
-    width: Styles.Width(640),
+    width: Styles.Width(Styles.VirtualWidth),
     height: Styles.Height(330),
   },
 });

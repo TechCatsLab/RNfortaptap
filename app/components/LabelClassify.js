@@ -37,7 +37,7 @@ import {
 
 import Colors from '../res/Colors';
 
-function LabelClassify(props) {
+export default (props) => {
   return (
     <FlatList
       horizontal
@@ -58,6 +58,4 @@ function LabelClassify(props) {
       )}
     />
   );
-}
-
-export default LabelClassify;
+};

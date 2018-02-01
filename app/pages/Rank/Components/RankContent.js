@@ -44,11 +44,12 @@ import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';
 import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
 
 import BriefInfo from '../../../components/BriefInfo';
 
 const _separator = () => {
-  return <View style={{ height: 0.5, backgroundColor: '#aaa' }} />;
+  return <View style={{ height: 0.5, backgroundColor: Colors.black }} />;
 };
 
 function RankContent(props) {
@@ -69,7 +70,6 @@ function RankContent(props) {
                 backgroundColor: Colors.white,
               }}
             />
-            {/* <BriefImage img={item.img} /> */}
           </View>
           <BriefInfo
             title={item.title}
@@ -95,13 +95,13 @@ const styles = StyleSheet.create({
   number: {
     fontSize: FontsSize.medium,
     fontWeight: FontsWeight.bold,
-    margin: 10,
-    width: 20,
+    marginHorizontal: Styles.Height(10),
+    width: Styles.Width(30),
   },
   overAll: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 3,
+    marginBottom: Styles.Height(3),
     position: 'relative',
   },
   leftContent: {
@@ -111,8 +111,8 @@ const styles = StyleSheet.create({
   },
   rightIcon: {
     position: 'absolute',
-    top: 10,
-    right: 13,
+    top: Styles.Height(10),
+    right: Styles.Width(13),
   },
 });
 

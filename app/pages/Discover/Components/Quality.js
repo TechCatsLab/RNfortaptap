@@ -57,11 +57,10 @@ function Quality(props) {
 
 const styles = StyleSheet.create({
   image: {
-    width: Styles.ScreenWidth * 0.4,
-    height: Styles.ScreenWidth * 0.2,
-    marginLeft: 10,
-    marginTop: 15,
-    marginBottom: 15,
+    width: Styles.Width(360),
+    height: Styles.Width(150),
+    marginLeft: Styles.Width(20),
+    marginVertical: Styles.Height(15),
     borderRadius: 10,
   },
 });

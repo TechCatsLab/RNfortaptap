@@ -35,9 +35,10 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import IconsSize from '../../../res/Icons/size';
 import FontsSize from '../../../res/Fonts/size';
+import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
 
 function GradeIcon(props) {
   return (
@@ -63,11 +64,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    margin: 5,
+    margin: Styles.Width(5),
   },
   text: {
     fontSize: FontsSize.tiny,
-    margin: 5,
+    margin: Styles.Width(5),
   },
 });
 

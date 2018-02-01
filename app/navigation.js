@@ -32,8 +32,8 @@ import {
 } from 'react-navigation';
 
 
-import Colors from './res/Colors';
 import FontsSize from './res/Fonts/size';
+import Colors from './res/Colors';
 import Styles from './res/Styles';
 
 import RecommendScreen from './pages/Recommend/RecommendPage';
@@ -71,7 +71,7 @@ const BasicApp = TabNavigator({
     },
     style: {
       backgroundColor: Colors.primary,
-      height: Styles.ScreenHeight * 0.1,
+      height: Styles.Height(100),
     },
     indicatorStyle: {
       height: 0,

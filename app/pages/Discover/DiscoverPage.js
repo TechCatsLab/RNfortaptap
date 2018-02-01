@@ -41,8 +41,8 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 
-import IconsSize from '../../res/Icons/size';
 import FontsSize from '../../res/Fonts/size';
+import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 
 import Carousel from '../../components/Carousel';
@@ -52,7 +52,7 @@ import ClassifyHead from '../../components/ClassifyHead';
 import Quality from './Components/Quality';
 import Player from './Components/Player';
 
-class FindPage extends React.Component {
+class DiscoverPage extends React.Component {
   static navigationOptions = {
     header: null,
     tabBarLabel: '发现',
@@ -66,39 +66,44 @@ class FindPage extends React.Component {
     ),
   }
 
+  renderHeader = () => {
+    return (
+      <Header
+        leftComponent={
+          <Avatar
+            small
+            rounded
+            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+            activeOpacity={0.7}
+            avatarStyle={{
+              borderWidth: 1,
+              borderColor: Colors.white,
+            }}
+          />
+        }
+        centerComponent={{
+          text: '发现',
+          style: {
+            color: Colors.white,
+            fontSize: FontsSize.large,
+          },
+        }}
+        rightComponent={
+          <Ionicons
+            name="ios-search"
+            size={IconsSize.xlarge}
+            color={Colors.white}
+          />
+        }
+        backgroundColor={Colors.primary}
+      />
+    );
+  }
   render() {
     return (
       <ScrollView style={styles.container}>
+        { this.renderHeader() }
         <View>
-          <Header
-            leftComponent={
-              <Avatar
-                small
-                rounded
-                source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-                activeOpacity={0.7}
-                avatarStyle={{
-                  borderWidth: 1,
-                  borderColor: Colors.white,
-                }}
-              />
-            }
-            centerComponent={{
-              text: '发现',
-              style: {
-                color: '#fff',
-                fontSize: FontsSize.large,
-              },
-            }}
-            rightComponent={
-              <Ionicons
-                name="ios-search"
-                size={IconsSize.xlarge}
-                color="white"
-              />
-            }
-            backgroundColor={Colors.primary}
-          />
           <Carousel slides={this.props.slides} />
           <LabelClassify labels={this.props.labels} />
           <Divider />
@@ -140,4 +145,4 @@ const styles = StyleSheet.create({
 export default connect(({ discover, player }) => ({
   ...discover,
   users: player.users,
-}))(FindPage);
+}))(DiscoverPage);
