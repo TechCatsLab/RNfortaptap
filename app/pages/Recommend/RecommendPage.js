@@ -174,9 +174,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(({ recommend }) => ({
-  games: recommend.games,
-  wall: recommend.wall,
-  previous: recommend.previous,
-  admire: recommend.admire,
-}))(RecommendPage);
+export default connect(({ recommend }) => ({ ...recommend }))(RecommendPage);

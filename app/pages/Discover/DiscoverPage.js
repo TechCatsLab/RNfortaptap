@@ -138,13 +138,6 @@ const styles = StyleSheet.create({
 });
 
 export default connect(({ discover, player }) => ({
-  daily: discover.daily,
-  order: discover.order,
-  slides: discover.slides,
-  labels: discover.labels,
-  qualityImg: discover.qualityImg,
-  beta: discover.beta,
+  ...discover,
   users: player.users,
-  hot: discover.hot,
-  previous: discover.previous,
 }))(FindPage);

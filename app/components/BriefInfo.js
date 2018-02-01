@@ -41,7 +41,7 @@ import FontsSize from '../res/Fonts/size';
 import Colors from '../res/Colors';
 import FontsWeight from '../res/Fonts/weight';
 
-function BrifInfo(props) {
+export default (props) => {
   return (
     <View style={styles.overAll}>
       <View style={styles.centerContent}>
@@ -99,5 +99,3 @@ const styles = StyleSheet.create({
     fontWeight: FontsWeight.blod,
   },
 });
-
-export default BrifInfo;

@@ -63,38 +63,44 @@ class RankPage extends React.Component {
     ),
   }
 
+  renderHeader = () => {
+    return (
+      <Header
+        leftComponent={
+          <Avatar
+            small
+            rounded
+            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+            activeOpacity={0.7}
+            avatarStyle={{
+              borderWidth: 1,
+              borderColor: Colors.white,
+            }}
+          />
+        }
+        centerComponent={{
+          text: '排行榜',
+          style: {
+            color: '#fff',
+            fontSize: FontsSize.large,
+          },
+        }}
+        rightComponent={
+          <Ionicons
+            name="ios-search"
+            size={IconsSize.xlarge}
+            color="white"
+          />
+        }
+        backgroundColor={Colors.primary}
+      />
+    );
+  }
+
   render() {
     return (
       <View>
-        <Header
-          leftComponent={
-            <Avatar
-              small
-              rounded
-              source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-              activeOpacity={0.7}
-              avatarStyle={{
-                borderWidth: 1,
-                borderColor: Colors.white,
-              }}
-            />
-          }
-          centerComponent={{
-            text: '排行榜',
-            style: {
-              color: '#fff',
-              fontSize: FontsSize.large,
-            },
-          }}
-          rightComponent={
-            <Ionicons
-              name="ios-search"
-              size={IconsSize.xlarge}
-              color="white"
-            />
-          }
-          backgroundColor={Colors.primary}
-        />
+        { this.renderHeader() }
         <ScrollView
           style={styles.content}
           showsVerticalScrollIndicator={false}

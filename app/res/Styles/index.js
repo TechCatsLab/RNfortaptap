@@ -36,12 +36,11 @@ const Styles = {
   ScreenWidth: Dimensions.get('window').width,
   ScreenHeight: Dimensions.get('window').height,
 
-  Height: (x) => {
-    return x * Dimensions.get('window').height / _height; //eslint-disable-line
-  },
-
   Width: (y) => {
     return (y * Dimensions.get('window').width / _width); // eslint-disable-line
+  },
+  Height: (x) => {
+    return x * Dimensions.get('window').height / _height; //eslint-disable-line
   },
 };
 
