@@ -40,7 +40,7 @@ import Colors from '../../../../res/Colors';
 import Styles from '../../../../res/Styles';
 
 import Head from '../Head';
-import Image from './Components/Image';
+import Images from './Components/Images';
 import Content from '../Content';
 import Footer from '../Footer';
 
@@ -48,17 +48,16 @@ export default (props) => {
   return (
     <FlatList
       showsHorizontalScrollIndicator={false}
-      style={styles.container}
       data={props.details}
       renderItem={({ item }) => (
-        <View>
+        <View style={styles.container}>
           <Head
             iconImg={item.iconImg}
             title={item.title}
             from={item.from}
             count={item.count}
           />
-          <Image image={item.image} />
+          <Images image={item.image} />
           <Content
             cTitle={item.cTitle}
             cFrom={item.cFrom}

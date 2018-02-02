@@ -35,6 +35,7 @@ import scrollRow from './scrollRow';
 import discover from './discover';
 import player from './player';
 import hot from './hot';
+import videos from './videos';
 
 export const Models = [
   init,
@@ -45,4 +46,5 @@ export const Models = [
   discover,
   player,
   hot,
+  videos,
 ];

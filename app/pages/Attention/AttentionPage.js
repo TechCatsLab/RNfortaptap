@@ -118,7 +118,7 @@ class AttentionPage extends React.Component {
         );
       case tabIndexVideo:
         return (
-          <Video />
+          <Video matter={this.props.matter} />
         );
       case tabIndexHot:
         return (
@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(({ hot }) => ({
+export default connect(({ hot, videos }) => ({
   ...hot,
+  ...videos,
 }))(AttentionPage);

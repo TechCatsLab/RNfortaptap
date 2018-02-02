@@ -32,6 +32,7 @@ import {
   View,
   Text,
   StyleSheet,
+  FlatList,
 } from 'react-native';
 
 import Colors from '../../../../res/Colors';
@@ -42,14 +43,40 @@ import Videos from './Components/Videos';
 import Content from '../Content';
 import Footer from '../Footer';
 
-export default () => {
+export default (props) => {
   return (
-    <View style={styles.container}>
-      <Head />
-      <Videos />
-      <Content />
-      <Footer />
-    </View>
+    <FlatList
+      showsHorizontalScrollIndicator={false}
+      data={props.matter}
+      renderItem={({ item }) => (
+        <View style={styles.container}>
+          <Head
+            iconImg={item.iconImg}
+            title={item.title}
+            from={item.from}
+            count={item.count}
+          />
+          <Videos image={item.video} />
+          <Content
+            cTitle={item.cTitle}
+            cFrom={item.cFrom}
+            cAvatar={item.cAvatar}
+            cName={item.cName}
+          />
+          <Text style={styles.briefInfo}>{item.describe}</Text>
+          <Footer
+            time={item.time}
+            likes={item.likes}
+          />
+        </View>
+      )}
+    />
+    // <View style={styles.container}>
+    //   <Head />
+    //   <Videos />
+    //   <Content />
+    //   <Footer />
+    // </View>
   );
 };
 
