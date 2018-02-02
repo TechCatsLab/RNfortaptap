@@ -24,19 +24,5 @@
 
 /*
  * Revision History:
- *     Initial: 2018/02/1        Cheng Jifeng
+ *     Initial: 2018/02/02        Cheng Jifeng
  */
-
-import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
-
-export default () => {
-  return (
-    <View>
-      <Text>热点</Text>
-    </View>
-  );
-};

@@ -34,6 +34,7 @@ import {
   View,
   ScrollView,
   Text,
+  StyleSheet,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
@@ -120,7 +121,12 @@ export default class AttentionPage extends React.Component {
         );
       case tabIndexHot:
         return (
-          <Hot />
+          <View>
+            <Hot />
+            <Hot />
+            <Hot />
+            <Hot />
+          </View>
         );
       case tabIndexCommunity:
         return (
@@ -132,7 +138,7 @@ export default class AttentionPage extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         { this.renderHeader() }
         <ScrollView>
           <ScrollableTabView
@@ -154,10 +160,10 @@ export default class AttentionPage extends React.Component {
               this.setState({ tabIndex: i })
             )}
           >
-            <Text tabLabel="关注">My</Text>
-            <Text tabLabel="视频">favorite</Text>
-            <Text tabLabel="热点">project</Text>
-            <Text tabLabel="论坛">project</Text>
+            <Text tabLabel="关注" />
+            <Text tabLabel="视频" />
+            <Text tabLabel="热点" />
+            <Text tabLabel="论坛" />
           </ScrollableTabView>
           { this.renderTabContent() }
         </ScrollView>
@@ -165,3 +171,9 @@ export default class AttentionPage extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.gray,
+  },
+});
