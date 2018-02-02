@@ -36,11 +36,11 @@ import {
 import Colors from '../../../../../res/Colors';
 import Styles from '../../../../../res/Styles';
 
-export default () => {
+export default (props) => {
   return (
     <View>
       <Image
-        source={{ uri: 'https://img2.tapimg.com/bbcode/images/cb94f9a87b440711905614493d02480c.png?imageMogr2/auto-orient/strip/thumbnail/!420x236r/gravity/Center/crop/420x236/format/jpg/interlace/1/quality/80' }}
+        source={{ uri: props.image }}
         style={{
           height: Styles.Height(330),
           width: Styles.ScreenWidth,

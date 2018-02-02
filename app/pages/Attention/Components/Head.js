@@ -40,7 +40,7 @@ import FontsWeight from '../../../res/Fonts/weight';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-export default () => {
+export default (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
@@ -49,14 +49,14 @@ export default () => {
             width: Styles.Width(80),
             height: Styles.Height(80),
           }}
-          source={{ uri: 'https://img.tapimg.com/market/lcs/6c03207e42b68fda449c4cf70f529411_360.png?imageView2/1/w/60/q/40/interlace/1/ignore-error/1' }}
+          source={{ uri: props.iconImg }}
         />
         <View style={styles.headRight}>
-          <Text style={styles.headTitle}>操作为零</Text>
-          <Text style={styles.from}>推荐贴</Text>
+          <Text style={styles.headTitle}>{props.title}</Text>
+          <Text style={styles.from}>{props.from}</Text>
         </View>
       </View>
-      <Text style={styles.browseNum}>221次浏览</Text>
+      <Text style={styles.browseNum}>{props.count}次浏览</Text>
     </View>
   );
 };
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     marginLeft: Styles.Width(15),
-    // marginTop: Styles.Height(15),
   },
   headTitle: {
     color: Colors.black,

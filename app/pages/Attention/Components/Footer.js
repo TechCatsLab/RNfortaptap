@@ -39,16 +39,16 @@ import FontsSize from '../../../res/Fonts/size';
 import IconsSize from '../../../res/Icons/size';
 import Styles from '../../../res/Styles';
 
-export default () => {
+export default (props) => {
   return (
     <View style={styles.layout}>
-      <Text style={styles.text}>9小时前</Text>
+      <Text style={styles.text}>{props.time}</Text>
       <View style={styles.icon}>
         <Feather
           name="thumbs-up"
           size={IconsSize.medium}
         />
-        <Text style={styles.count}>2</Text>
+        <Text style={styles.count}>{props.likes}</Text>
         <Feather
           name="message-square"
           size={IconsSize.medium}

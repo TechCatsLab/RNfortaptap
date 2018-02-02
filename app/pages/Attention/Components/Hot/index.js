@@ -32,6 +32,7 @@ import {
   View,
   StyleSheet,
   Text,
+  FlatList,
 } from 'react-native';
 
 import FontsSize from '../../../../res/Fonts/size';
@@ -43,15 +44,35 @@ import Image from './Components/Image';
 import Content from '../Content';
 import Footer from '../Footer';
 
-export default () => {
+export default (props) => {
   return (
-    <View style={styles.container}>
-      <Head />
-      <Image />
-      <Content />
-      <Text style={styles.briefInfo}>评价说明总体伤害：该兵种在整个战斗中可能造成的实际伤害量。(考虑兵种技能)总体血量：该兵种在整个战斗中可能承受的实际伤害量。(考虑兵种技能)阵容适配：该兵种和其它兵种搭配...</Text>
-      <Footer />
-    </View>
+    <FlatList
+      showsHorizontalScrollIndicator={false}
+      style={styles.container}
+      data={props.details}
+      renderItem={({ item }) => (
+        <View>
+          <Head
+            iconImg={item.iconImg}
+            title={item.title}
+            from={item.from}
+            count={item.count}
+          />
+          <Image image={item.image} />
+          <Content
+            cTitle={item.cTitle}
+            cFrom={item.cFrom}
+            cAvatar={item.cAvatar}
+            cName={item.cName}
+          />
+          <Text style={styles.briefInfo}>{item.describe}</Text>
+          <Footer
+            time={item.time}
+            likes={item.likes}
+          />
+        </View>
+      )}
+    />
   );
 };
 

@@ -34,6 +34,7 @@ import rank from './rank';
 import scrollRow from './scrollRow';
 import discover from './discover';
 import player from './player';
+import hot from './hot';
 
 export const Models = [
   init,
@@ -43,4 +44,5 @@ export const Models = [
   scrollRow,
   discover,
   player,
+  hot,
 ];

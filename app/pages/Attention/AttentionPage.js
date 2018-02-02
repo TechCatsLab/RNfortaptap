@@ -39,6 +39,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
@@ -55,7 +56,7 @@ const tabIndexVideo = 1;
 const tabIndexHot = 2;
 const tabIndexCommunity = 3;
 
-export default class AttentionPage extends React.Component {
+class AttentionPage extends React.Component {
   static navigationOptions = {
     header: null,
     tabBarLabel: '动态',
@@ -121,12 +122,7 @@ export default class AttentionPage extends React.Component {
         );
       case tabIndexHot:
         return (
-          <View>
-            <Hot />
-            <Hot />
-            <Hot />
-            <Hot />
-          </View>
+          <Hot details={this.props.details} />
         );
       case tabIndexCommunity:
         return (
@@ -177,3 +173,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.gray,
   },
 });
+
+export default connect(({ hot }) => ({
+  ...hot,
+}))(AttentionPage);

@@ -180,4 +180,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(({ recommend }) => ({ ...recommend }))(RecommendPage);
+export default connect(({ recommend }) => ({
+  ...recommend,
+}))(RecommendPage);
