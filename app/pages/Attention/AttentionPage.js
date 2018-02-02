@@ -27,17 +27,32 @@
  *     Initial: 2018/01/21        Cheng Jifeng
  */
 
+/* eslint-disable default-case */
+
 import React from 'react';
 import {
   View,
+  ScrollView,
+  Text,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
-import ScrollableTabView from 'react-native-scrollable-tab-view';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
+import Styles from '../../res/Styles';
+
+import Attention from './Components/Attention';
+import Video from './Components/Video';
+import Hot from './Components/Hot';
+import Community from './Components/Community';
+
+const tabIndexFocused = 0;
+const tabIndexVideo = 1;
+const tabIndexHot = 2;
+const tabIndexCommunity = 3;
 
 export default class AttentionPage extends React.Component {
   static navigationOptions = {
@@ -52,6 +67,10 @@ export default class AttentionPage extends React.Component {
       />
     ),
   }
+
+  state = {
+    tabIndex: tabIndexFocused,
+  };
 
   renderHeader = () => {
     return (
@@ -87,10 +106,61 @@ export default class AttentionPage extends React.Component {
     );
   }
 
+  renderTabContent = () => {
+    const _tab = this.state.tabIndex;
+
+    switch (_tab) {
+      case tabIndexFocused:
+        return (
+          <Attention />
+        );
+      case tabIndexVideo:
+        return (
+          <Video />
+        );
+      case tabIndexHot:
+        return (
+          <Hot />
+        );
+      case tabIndexCommunity:
+        return (
+          <Community />
+        );
+      break; // eslint-disable-line
+    }
+  };
+
   render() {
     return (
       <View>
         { this.renderHeader() }
+        <ScrollView>
+          <ScrollableTabView
+            tabBarBackgroundColor={Colors.white}
+            scrollEnable
+            scrollWithoutAnimation
+            tabBarUnderlineStyle={{
+              backgroundColor: Colors.primary,
+              width: Styles.Width(160),
+            }}
+            tabBarActiveTextColor={Colors.primary}
+            tabBarInactiveTextColor={Colors.black}
+            locked={false}
+            renderTabBar={() => (
+              <DefaultTabBar />
+            )}
+            initialPage={tabIndexFocused}
+            onChangeTab={({ i }) => (
+              this.setState({ tabIndex: i })
+            )}
+          >
+            <Text tabLabel="关注">My</Text>
+            <Text tabLabel="视频">favorite</Text>
+            <Text tabLabel="热点">project</Text>
+            <Text tabLabel="论坛">project</Text>
+          </ScrollableTabView>
+          { this.renderTabContent() }
+        </ScrollView>
       </View>
     );
   }
