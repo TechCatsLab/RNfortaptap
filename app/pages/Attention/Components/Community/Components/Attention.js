@@ -31,60 +31,55 @@ import React from 'react';
 import {
   View,
   Text,
-  Image,
   StyleSheet,
 } from 'react-native';
+import {
+  Divider,
+} from 'react-native-elements';
+import Feather from 'react-native-vector-icons/Feather';
 
-import FontsSize from '../../../res/Fonts/size';
-import FontsWeight from '../../../res/Fonts/weight';
-import Colors from '../../../res/Colors';
-import Styles from '../../../res/Styles';
+import IconsSize from '../../../../../res/Icons/size';
+import Colors from '../../../../../res/Colors';
+import Styles from '../../../../../res/Styles';
+
+import Info from './Info';
 
 export default (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-        <Image
-          style={{
-            width: Styles.Width(80),
-            height: Styles.Height(80),
-          }}
-          source={{ uri: props.img }}
+        <Text>{props.type}</Text>
+        <Feather
+          name="chevron-right"
+          size={IconsSize.large}
         />
-        <View style={styles.headRight}>
-          <Text style={styles.headTitle}>{props.title}</Text>
-          <Text style={styles.from}>主题数：{props.num}</Text>
-        </View>
       </View>
+      <Divider style={{ backgroundColor: Colors.gray }} />
+      <Info />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     backgroundColor: Colors.white,
     marginTop: Styles.Height(15),
-    width: Styles.Width(300),
   },
   head: {
     display: 'flex',
     flexDirection: 'row',
-    marginLeft: Styles.Width(15),
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: Styles.Height(15),
   },
-  headTitle: {
-    color: Colors.black,
-    fontWeight: FontsWeight.blod,
-    marginBottom: 5,
+  line: {
+    height: Styles.Height(60),
+    width: Styles.Width(1),
+    backgroundColor: Colors.black,
+    marginTop: Styles.Height(15),
   },
-  headRight: {
+  rowLayout: {
     display: 'flex',
-    flexDirection: 'column',
-    marginLeft: Styles.Width(10),
-  },
-  from: {
-    fontSize: FontsSize.small,
+    flexDirection: 'row',
   },
 });

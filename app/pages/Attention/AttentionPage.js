@@ -38,7 +38,7 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
-import ScrollableTabView, { ScrollableTabBar, DefaultTabBar } from 'react-native-scrollable-tab-view';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
@@ -183,6 +183,12 @@ class AttentionPage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.gray,
+  },
+  more: {
+    color: Colors.primary,
+    fontSize: FontsSize.small,
+    marginVertical: Styles.Height(15),
+    marginLeft: Styles.Width(270),
   },
 });
 

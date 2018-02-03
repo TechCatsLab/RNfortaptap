@@ -36,6 +36,7 @@ import discover from './discover';
 import player from './player';
 import hot from './hot';
 import videos from './videos';
+import community from './community';
 
 export const Models = [
   init,
@@ -47,4 +48,5 @@ export const Models = [
   player,
   hot,
   videos,
+  community,
 ];
