@@ -24,7 +24,7 @@
 
 /*
  * Revision History:
- *     Initial: 2018/02/2        Cheng Jifeng
+ *     Initial: 2018/02/02        Cheng Jifeng
  */
 
 import React from 'react';

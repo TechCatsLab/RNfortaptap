@@ -102,36 +102,38 @@ class DiscoverPage extends React.Component {
   }
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <View>
         { this.renderHeader() }
-        <View>
-          <Carousel slides={this.props.slides} />
-          <LabelClassify labels={this.props.labels} />
-          <Divider />
+        <ScrollView style={styles.container}>
           <View>
-            <ClassifyHead type="每日新发现" />
-            <GameType data={this.props.daily} />
+            <Carousel slides={this.props.slides} />
+            <LabelClassify labels={this.props.labels} />
             <Divider />
-            <ClassifyHead type="新游预约" />
-            <GameType data={this.props.order} />
-            <Divider />
-            <Quality qualityImg={this.props.qualityImg} />
-            <Divider />
-            <ClassifyHead type="推荐玩家" />
-            <Player users={this.props.users} />
-            <Divider />
-            <ClassifyHead type="游戏测试" />
-            <GameType data={this.props.beta} />
-            <Divider />
-            <ClassifyHead type="近期最热" />
-            <GameType data={this.props.hot} />
-            <Divider />
-            <ClassifyHead type="往期专题" />
-            <Quality qualityImg={this.props.previous} />
-            <Divider />
+            <View>
+              <ClassifyHead type="每日新发现" />
+              <GameType data={this.props.daily} />
+              <Divider />
+              <ClassifyHead type="新游预约" />
+              <GameType data={this.props.order} />
+              <Divider />
+              <Quality qualityImg={this.props.qualityImg} />
+              <Divider />
+              <ClassifyHead type="推荐玩家" />
+              <Player users={this.props.users} />
+              <Divider />
+              <ClassifyHead type="游戏测试" />
+              <GameType data={this.props.beta} />
+              <Divider />
+              <ClassifyHead type="近期最热" />
+              <GameType data={this.props.hot} />
+              <Divider />
+              <ClassifyHead type="往期专题" />
+              <Quality qualityImg={this.props.previous} />
+              <Divider />
+            </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     );
   }
 }

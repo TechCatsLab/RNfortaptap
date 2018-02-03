@@ -38,7 +38,7 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
-import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import ScrollableTabView, { ScrollableTabBar, DefaultTabBar } from 'react-native-scrollable-tab-view';
 import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
@@ -114,19 +114,27 @@ class AttentionPage extends React.Component {
     switch (_tab) {
       case tabIndexFocused:
         return (
-          <Attention />
+          <View>
+            <Attention />
+          </View>
         );
       case tabIndexVideo:
         return (
-          <Video matter={this.props.matter} />
+          <View>
+            <Video matter={this.props.matter} />
+          </View>
         );
       case tabIndexHot:
         return (
-          <Hot details={this.props.details} />
+          <View>
+            <Hot details={this.props.details} />
+          </View>
         );
       case tabIndexCommunity:
         return (
-          <Community />
+          <View>
+            <Community />
+          </View>
         );
       break; // eslint-disable-line
     }
@@ -136,11 +144,11 @@ class AttentionPage extends React.Component {
     return (
       <View style={styles.container}>
         { this.renderHeader() }
-        <ScrollView>
+        <ScrollView style={styles.container}>
           <ScrollableTabView
             tabBarBackgroundColor={Colors.white}
-            scrollEnable
-            scrollWithoutAnimation
+            // scrollEnable
+            // scrollWithoutAnimation
             tabBarUnderlineStyle={{
               backgroundColor: Colors.primary,
               width: Styles.Width(160),
@@ -149,6 +157,10 @@ class AttentionPage extends React.Component {
             tabBarInactiveTextColor={Colors.black}
             locked={false}
             renderTabBar={() => (
+              // <ScrollableTabBar
+              //   style={{ height: 35 }}
+              //   tabStyle={{ height: 34, paddingLeft: 15, paddingRight: 15 }}
+              // />
               <DefaultTabBar />
             )}
             initialPage={tabIndexFocused}
