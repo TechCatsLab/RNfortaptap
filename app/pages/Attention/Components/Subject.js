@@ -46,8 +46,8 @@ export default (props) => {
       <View style={styles.head}>
         <Image
           style={{
-            width: Styles.Width(80),
-            height: Styles.Height(80),
+            width: Styles.Width(70),
+            height: Styles.Height(70),
           }}
           source={{ uri: props.img }}
         />
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
   head: {
     display: 'flex',
     flexDirection: 'row',
-    marginLeft: Styles.Width(15),
+    marginLeft: Styles.Width(30),
+    marginBottom: Styles.Height(10),
   },
   headTitle: {
     color: Colors.black,
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     marginLeft: Styles.Width(10),
+    marginBottom: Styles.Height(10),
   },
   from: {
     fontSize: FontsSize.small,

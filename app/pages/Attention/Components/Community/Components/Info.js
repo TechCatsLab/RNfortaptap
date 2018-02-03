@@ -98,11 +98,12 @@ const styles = StyleSheet.create({
   line: {
     height: Styles.Height(60),
     width: Styles.Width(1),
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray1,
     marginTop: Styles.Height(15),
   },
   rowLayout: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
   },
 });

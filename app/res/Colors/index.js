@@ -31,6 +31,7 @@ const Colors = {
   primary: '#14B9C8',
   white: '#fff',
   gray: 'rgba(244,244,244,0.8)',
+  gray1: '#666',
   black: '#000',
   orange: 'orange',
 };
