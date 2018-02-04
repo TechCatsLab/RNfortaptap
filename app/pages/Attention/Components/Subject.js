@@ -49,11 +49,11 @@ export default (props) => {
             width: Styles.Width(70),
             height: Styles.Height(70),
           }}
-          source={{ uri: props.img }}
+          source={{ uri: props.item.img }}
         />
         <View style={styles.headRight}>
-          <Text style={styles.headTitle}>{props.title}</Text>
-          <Text style={styles.from}>主题数：{props.num}</Text>
+          <Text style={styles.headTitle}>{props.item.title}</Text>
+          <Text style={styles.from}>主题数：{props.item.num}</Text>
         </View>
       </View>
     </View>

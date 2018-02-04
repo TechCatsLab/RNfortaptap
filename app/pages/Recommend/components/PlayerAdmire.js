@@ -90,8 +90,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     width: Styles.Width(480),
     height: Styles.Height(330),
-    marginLeft: Styles.Width(15),
+    marginLeft: Styles.Width(20),
     marginVertical: Styles.Height(10),
+    marginBottom: Styles.Height(20),
   },
   title: {
     fontSize: FontsSize.medium,

@@ -49,13 +49,13 @@ export default (props) => {
       <View style={styles.header}>
         <View style={styles.leftHeader}>
           <Image
-            source={{ uri: props.gicon }}
+            source={{ uri: props.item.gicon }}
             style={{
               height: IconsSize.large,
               width: IconsSize.large,
             }}
           />
-          <Text style={styles.from}>{props.gfrom}</Text>
+          <Text style={styles.from}>{props.item.gfrom}</Text>
         </View>
         <View style={styles.rightHeader}>
           <Ionicons
@@ -64,17 +64,17 @@ export default (props) => {
           />
         </View>
       </View>
-      <Text style={styles.title}>{props.gtitle}</Text>
+      <Text style={styles.title}>{props.item.gtitle}</Text>
       <Image
-        source={{ uri: props.gimage }}
+        source={{ uri: props.item.gimage }}
         style={styles.mainImage}
       />
       <GradeIcon
         style={styles.grade}
-        grade={props.grade}
-        message={props.message}
+        grade={props.item.grade}
+        message={props.item.message}
       />
-      <Text style={styles.info}>{props.ginfo}</Text>
+      <Text style={styles.info}>{props.item.ginfo}</Text>
     </View>
   );
 };
@@ -82,7 +82,7 @@ export default (props) => {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: Colors.white,
-    marginBottom: Styles.Height(10),
+    marginBottom: Styles.Height(15),
   },
   container: {
     flexGrow: 1,

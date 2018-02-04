@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     width: Styles.Width(500),
     height: Styles.Height(250),
-    marginLeft: Styles.Width(10),
-    marginBottom: Styles.Height(10),
+    marginLeft: Styles.Width(20),
+    marginBottom: Styles.Height(20),
   },
   head: {
     display: 'flex',

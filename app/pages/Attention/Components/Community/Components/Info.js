@@ -35,60 +35,39 @@ import {
 import {
   Divider,
 } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 import Colors from '../../../../../res/Colors';
 import Styles from '../../../../../res/Styles';
 
 import Subject from '../../Subject';
 
-export default () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.rowLayout}>
-        <Subject
-          img="https://img.tapimg.com/market/lcs/e92af0cdfc03c10ea8e9a5a15414119a_360.png?imageView2/1/w/135/q/80/interlace/1/ignore-error/1"
-          title="七骑士2"
-          num={15}
-        />
-        <View style={styles.line} />
-        <Subject
-          img="https://img.tapimg.com/market/lcs/b73357a9b73f7dd27c62ad1093f5d22d_360.png?imageView2/1/w/135/q/80/interlace/1/ignore-error/1"
-          title="跳舞的线"
-          num={5256}
-        />
+class Info extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.rowLayout}>
+          <Subject item={this.props.forum[0]} />
+          <View style={styles.line} />
+          <Subject item={this.props.forum[1]} />
+        </View>
+        <Divider style={{ backgroundColor: Colors.gray }} />
+        <View style={styles.rowLayout}>
+          <Subject item={this.props.forum[2]} />
+          <View style={styles.line} />
+          <Subject item={this.props.forum[3]} />
+        </View>
+        <Divider style={{ backgroundColor: Colors.gray }} />
+        <View style={styles.rowLayout}>
+          <Subject item={this.props.forum[4]} />
+          <View style={styles.line} />
+          <Subject item={this.props.forum[5]} />
+        </View>
+        <Divider style={{ backgroundColor: Colors.gray }} />
       </View>
-      <Divider style={{ backgroundColor: Colors.gray }} />
-      <View style={styles.rowLayout}>
-        <Subject
-          img="https://img.tapimg.com/market/lcs/b73357a9b73f7dd27c62ad1093f5d22d_360.png?imageView2/1/w/135/q/80/interlace/1/ignore-error/1"
-          title="还有这种操作2"
-          num={471}
-        />
-        <View style={styles.line} />
-        <Subject
-          img="https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageView2/1/w/135/q/80/interlace/1/ignore-error/1"
-          title="旅行青蛙"
-          num={6660}
-        />
-      </View>
-      <Divider style={{ backgroundColor: Colors.gray }} />
-      <View style={styles.rowLayout}>
-        <Subject
-          img="https://img.tapimg.com/market/lcs/e8550b005d435bdf8a235a306d0bacd3_360.png?imageView2/1/w/135/q/80/interlace/1/ignore-error/1"
-          title="崩坏3"
-          num={32235}
-        />
-        <View style={styles.line} />
-        <Subject
-          img="https://img.tapimg.com/market/lcs/9fcc8416b506b98393ed373d919da5b4_360.png?imageView2/1/w/135/q/80/interlace/1/ignore-error/1"
-          title="纪念碑谷2"
-          num={1035}
-        />
-      </View>
-      <Divider style={{ backgroundColor: Colors.gray }} />
-    </View>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -107,3 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default connect(({ community }) => ({
+  ...community,
+}))(Info);
