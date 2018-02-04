@@ -38,7 +38,6 @@ import {
   Avatar,
 } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// import { connect } from 'react-redux';
 
 import FontsSize from '../../../res/Fonts/size';
 import FontsWeight from '../../../res/Fonts/weight';

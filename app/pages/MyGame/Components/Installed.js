@@ -30,7 +30,6 @@
 import React from 'react';
 import {
   View,
-  Text,
   FlatList,
   StyleSheet,
 } from 'react-native';
@@ -74,10 +73,6 @@ export default (props) => {
               title={item.title}
               star={item.star}
               ratingSize={10}
-              // label1={item.label1}
-              // label2={item.label2}
-              // label3={item.label3}
-              // label4={item.label4}
             />
           </View>
           <View>

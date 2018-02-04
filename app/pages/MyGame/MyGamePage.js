@@ -148,7 +148,9 @@ class MyGamePage extends React.Component {
     return (
       <View>
         { this.renderHeader() }
-        <ScrollView>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+        >
           <ScrollableTabView
             tabBarBackgroundColor={Colors.white}
             scrollEnable

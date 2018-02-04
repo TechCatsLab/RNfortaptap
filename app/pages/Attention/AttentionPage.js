@@ -118,25 +118,30 @@ class AttentionPage extends React.Component {
             <Attention />
           </View>
         );
+
       case tabIndexVideo:
         return (
           <View>
             <Video matter={this.props.matter} />
           </View>
         );
+
       case tabIndexHot:
         return (
           <View>
             <Hot details={this.props.details} />
           </View>
         );
+
       case tabIndexCommunity:
         return (
           <View>
             <Community />
           </View>
         );
-      break; // eslint-disable-line
+
+      default:
+        return (<View />);
     }
   };
 
@@ -145,13 +150,11 @@ class AttentionPage extends React.Component {
       <View style={styles.container}>
         { this.renderHeader() }
         <ScrollView
-          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
           style={styles.container}
         >
           <ScrollableTabView
             tabBarBackgroundColor={Colors.white}
-            // scrollEnable
-            // scrollWithoutAnimation
             tabBarUnderlineStyle={{
               backgroundColor: Colors.gray,
               width: Styles.Width(160),
@@ -161,10 +164,6 @@ class AttentionPage extends React.Component {
             tabBarInactiveTextColor={Colors.black}
             locked={false}
             renderTabBar={() => (
-              // <ScrollableTabBar
-              //   style={{ height: 35 }}
-              //   tabStyle={{ height: 34, paddingLeft: 15, paddingRight: 15 }}
-              // />
               <DefaultTabBar />
             )}
             initialPage={tabIndexFocused}

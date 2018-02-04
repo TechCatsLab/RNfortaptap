@@ -91,8 +91,8 @@ export default (props) => {
           <Button
             title="关注"
             buttonStyle={{
-              width: Styles.Width(111), //eslint-disable-line
-              height: Styles.Height(20), //eslint-disable-line
+              width: Styles.Width(111),
+              height: Styles.Height(20),
               backgroundColor: Colors.primary,
               marginTop: Styles.Height(3),
               borderRadius: 8,

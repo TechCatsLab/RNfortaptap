@@ -99,12 +99,13 @@ class DiscoverPage extends React.Component {
       />
     );
   }
+
   render() {
     return (
       <View>
         { this.renderHeader() }
         <ScrollView
-          scrollbarAlwaysDrawVerticalTrack={false}
+          showsVerticalScrollIndicator={false}
           style={styles.container}
         >
           <View>
