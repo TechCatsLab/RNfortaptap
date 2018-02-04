@@ -38,6 +38,7 @@ import { Header, Avatar } from 'react-native-elements';
 import ScrollableTabView, {
   DefaultTabBar,
 } from 'react-native-scrollable-tab-view';
+import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
@@ -50,11 +51,11 @@ import Collected from './Components/Collected';
 import Ordered from './Components/Ordered';
 
 const tabIndexInstalled = 0;
-const tabIndexPlayed = 1;
-const tabIndexCollected = 2;
-const tabIndexOrdered = 3;
+const tabIndexPlayed = 2;
+const tabIndexCollected = 4;
+const tabIndexOrdered = 6;
 
-export default class MyGamePage extends React.Component {
+class MyGamePage extends React.Component {
   static navigationOptions = {
     header: null,
     tabBarLabel: '我的游戏',
@@ -112,22 +113,30 @@ export default class MyGamePage extends React.Component {
     switch (_tab) {
       case tabIndexInstalled:
         return (
-          <Installed />
+          <View>
+            <Installed install={this.props.install} />
+          </View>
         );
 
       case tabIndexPlayed:
         return (
-          <Played />
+          <View>
+            <Played played={this.props.played} />
+          </View>
         );
 
       case tabIndexCollected:
         return (
-          <Collected />
+          <View>
+            <Collected collect={this.props.collect} />
+          </View>
         );
 
       case tabIndexOrdered:
         return (
-          <Ordered />
+          <View>
+            <Ordered order={this.props.order} />
+          </View>
         );
 
       default:
@@ -145,8 +154,9 @@ export default class MyGamePage extends React.Component {
             scrollEnable
             scrollWithoutAnimation
             tabBarUnderlineStyle={{
-              backgroundColor: Colors.primary,
+              backgroundColor: Colors.gray,
               width: Styles.Width(160),
+              height: Styles.Height(0.5),
             }}
             tabBarActiveTextColor={Colors.primary}
             tabBarInactiveTextColor={Colors.black}
@@ -159,10 +169,13 @@ export default class MyGamePage extends React.Component {
               this.setState({ tabIndex: i })
             )}
           >
-            <Text tabLabel="已装">My</Text>
-            <Text tabLabel="玩过">favorite</Text>
-            <Text tabLabel="收藏">project</Text>
-            <Text tabLabel="预约">project</Text>
+            <Text tabLabel="已装" />
+            <Text tabLabel="|" />
+            <Text tabLabel="玩过" />
+            <Text tabLabel="|" />
+            <Text tabLabel="收藏" />
+            <Text tabLabel="|" />
+            <Text tabLabel="预约" />
           </ScrollableTabView>
           { this.renderTabContent() }
         </ScrollView>
@@ -170,3 +183,7 @@ export default class MyGamePage extends React.Component {
     );
   }
 }
+
+export default connect(({ games }) => ({
+  ...games,
+}))(MyGamePage);

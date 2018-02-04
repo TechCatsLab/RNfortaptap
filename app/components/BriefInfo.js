@@ -62,7 +62,7 @@ export default (props) => {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   label: {

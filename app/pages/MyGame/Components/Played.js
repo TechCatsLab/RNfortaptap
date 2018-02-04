@@ -30,13 +30,106 @@
 import React from 'react';
 import {
   View,
-  Text,
+  FlatList,
+  StyleSheet,
 } from 'react-native';
+import {
+  Avatar,
+  Button,
+} from 'react-native-elements';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default () => {
+import FontsSize from '../../../res/Fonts/size';
+import FontsWeight from '../../../res/Fonts/weight';
+import IconsSize from '../../../res/Icons/size';
+import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
+
+import BriefInfo from '../../../components/BriefInfo';
+
+const _separator = () => {
+  return <View style={{ height: 0.5, backgroundColor: Colors.black }} />;
+};
+
+export default (props) => {
   return (
-    <View>
-      <Text>玩过</Text>
-    </View>
+    <FlatList
+      style={styles.container}
+      ItemSeparatorComponent={_separator}
+      data={props.played}
+      renderItem={({ item }) => (
+        <View style={styles.overAll} key={item.key}>
+          <View style={styles.leftContent}>
+            <Avatar
+              medium
+              source={{ uri: item.img }}
+              activeOpacity={0.7}
+              avatarStyle={{
+                borderRadius: 8,
+                backgroundColor: Colors.white,
+              }}
+            />
+            <BriefInfo
+              title={item.title}
+              star={item.star}
+              ratingSize={10}
+              label1={item.label1}
+              label2={item.label2}
+              label3={item.label3}
+              label4={item.label4}
+            />
+          </View>
+          <View>
+            <Ionicons
+              name="md-more"
+              size={IconsSize.large}
+              style={styles.rightIcon}
+            />
+            <Button
+              title="下载"
+              buttonStyle={{
+                height: Styles.Height(20),
+                position: 'absolute',
+                top: Styles.Height(62),
+                right: Styles.Width(1),
+                borderRadius: 5,
+                backgroundColor: Colors.primary,
+              }}
+              fontSize={FontsSize.small}
+            />
+          </View>
+        </View>
+      )}
+    />
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.white,
+    marginTop: Styles.Height(15),
+  },
+  number: {
+    fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.bold,
+    marginHorizontal: Styles.Height(10),
+    width: Styles.Width(30),
+  },
+  overAll: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: Styles.Height(3),
+    position: 'relative',
+  },
+  leftContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  rightIcon: {
+    position: 'absolute',
+    top: Styles.Height(10),
+    right: Styles.Width(28),
+  },
+});

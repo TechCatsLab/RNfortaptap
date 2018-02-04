@@ -144,14 +144,18 @@ class AttentionPage extends React.Component {
     return (
       <View style={styles.container}>
         { this.renderHeader() }
-        <ScrollView style={styles.container}>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          style={styles.container}
+        >
           <ScrollableTabView
             tabBarBackgroundColor={Colors.white}
             // scrollEnable
             // scrollWithoutAnimation
             tabBarUnderlineStyle={{
-              backgroundColor: Colors.primary,
+              backgroundColor: Colors.gray,
               width: Styles.Width(160),
+              height: Styles.Height(0.5),
             }}
             tabBarActiveTextColor={Colors.primary}
             tabBarInactiveTextColor={Colors.black}
