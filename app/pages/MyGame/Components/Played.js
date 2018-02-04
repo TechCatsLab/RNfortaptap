@@ -126,10 +126,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft: Styles.Width(15),
   },
   rightIcon: {
     position: 'absolute',
     top: Styles.Height(10),
-    right: Styles.Width(28),
+    right: Styles.Width(32),
   },
 });
