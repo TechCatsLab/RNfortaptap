@@ -56,7 +56,7 @@ export default (props) => {
             from={item.from}
             count={item.count}
           />
-          <Videos image={item.video} />
+          <Videos />
           <Content
             cTitle={item.cTitle}
             cFrom={item.cFrom}

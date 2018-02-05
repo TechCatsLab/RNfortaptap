@@ -27,29 +27,31 @@
  *     Initial: 2018/02/2        Cheng Jifeng
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
+  StyleSheet,
   View,
   Text,
-  StyleSheet,
 } from 'react-native';
 
 import Colors from '../../../../../res/Colors';
 import Styles from '../../../../../res/Styles';
 
-export default () => {
-  return (
-    <View style={styles.container}>
-      <Text>视频</Text>
-    </View>
-  );
-};
+export default class Videos extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>视频</Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
-    width: Styles.ScreenWidth,
     height: Styles.Height(330),
-    backgroundColor: Colors.orange,
+    width: Styles.ScreenWidth,
     marginTop: Styles.Height(15),
+    backgroundColor: Colors.orange,
   },
 });
