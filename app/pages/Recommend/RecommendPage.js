@@ -46,11 +46,11 @@ import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
 
-import SingleRecommend from './components/SingleRecommend';
+import SingleRecommend from './Components/SingleRecommend';
 import ClassifyHead from '../../components/ClassifyHead';
 import Quality from '../../pages/Discover/Components/Quality';
-import PlayerAdmire from './components/PlayerAdmire';
-import Wall from './components/Wall';
+import PlayerAdmire from './Components/PlayerAdmire';
+import Wall from './Components/Wall';
 
 class RecommendPage extends React.Component {
   static navigationOptions = {

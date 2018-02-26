@@ -32,6 +32,7 @@ import {
   View,
   Text,
   ScrollView,
+  StyleSheet,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Avatar } from 'react-native-elements';
@@ -146,14 +147,13 @@ class MyGamePage extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         { this.renderHeader() }
         <ScrollView
           showsVerticalScrollIndicator={false}
         >
           <ScrollableTabView
             tabBarBackgroundColor={Colors.white}
-            scrollEnable
             scrollWithoutAnimation
             tabBarUnderlineStyle={{
               backgroundColor: Colors.gray,
@@ -185,6 +185,12 @@ class MyGamePage extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.gray,
+  },
+});
 
 export default connect(({ games }) => ({
   ...games,
