@@ -190,30 +190,26 @@ export default {
     labels: [
       {
         key: '0',
-        content: '热门',
+        content: '下载榜',
       },
       {
         key: '1',
-        content: '美国',
+        content: '新品榜',
       },
       {
         key: '2',
-        content: '日本',
+        content: '预约榜',
       },
       {
         key: '3',
-        content: '韩国',
+        content: '热卖榜',
       },
       {
         key: '4',
-        content: '台湾',
+        content: '热玩榜',
       },
       {
         key: '5',
-        content: '香港',
-      },
-      {
-        key: '6',
         content: '厂商',
       },
     ],

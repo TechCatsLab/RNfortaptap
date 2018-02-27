@@ -45,7 +45,6 @@ import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 
-import RankHeader from './Components/RankHeader';
 import RankContent from './Components/RankContent';
 import LabelClassify from '../../components/LabelClassify';
 
@@ -106,7 +105,6 @@ class RankPage extends React.Component {
           showsVerticalScrollIndicator={false}
         >
           <LabelClassify labels={this.props.labels} />
-          <RankHeader />
           <Divider />
           <RankContent content={this.props.content} />
         </ScrollView>
