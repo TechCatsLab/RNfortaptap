@@ -49,7 +49,7 @@ const BasicApp = TabNavigator({
   Rank: {
     screen: RankScreen,
   },
-  Find: {
+  Discover: {
     screen: DiscoverScreen,
   },
   Like: {
