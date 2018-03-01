@@ -31,8 +31,9 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Text,
+  TouchableOpacity,
 } from 'react-native';
+import VideoPlayer from 'react-native-video-controls';
 
 import Colors from '../../../../../res/Colors';
 import Styles from '../../../../../res/Styles';
@@ -40,9 +41,19 @@ import Styles from '../../../../../res/Styles';
 export default class Videos extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>视频</Text>
-      </View>
+      <TouchableOpacity onPress={this._onPressButton}>
+        <View style={styles.container}>
+          <VideoPlayer
+            source={{ uri: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
+            disableVolume
+            disableBack
+            disableSeekbar
+            disableFullscreen
+            paused
+            resizeMode="cover"
+          />
+        </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -53,5 +64,12 @@ const styles = StyleSheet.create({
     width: Styles.ScreenWidth,
     marginTop: Styles.Height(15),
     backgroundColor: Colors.orange,
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 });
