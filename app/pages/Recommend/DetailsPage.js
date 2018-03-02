@@ -24,30 +24,23 @@
 
 /*
  * Revision History:
- *     Initial: 2018/02/1        Cheng Jifeng
+ *     Initial: 2018/03/02        Cheng Jifeng
  */
 
 import React from 'react';
 import {
   View,
-  Button,
-  TouchableOpacity,
+  Text,
 } from 'react-native';
 
-import Navigator, { dispatcher } from '../../../../helper/navigator';
-
-export default class Attention extends React.Component {
+class DetailsPage extends React.Component {
   render() {
-    const dispatch = dispatcher(this.props);
     return (
       <View>
-        <TouchableOpacity>
-          <Button
-            title="asd"
-            onPress={() => dispatch(Navigator.navigate('Details'))}
-          />
-        </TouchableOpacity>
+        <Text>Details page is coming!</Text>
       </View>
     );
   }
 }
+
+export default DetailsPage;

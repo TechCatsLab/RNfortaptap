@@ -115,7 +115,7 @@ class AttentionPage extends React.Component {
       case tabIndexFocused:
         return (
           <View>
-            <Attention />
+            <Attention navigation={this.props.navigation} />
           </View>
         );
 

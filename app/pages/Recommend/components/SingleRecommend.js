@@ -34,15 +34,17 @@ import {
   Text,
   StyleSheet,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 
+import Navigator, { dispatcher } from '../../../helper/navigator';
 import FontsSize from '../../../res/Fonts/size';
 import IconsSize from '../../../res/Icons/size';
 import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
 import GradeIcon from './GradeIcon';
-
+// const dispatch = dispatcher(this.props);
 export default (props) => {
   return (
     <View style={styles.card}>
@@ -65,10 +67,13 @@ export default (props) => {
         </View>
       </View>
       <Text style={styles.title}>{props.item.gtitle}</Text>
-      <Image
-        source={{ uri: props.item.gimage }}
-        style={styles.mainImage}
-      />
+      <TouchableOpacity>
+        <Image
+          source={{ uri: props.item.gimage }}
+          style={styles.mainImage}
+          onPress={() => dispatcher.props.dispatch(Navigator.navigate('Details'))}
+        />
+      </TouchableOpacity>
       <GradeIcon
         style={styles.grade}
         grade={props.item.grade}

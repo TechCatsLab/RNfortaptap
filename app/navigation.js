@@ -41,6 +41,7 @@ import RankScreen from './pages/Rank/RankPage';
 import DiscoverScreen from './pages/Discover/DiscoverPage';
 import AttentionScreen from './pages/Attention/AttentionPage';
 import MyGameScreen from './pages/MyGame/MyGamePage';
+import DetailsScreen from './pages/Recommend/DetailsPage';
 
 const BasicApp = TabNavigator({
   Recommend: {
@@ -82,6 +83,9 @@ const BasicApp = TabNavigator({
 
 const Navigations = {
   Main: { screen: BasicApp },
+  Details: {
+    screen: DetailsScreen,
+  },
 };
 
 export default Navigations;
