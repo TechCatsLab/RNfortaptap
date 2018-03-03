@@ -30,7 +30,6 @@
 import React from 'react';
 import {
   View,
-  ScrollView,
   StyleSheet,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -100,14 +99,13 @@ class RankPage extends React.Component {
     return (
       <View>
         { this.renderHeader() }
-        <ScrollView
+        <View
           style={styles.content}
-          showsVerticalScrollIndicator={false}
         >
           <LabelClassify labels={this.props.labels} />
           <Divider />
           <RankContent content={this.props.content} />
-        </ScrollView>
+        </View>
       </View>
     );
   }

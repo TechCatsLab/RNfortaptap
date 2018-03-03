@@ -55,6 +55,7 @@ export default (props) => {
   return (
     <FlatList
       ItemSeparatorComponent={_separator}
+      showsVerticalScrollIndicator={false}
       data={props.content}
       renderItem={({ item }) => (
         <View style={styles.overAll} key={item.key}>
