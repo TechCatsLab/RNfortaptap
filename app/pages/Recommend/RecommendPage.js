@@ -54,6 +54,7 @@ import Wall from './Components/Wall';
 
 class RecommendPage extends React.Component {
   static navigationOptions = {
+    tabBarVisible: true,
     header: null,
     headerTitle: 'TapTap',
     tabBarLabel: '游戏推荐',
