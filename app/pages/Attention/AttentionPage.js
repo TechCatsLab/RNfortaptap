@@ -77,6 +77,9 @@ class AttentionPage extends React.Component {
   renderHeader = () => {
     return (
       <Header
+        outerContainerStyles={{
+          borderBottomWidth: 0,
+        }}
         leftComponent={
           <Avatar
             small
