@@ -35,12 +35,16 @@ import {
   StyleSheet,
   FlatList,
 } from 'react-native';
+import {
+  Avatar,
+} from 'react-native-elements';
 import Feater from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import VideoPlayer from 'react-native-video-controls';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import FontsSize from '../../res/Fonts/size';
+import FontsWeight from '../../res/Fonts/weight';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
@@ -190,16 +194,47 @@ class DetailsPage extends React.Component {
         <FlatList
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
-            <View style={styles.container}>
-              <VideoPlayer
-                source={{ uri: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
-                disableVolume
-                disableBack
-                disableSeekbar
-                disableFullscreen
-                paused
-                resizeMode="cover"
-              />
+            <View>
+              <View style={styles.container}>
+                <VideoPlayer
+                  source={{ uri: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
+                  disableVolume
+                  disableBack
+                  disableSeekbar
+                  disableFullscreen
+                  paused
+                  resizeMode="cover"
+                />
+              </View>
+              <View style={styles.briefInfo}>
+                <View style={styles.briefLeft}>
+                  <Avatar
+                    large
+                    source={{ uri: "https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageMogr2/auto-orient/strip" }}
+                    avatarStyle={{
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                    }}
+                  />
+                  <View>
+                    <Text style={styles.title}>旅行青蛙</Text>
+                    <Text style={styles.manufacturer}>厂商：Hit-Point Co.,Ltd.</Text>
+                    <Text style={styles.count}>12454人预约</Text>
+                    <Text style={styles.from}> 编辑推荐 </Text>
+                  </View>
+                </View>
+                <View style={styles.briefRight}>
+                  <Text style={styles.taptap}>taptap</Text>
+                  <Text style={styles.grade}>9.4</Text>
+                </View>
+              </View>
+              <View>
+                <FontAwesome
+                  name="heart-o"
+                  size={IconsSize.large}
+                  color={Colors.primary}
+                />
+              </View>
             </View>
           }
           data={this.state.labels}
@@ -234,7 +269,6 @@ const styles = StyleSheet.create({
   rowHeader: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
     marginHorizontal: Styles.Width(20),
   },
   headerTitle: {
@@ -244,6 +278,70 @@ const styles = StyleSheet.create({
   },
   list: {
     height: 100,
+  },
+  briefInfo: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginLeft: Styles.Width(5),
+    marginRight: Styles.Width(20),
+  },
+  briefLeft: {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: Styles.Height(25),
+  },
+  title: {
+    fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.blod,
+    color: Colors.black,
+    marginLeft: Styles.Width(13),
+  },
+  manufacturer: {
+    fontSize: FontsSize.tiny,
+    fontWeight: FontsWeight.blod,
+    color: Colors.primary,
+    marginTop: Styles.Height(8),
+    marginLeft: Styles.Width(13),
+  },
+  from: {
+    fontSize: FontsSize.tiny,
+    fontWeight: FontsWeight.blod,
+    backgroundColor: Colors.primary,
+    color: Colors.white,
+    borderStyle: 'solid',
+    borderRadius: 4,
+    width: Styles.Width(72),
+    marginTop: Styles.Height(10),
+    marginLeft: Styles.Width(13),
+  },
+  count: {
+    fontSize: FontsSize.tiny,
+    fontWeight: FontsWeight.blod,
+    marginTop: Styles.Height(3),
+    marginLeft: Styles.Width(13),
+  },
+  briefRight: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: 55,
+    height: 55,
+    borderRadius: 50,
+    backgroundColor: '#00AAAA',
+    borderColor: Colors.primary,
+    borderWidth: Styles.Width(8),
+  },
+  taptap: {
+    fontSize: FontsSize.mini,
+    fontWeight: FontsWeight.blod,
+    color: Colors.white,
+  },
+  grade: {
+    fontSize: FontsSize.large,
+    fontWeight: FontsWeight.blod,
+    color: Colors.white,
   },
 });
 
