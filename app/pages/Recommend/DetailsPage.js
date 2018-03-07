@@ -37,6 +37,8 @@ import {
 } from 'react-native';
 import {
   Avatar,
+  Button,
+  Divider,
 } from 'react-native-elements';
 import Feater from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -228,13 +230,53 @@ class DetailsPage extends React.Component {
                   <Text style={styles.grade}>9.4</Text>
                 </View>
               </View>
-              <View>
+              <View style={styles.download}>
                 <FontAwesome
                   name="heart-o"
                   size={IconsSize.large}
                   color={Colors.primary}
                 />
+                <Button
+                  clear
+                  title="已关注"
+                  textStyle={{
+                    color: Colors.primary,
+                    fontSize: FontsSize.small,
+                  }}
+                  buttonStyle={{
+                    height: Styles.Height(42),
+                    width: Styles.Width(100),
+                    borderRadius: 5,
+                    backgroundColor: 'transparent',
+                    borderColor: Colors.primary,
+                    borderWidth: Styles.Height(2),
+                  }}
+                />
+                <Button
+                  clear
+                  title="下载"
+                  textStyle={{
+                    color: Colors.white,
+                    fontSize: FontsSize.small,
+                  }}
+                  buttonStyle={{
+                    height: Styles.Height(42),
+                    width: Styles.Width(100),
+                    borderRadius: 5,
+                    backgroundColor: Colors.primary,
+                    borderColor: Colors.primary,
+                    borderWidth: Styles.Height(2),
+                  }}
+                />
               </View>
+              <Divider
+                style={{
+                  backgroundColor: Colors.gray2,
+                  width: Styles.ScreenWidth,
+                  height: Styles.Height(3),
+                  marginTop: Styles.Height(20),
+                }}
+              />
             </View>
           }
           data={this.state.labels}
@@ -342,6 +384,12 @@ const styles = StyleSheet.create({
     fontSize: FontsSize.large,
     fontWeight: FontsWeight.blod,
     color: Colors.white,
+  },
+  download: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
 });
 
