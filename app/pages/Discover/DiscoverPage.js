@@ -31,7 +31,7 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  ScrollView,
+  FlatList,
 } from 'react-native';
 import {
   Header,
@@ -107,38 +107,38 @@ class DiscoverPage extends React.Component {
     return (
       <View>
         { this.renderHeader() }
-        <ScrollView
+        <FlatList
           showsVerticalScrollIndicator={false}
-          style={styles.container}
-        >
-          <View>
-            <Carousel slides={this.props.slides} />
-            <LabelClassify labels={this.props.labels} />
-            <Divider />
-            <View>
-              <ClassifyHead type="每日新发现" />
-              <GameType data={this.props.daily} />
+          ListHeaderComponent={
+            <View style={styles.container}>
+              <Carousel slides={this.props.slides} />
+              <LabelClassify labels={this.props.labels} />
               <Divider />
-              <ClassifyHead type="新游预约" />
-              <GameType data={this.props.order} />
-              <Divider />
-              <Quality qualityImg={this.props.qualityImg} />
-              <Divider />
-              <ClassifyHead type="推荐玩家" />
-              <Player users={this.props.users} />
-              <Divider />
-              <ClassifyHead type="游戏测试" />
-              <GameType data={this.props.beta} />
-              <Divider />
-              <ClassifyHead type="近期最热" />
-              <GameType data={this.props.hot} />
-              <Divider />
-              <ClassifyHead type="往期专题" />
-              <Quality qualityImg={this.props.previous} />
-              <Divider />
+              <View>
+                <ClassifyHead type="每日新发现" />
+                <GameType data={this.props.daily} />
+                <Divider />
+                <ClassifyHead type="新游预约" />
+                <GameType data={this.props.order} />
+                <Divider />
+                <Quality qualityImg={this.props.qualityImg} />
+                <Divider />
+                <ClassifyHead type="推荐玩家" />
+                <Player users={this.props.users} />
+                <Divider />
+                <ClassifyHead type="游戏测试" />
+                <GameType data={this.props.beta} />
+                <Divider />
+                <ClassifyHead type="近期最热" />
+                <GameType data={this.props.hot} />
+                <Divider />
+                <ClassifyHead type="往期专题" />
+                <Quality qualityImg={this.props.previous} />
+                <Divider />
+              </View>
             </View>
-          </View>
-        </ScrollView>
+          }
+        />
       </View>
     );
   }
@@ -147,7 +147,6 @@ class DiscoverPage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    flexGrow: 1,
   },
 });
 

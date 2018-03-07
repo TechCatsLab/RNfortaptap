@@ -31,6 +31,7 @@ import React from 'react';
 import {
   View,
   StyleSheet,
+  FlatList,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
@@ -102,13 +103,18 @@ class RankPage extends React.Component {
     return (
       <View>
         { this.renderHeader() }
-        <View
-          style={styles.content}
-        >
-          <LabelClassify labels={this.props.labels} />
-          <Divider />
-          <RankContent content={this.props.content} />
-        </View>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={
+            <View
+              style={styles.content}
+            >
+              <LabelClassify labels={this.props.labels} />
+              <Divider />
+              <RankContent content={this.props.content} />
+            </View>
+          }
+        />
       </View>
     );
   }

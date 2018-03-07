@@ -33,6 +33,7 @@ import {
   View,
   StyleSheet,
   ScrollView,
+  FlatList,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
@@ -105,23 +106,25 @@ class RecommendPage extends React.Component {
     return (
       <View style={styles.container}>
         { this.renderHeader() }
-        <ScrollView
+        <FlatList
           showsVerticalScrollIndicator={false}
-          style={styles.scroll}
-        >
-          <SingleRecommend item={this.props.games[0]} />
-          <SingleRecommend item={this.props.games[1]} />
-          <ClassifyHead type="安利墙" />
-          <Wall wall={this.props.wall} />
-          <SingleRecommend item={this.props.games[2]} />
-          <SingleRecommend item={this.props.games[3]} />
-          <ClassifyHead type="精选专题" />
-          <Quality qualityImg={this.props.previous} />
-          <ClassifyHead type="玩赏家推荐游戏" />
-          <PlayerAdmire admire={this.props.admire} />
-          <SingleRecommend item={this.props.games[4]} />
-          <SingleRecommend item={this.props.games[5]} />
-        </ScrollView>
+          ListHeaderComponent={
+            <View>
+              <SingleRecommend item={this.props.games[0]} />
+              <SingleRecommend item={this.props.games[1]} />
+              <ClassifyHead type="安利墙" />
+              <Wall wall={this.props.wall} />
+              <SingleRecommend item={this.props.games[2]} />
+              <SingleRecommend item={this.props.games[3]} />
+              <ClassifyHead type="精选专题" />
+              <Quality qualityImg={this.props.previous} />
+              <ClassifyHead type="玩赏家推荐游戏" />
+              <PlayerAdmire admire={this.props.admire} />
+              <SingleRecommend item={this.props.games[4]} />
+              <SingleRecommend item={this.props.games[5]} />
+            </View>
+          }
+        />
       </View>
     );
   }
