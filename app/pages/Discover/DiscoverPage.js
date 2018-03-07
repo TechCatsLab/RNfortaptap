@@ -32,6 +32,7 @@ import {
   View,
   StyleSheet,
   FlatList,
+  RefreshControl,
 } from 'react-native';
 import {
   Header,
@@ -64,6 +65,24 @@ class DiscoverPage extends React.Component {
         style={{ color: tintColor }}
       />
     ),
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isRefreshing: false,
+    };
+  }
+
+  _onRefresh() {
+    this.setState({
+      isRefreshing: true,
+    });
+    setTimeout(() => {
+      this.setState({
+        isRefreshing: false,
+      });
+    }, 1500);
   }
 
   renderHeader = () => {
@@ -108,6 +127,17 @@ class DiscoverPage extends React.Component {
       <View>
         { this.renderHeader() }
         <FlatList
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.isRefreshing}
+              onRefresh={this._onRefresh.bind(this)}
+              tintColor="#000000"
+              title="loading"
+              colors={['#000000']}
+              progressBackgroundColor="#ffffff"
+              enabled
+            />
+          }
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
             <View style={styles.container}>
