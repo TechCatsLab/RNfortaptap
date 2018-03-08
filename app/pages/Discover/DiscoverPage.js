@@ -124,47 +124,9 @@ class DiscoverPage extends React.Component {
     }, 1500);
   }
 
-  // renderHeader = () => {
-  //   return (
-  //     <Header
-  //       outerContainerStyles={{
-  //         borderBottomWidth: 0,
-  //       }}
-  //       leftComponent={
-  //         <Avatar
-  //           small
-  //           rounded
-  //           source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-  //           activeOpacity={0.7}
-  //           avatarStyle={{
-  //             borderWidth: 1,
-  //             borderColor: Colors.white,
-  //           }}
-  //         />
-  //       }
-  //       centerComponent={{
-  //         text: '发现',
-  //         style: {
-  //           color: Colors.white,
-  //           fontSize: FontsSize.large,
-  //         },
-  //       }}
-  //       rightComponent={
-  //         <Ionicons
-  //           name="ios-search"
-  //           size={IconsSize.xlarge}
-  //           color={Colors.white}
-  //         />
-  //       }
-  //       backgroundColor={Colors.primary}
-  //     />
-  //   );
-  // }
-
   render() {
     return (
       <View>
-        {/* { this.renderHeader() } */}
         <FlatList
           refreshControl={
             <RefreshControl

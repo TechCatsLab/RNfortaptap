@@ -111,43 +111,6 @@ class MyGamePage extends React.Component {
     tabIndex: tabIndexInstalled,
   }
 
-  // renderHeader = () => {
-  //   return (
-  //     <Header
-  //       outerContainerStyles={{
-  //         borderBottomWidth: 0,
-  //       }}
-  //       leftComponent={
-  //         <Avatar
-  //           small
-  //           rounded
-  //           source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-  //           activeOpacity={0.7}
-  //           avatarStyle={{
-  //             borderWidth: 1,
-  //             borderColor: Colors.white,
-  //           }}
-  //         />
-  //       }
-  //       centerComponent={{
-  //         text: '我的游戏',
-  //         style: {
-  //           color: '#fff',
-  //           fontSize: FontsSize.large,
-  //         },
-  //       }}
-  //       rightComponent={
-  //         <Ionicons
-  //           name="ios-search"
-  //           size={IconsSize.xlarge}
-  //           color="white"
-  //         />
-  //       }
-  //       backgroundColor={Colors.primary}
-  //     />
-  //   );
-  // }
-
   renderTabContent = () => {
     const _tab = this.state.tabIndex;
 
@@ -188,7 +151,6 @@ class MyGamePage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* { this.renderHeader() } */}
         <ScrollView
           showsVerticalScrollIndicator={false}
         >
