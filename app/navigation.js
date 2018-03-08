@@ -31,7 +31,6 @@ import {
   TabNavigator,
 } from 'react-navigation';
 
-
 import FontsSize from './res/Fonts/size';
 import Colors from './res/Colors';
 import Styles from './res/Styles';
@@ -42,6 +41,7 @@ import DiscoverScreen from './pages/Discover/DiscoverPage';
 import AttentionScreen from './pages/Attention/AttentionPage';
 import MyGameScreen from './pages/MyGame/MyGamePage';
 import DetailsScreen from './pages/Recommend/DetailsPage';
+import MainScreen from './Test/MainPage';
 
 const BasicApp = TabNavigator({
   Recommend: {
@@ -58,6 +58,9 @@ const BasicApp = TabNavigator({
   },
   MyGame: {
     screen: MyGameScreen,
+  },
+  Test: {
+    screen: MainScreen,
   },
 }, {
   initialRouteName: 'Recommend',

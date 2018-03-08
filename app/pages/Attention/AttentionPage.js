@@ -31,13 +31,13 @@
 
 import React from 'react';
 import {
-  View,
-  ScrollView,
   Text,
-  StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Header, Avatar } from 'react-native-elements';
+import {
+  Avatar,
+} from 'react-native-elements';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import { connect } from 'react-redux';
 
@@ -50,15 +50,46 @@ import Attention from './Components/Attention';
 import Video from './Components/Video';
 import Hot from './Components/Hot';
 import Community from './Components/Community';
-
-const tabIndexFocused = 0;
-const tabIndexVideo = 1;
-const tabIndexHot = 2;
-const tabIndexCommunity = 3;
+import FontsWeight from '../../res/Fonts/weight';
 
 class AttentionPage extends React.Component {
   static navigationOptions = {
-    header: null,
+    headerTitle: (
+      <Text
+        style={{
+          color: Colors.white,
+          alignSelf: 'center',
+          fontSize: FontsSize.large,
+        }}
+      >动态
+      </Text>
+    ),
+    headerLeft: (
+      <TouchableOpacity style={{ marginLeft: Styles.Width(20) }}>
+        <Avatar
+          small
+          rounded
+          source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+          activeOpacity={0.7}
+          avatarStyle={{
+            borderWidth: 1,
+            borderColor: Colors.white,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity style={{ marginRight: Styles.Width(20) }}>
+        <Text
+          style={{ fontSize: FontsSize.small, color: Colors.white, fontWeight: FontsWeight.blod }}
+        >我的关注
+        </Text>
+      </TouchableOpacity>
+    ),
+    headerStyle: {
+      backgroundColor: Colors.primary,
+      borderBottomWidth: 0,
+    },
     tabBarLabel: '动态',
     title: '动态',
     tabBarIcon: ({ tintColor, focused }) => (
@@ -70,133 +101,30 @@ class AttentionPage extends React.Component {
     ),
   }
 
-  state = {
-    tabIndex: tabIndexFocused,
-  };
-
-  renderHeader = () => {
-    return (
-      <Header
-        outerContainerStyles={{
-          borderBottomWidth: 0,
-        }}
-        leftComponent={
-          <Avatar
-            small
-            rounded
-            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-            activeOpacity={0.7}
-            avatarStyle={{
-              borderWidth: 1,
-              borderColor: Colors.white,
-            }}
-          />
-        }
-        centerComponent={{
-          text: '动态',
-          style: {
-            color: Colors.white,
-            fontSize: FontsSize.large,
-          },
-        }}
-        rightComponent={
-          <Ionicons
-            name="ios-search"
-            size={IconsSize.xlarge}
-            color={Colors.white}
-          />
-        }
-        backgroundColor={Colors.primary}
-      />
-    );
-  }
-
-  renderTabContent = () => {
-    const _tab = this.state.tabIndex;
-
-    switch (_tab) {
-      case tabIndexFocused:
-        return (
-          <View>
-            <Attention navigation={this.props.navigation} />
-          </View>
-        );
-
-      case tabIndexVideo:
-        return (
-          <View>
-            <Video matter={this.props.matter} />
-          </View>
-        );
-
-      case tabIndexHot:
-        return (
-          <View>
-            <Hot details={this.props.details} />
-          </View>
-        );
-
-      case tabIndexCommunity:
-        return (
-          <View>
-            <Community />
-          </View>
-        );
-
-      default:
-        return (<View />);
-    }
-  };
-
   render() {
+    const types = [
+      { title: '关注', component: Attention },
+      { title: '视频', component: Video },
+      { title: '热点', component: Hot },
+      { title: '论坛', component: Community },
+    ];
     return (
-      <View style={styles.container}>
-        { this.renderHeader() }
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={styles.container}
-        >
-          <ScrollableTabView
-            tabBarBackgroundColor={Colors.white}
-            tabBarUnderlineStyle={{
-              backgroundColor: Colors.gray,
-              width: Styles.Width(160),
-              height: Styles.Height(0.5),
-            }}
-            tabBarActiveTextColor={Colors.primary}
-            tabBarInactiveTextColor={Colors.black}
-            locked={false}
-            renderTabBar={() => (
-              <DefaultTabBar />
-            )}
-            initialPage={tabIndexFocused}
-            onChangeTab={({ i }) => (
-              this.setState({ tabIndex: i })
-            )}
-          >
-            <Text tabLabel="关注" />
-            <Text tabLabel="视频" />
-            <Text tabLabel="热点" />
-            <Text tabLabel="论坛" />
-          </ScrollableTabView>
-          { this.renderTabContent() }
-        </ScrollView>
-      </View>
+      <ScrollableTabView
+        style={{ flex: 1, backgroundColor: '#FBFCFE' }}
+        tabBarBackgroundColor="#ffffff"
+        tabBarActiveTextColor={Colors.primary}
+        tabBarInactiveTextColor="#000000"
+        tabBarUnderlineStyle={{ backgroundColor: Colors.primary, width: Styles.ScreenWidth * 0.25 }}
+        renderTabBar={() => <DefaultTabBar />}
+      >
+        { types.map((v, i) => {
+            const Component = v.component;
+            return <Component key={i} tabLabel={v.title} navigation={this.props.navigation} />; // eslint-disable-line
+        })}
+      </ScrollableTabView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.gray,
-  },
-  more: {
-    color: Colors.primary,
-    fontSize: FontsSize.small,
-    marginVertical: Styles.Height(15),
-    marginLeft: Styles.Width(270),
-  },
-});
 
 export default connect(({ hot, videos }) => ({
   ...hot,

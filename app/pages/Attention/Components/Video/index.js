@@ -27,7 +27,8 @@
  *     Initial: 2018/02/1        Cheng Jifeng
  */
 
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   Text,
@@ -43,42 +44,38 @@ import Videos from './Components/Videos';
 import Content from '../Content';
 import Footer from '../Footer';
 
-export default (props) => {
-  return (
-    <FlatList
-      showsHorizontalScrollIndicator={false}
-      data={props.matter}
-      renderItem={({ item }) => (
-        <View style={styles.container}>
-          <Head
-            iconImg={item.iconImg}
-            title={item.title}
-            from={item.from}
-            count={item.count}
-          />
-          <Videos />
-          <Content
-            cTitle={item.cTitle}
-            cFrom={item.cFrom}
-            cAvatar={item.cAvatar}
-            cName={item.cName}
-          />
-          <Text style={styles.briefInfo}>{item.describe}</Text>
-          <Footer
-            time={item.time}
-            likes={item.likes}
-          />
-        </View>
-      )}
-    />
-    // <View style={styles.container}>
-    //   <Head />
-    //   <Videos />
-    //   <Content />
-    //   <Footer />
-    // </View>
-  );
-};
+class Video extends PureComponent {
+  render() {
+    return (
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        data={this.props.matter}
+        renderItem={({ item }) => (
+          <View style={styles.container}>
+            <Head
+              iconImg={item.iconImg}
+              title={item.title}
+              from={item.from}
+              count={item.count}
+            />
+            <Videos />
+            <Content
+              cTitle={item.cTitle}
+              cFrom={item.cFrom}
+              cAvatar={item.cAvatar}
+              cName={item.cName}
+            />
+            <Text style={styles.briefInfo}>{item.describe}</Text>
+            <Footer
+              time={item.time}
+              likes={item.likes}
+            />
+          </View>
+        )}
+      />
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -87,3 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
 });
+
+export default connect(({ videos }) => ({
+  ...videos,
+}))(Video);

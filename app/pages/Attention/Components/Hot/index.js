@@ -27,7 +27,8 @@
  *     Initial: 2018/02/1        Cheng Jifeng
  */
 
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   StyleSheet,
@@ -44,36 +45,38 @@ import Images from './Components/Images';
 import Content from '../Content';
 import Footer from '../Footer';
 
-export default (props) => {
-  return (
-    <FlatList
-      showsHorizontalScrollIndicator={false}
-      data={props.details}
-      renderItem={({ item }) => (
-        <View style={styles.container}>
-          <Head
-            iconImg={item.iconImg}
-            title={item.title}
-            from={item.from}
-            count={item.count}
-          />
-          <Images image={item.image} />
-          <Content
-            cTitle={item.cTitle}
-            cFrom={item.cFrom}
-            cAvatar={item.cAvatar}
-            cName={item.cName}
-          />
-          <Text style={styles.briefInfo}>{item.describe}</Text>
-          <Footer
-            time={item.time}
-            likes={item.likes}
-          />
-        </View>
-      )}
-    />
-  );
-};
+class Hot extends PureComponent {
+  render() {
+    return (
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        data={this.props.details}
+        renderItem={({ item }) => (
+          <View style={styles.container}>
+            <Head
+              iconImg={item.iconImg}
+              title={item.title}
+              from={item.from}
+              count={item.count}
+            />
+            <Images image={item.image} />
+            <Content
+              cTitle={item.cTitle}
+              cFrom={item.cFrom}
+              cAvatar={item.cAvatar}
+              cName={item.cName}
+            />
+            <Text style={styles.briefInfo}>{item.describe}</Text>
+            <Footer
+              time={item.time}
+              likes={item.likes}
+            />
+          </View>
+        )}
+      />
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -86,3 +89,7 @@ const styles = StyleSheet.create({
     padding: Styles.Width(10),
   },
 });
+
+export default connect(({ hot }) => ({
+  ...hot,
+}))(Hot);
