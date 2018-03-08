@@ -33,9 +33,10 @@ import {
   Text,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Header, Avatar } from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
 import ScrollableTabView, {
   DefaultTabBar,
 } from 'react-native-scrollable-tab-view';
@@ -58,7 +59,43 @@ const tabIndexOrdered = 6;
 
 class MyGamePage extends React.Component {
   static navigationOptions = {
-    header: null,
+    headerTitle: (
+      <Text
+        style={{
+          color: Colors.white,
+          alignSelf: 'center',
+          fontSize: FontsSize.large,
+        }}
+      >我的游戏
+      </Text>
+    ),
+    headerLeft: (
+      <TouchableOpacity style={{ marginLeft: Styles.Width(20) }}>
+        <Avatar
+          small
+          rounded
+          source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+          activeOpacity={0.7}
+          avatarStyle={{
+            borderWidth: 1,
+            borderColor: Colors.white,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity style={{ marginRight: Styles.Width(20) }}>
+        <Ionicons
+          name="ios-search"
+          size={IconsSize.xlarge}
+          color={Colors.white}
+        />
+      </TouchableOpacity>
+    ),
+    headerStyle: {
+      backgroundColor: Colors.primary,
+      borderBottomWidth: 0,
+    },
     tabBarLabel: '我的游戏',
     title: '我的游戏',
     tabBarIcon: ({ tintColor, focused }) => (
@@ -74,42 +111,42 @@ class MyGamePage extends React.Component {
     tabIndex: tabIndexInstalled,
   }
 
-  renderHeader = () => {
-    return (
-      <Header
-        outerContainerStyles={{
-          borderBottomWidth: 0,
-        }}
-        leftComponent={
-          <Avatar
-            small
-            rounded
-            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-            activeOpacity={0.7}
-            avatarStyle={{
-              borderWidth: 1,
-              borderColor: Colors.white,
-            }}
-          />
-        }
-        centerComponent={{
-          text: '我的游戏',
-          style: {
-            color: '#fff',
-            fontSize: FontsSize.large,
-          },
-        }}
-        rightComponent={
-          <Ionicons
-            name="ios-search"
-            size={IconsSize.xlarge}
-            color="white"
-          />
-        }
-        backgroundColor={Colors.primary}
-      />
-    );
-  }
+  // renderHeader = () => {
+  //   return (
+  //     <Header
+  //       outerContainerStyles={{
+  //         borderBottomWidth: 0,
+  //       }}
+  //       leftComponent={
+  //         <Avatar
+  //           small
+  //           rounded
+  //           source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+  //           activeOpacity={0.7}
+  //           avatarStyle={{
+  //             borderWidth: 1,
+  //             borderColor: Colors.white,
+  //           }}
+  //         />
+  //       }
+  //       centerComponent={{
+  //         text: '我的游戏',
+  //         style: {
+  //           color: '#fff',
+  //           fontSize: FontsSize.large,
+  //         },
+  //       }}
+  //       rightComponent={
+  //         <Ionicons
+  //           name="ios-search"
+  //           size={IconsSize.xlarge}
+  //           color="white"
+  //         />
+  //       }
+  //       backgroundColor={Colors.primary}
+  //     />
+  //   );
+  // }
 
   renderTabContent = () => {
     const _tab = this.state.tabIndex;
@@ -151,7 +188,7 @@ class MyGamePage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        { this.renderHeader() }
+        {/* { this.renderHeader() } */}
         <ScrollView
           showsVerticalScrollIndicator={false}
         >

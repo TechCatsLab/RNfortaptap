@@ -41,7 +41,7 @@ import DiscoverScreen from './pages/Discover/DiscoverPage';
 import AttentionScreen from './pages/Attention/AttentionPage';
 import MyGameScreen from './pages/MyGame/MyGamePage';
 import DetailsScreen from './pages/Recommend/DetailsPage';
-import MainScreen from './Test/MainPage';
+// import MainScreen from './Test/MainPage';
 
 const BasicApp = TabNavigator({
   Recommend: {
@@ -59,9 +59,9 @@ const BasicApp = TabNavigator({
   MyGame: {
     screen: MyGameScreen,
   },
-  Test: {
-    screen: MainScreen,
-  },
+  // Test: {
+  //   screen: MainScreen,
+  // },
 }, {
   initialRouteName: 'Recommend',
   tabBarPosition: 'bottom',

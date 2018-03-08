@@ -32,10 +32,11 @@ import {
   View,
   StyleSheet,
   FlatList,
+  Text,
+  TouchableOpacity,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
-  Header,
   Avatar,
   Divider,
 } from 'react-native-elements';
@@ -44,13 +45,50 @@ import { connect } from 'react-redux';
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
+import Styles from '../../res/Styles';
 
 import RankContent from './Components/RankContent';
 import LabelClassify from '../../components/LabelClassify';
 
 class RankPage extends React.Component {
   static navigationOptions = {
-    header: null,
+    headerTitle: (
+      <Text
+        style={{
+          color: Colors.white,
+          alignSelf: 'center',
+          fontSize: FontsSize.large,
+        }}
+      >排行榜
+      </Text>
+    ),
+    headerLeft: (
+      <TouchableOpacity style={{ marginLeft: Styles.Width(20) }}>
+        <Avatar
+          small
+          rounded
+          source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+          activeOpacity={0.7}
+          avatarStyle={{
+            borderWidth: 1,
+            borderColor: Colors.white,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity style={{ marginRight: Styles.Width(20) }}>
+        <Ionicons
+          name="ios-search"
+          size={IconsSize.xlarge}
+          color={Colors.white}
+        />
+      </TouchableOpacity>
+    ),
+    headerStyle: {
+      backgroundColor: Colors.primary,
+      borderBottomWidth: 0,
+    },
     tabBarLabel: '排行榜',
     title: '排行榜',
     tabBarIcon: ({ tintColor, focused }) => (
@@ -62,47 +100,47 @@ class RankPage extends React.Component {
     ),
   }
 
-  renderHeader = () => {
-    return (
-      <Header
-        outerContainerStyles={{
-          borderBottomWidth: 0,
-        }}
-        leftComponent={
-          <Avatar
-            small
-            rounded
-            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-            activeOpacity={0.7}
-            avatarStyle={{
-              borderWidth: 1,
-              borderColor: Colors.white,
-            }}
-          />
-        }
-        centerComponent={{
-          text: '排行榜',
-          style: {
-            color: '#fff',
-            fontSize: FontsSize.large,
-          },
-        }}
-        rightComponent={
-          <Ionicons
-            name="ios-search"
-            size={IconsSize.xlarge}
-            color="white"
-          />
-        }
-        backgroundColor={Colors.primary}
-      />
-    );
-  }
+  // renderHeader = () => {
+  //   return (
+  //     <Header
+  //       outerContainerStyles={{
+  //         borderBottomWidth: 0,
+  //       }}
+  //       leftComponent={
+  //         <Avatar
+  //           small
+  //           rounded
+  //           source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+  //           activeOpacity={0.7}
+  //           avatarStyle={{
+  //             borderWidth: 1,
+  //             borderColor: Colors.white,
+  //           }}
+  //         />
+  //       }
+  //       centerComponent={{
+  //         text: '排行榜',
+  //         style: {
+  //           color: '#fff',
+  //           fontSize: FontsSize.large,
+  //         },
+  //       }}
+  //       rightComponent={
+  //         <Ionicons
+  //           name="ios-search"
+  //           size={IconsSize.xlarge}
+  //           color="white"
+  //         />
+  //       }
+  //       backgroundColor={Colors.primary}
+  //     />
+  //   );
+  // }
 
   render() {
     return (
       <View>
-        { this.renderHeader() }
+        {/* { this.renderHeader() } */}
         <FlatList
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={

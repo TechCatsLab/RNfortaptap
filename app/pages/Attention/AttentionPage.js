@@ -27,8 +27,6 @@
  *     Initial: 2018/01/21        Cheng Jifeng
  */
 
-/* eslint-disable default-case */
-
 import React from 'react';
 import {
   Text,

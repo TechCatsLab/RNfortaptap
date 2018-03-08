@@ -33,9 +33,10 @@ import {
   StyleSheet,
   FlatList,
   RefreshControl,
+  TouchableOpacity,
+  Text,
 } from 'react-native';
 import {
-  Header,
   Avatar,
   Divider,
 } from 'react-native-elements';
@@ -45,6 +46,7 @@ import { connect } from 'react-redux';
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
+import Styles from '../../res/Styles';
 
 import Carousel from '../../components/Carousel';
 import LabelClassify from '../../components/LabelClassify';
@@ -55,7 +57,44 @@ import Player from './Components/Player';
 
 class DiscoverPage extends React.Component {
   static navigationOptions = {
-    header: null,
+    headerTitle: (
+      <Text
+        style={{
+          color: Colors.white,
+          alignSelf: 'center',
+          fontSize: FontsSize.large,
+        }}
+      >发现
+      </Text>
+    ),
+    headerLeft: (
+      <TouchableOpacity style={{ marginLeft: Styles.Width(20) }}>
+        <Avatar
+          small
+          rounded
+          source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+          activeOpacity={0.7}
+          avatarStyle={{
+            borderWidth: 1,
+            borderColor: Colors.white,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity style={{ marginRight: Styles.Width(20) }}>
+        <Ionicons
+          name="ios-search"
+          size={IconsSize.xlarge}
+          color={Colors.white}
+        />
+      </TouchableOpacity>
+    ),
+    headerStyle: {
+      backgroundColor: Colors.primary,
+      borderBottomWidth: 0,
+    },
+    // header: null,
     tabBarLabel: '发现',
     title: '发现',
     tabBarIcon: ({ tintColor, focused }) => (
@@ -85,47 +124,47 @@ class DiscoverPage extends React.Component {
     }, 1500);
   }
 
-  renderHeader = () => {
-    return (
-      <Header
-        outerContainerStyles={{
-          borderBottomWidth: 0,
-        }}
-        leftComponent={
-          <Avatar
-            small
-            rounded
-            source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-            activeOpacity={0.7}
-            avatarStyle={{
-              borderWidth: 1,
-              borderColor: Colors.white,
-            }}
-          />
-        }
-        centerComponent={{
-          text: '发现',
-          style: {
-            color: Colors.white,
-            fontSize: FontsSize.large,
-          },
-        }}
-        rightComponent={
-          <Ionicons
-            name="ios-search"
-            size={IconsSize.xlarge}
-            color={Colors.white}
-          />
-        }
-        backgroundColor={Colors.primary}
-      />
-    );
-  }
+  // renderHeader = () => {
+  //   return (
+  //     <Header
+  //       outerContainerStyles={{
+  //         borderBottomWidth: 0,
+  //       }}
+  //       leftComponent={
+  //         <Avatar
+  //           small
+  //           rounded
+  //           source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
+  //           activeOpacity={0.7}
+  //           avatarStyle={{
+  //             borderWidth: 1,
+  //             borderColor: Colors.white,
+  //           }}
+  //         />
+  //       }
+  //       centerComponent={{
+  //         text: '发现',
+  //         style: {
+  //           color: Colors.white,
+  //           fontSize: FontsSize.large,
+  //         },
+  //       }}
+  //       rightComponent={
+  //         <Ionicons
+  //           name="ios-search"
+  //           size={IconsSize.xlarge}
+  //           color={Colors.white}
+  //         />
+  //       }
+  //       backgroundColor={Colors.primary}
+  //     />
+  //   );
+  // }
 
   render() {
     return (
       <View>
-        { this.renderHeader() }
+        {/* { this.renderHeader() } */}
         <FlatList
           refreshControl={
             <RefreshControl
