@@ -28,6 +28,7 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   FlatList,
@@ -51,58 +52,61 @@ const _separator = () => {
   return <View style={{ height: 0.5, backgroundColor: Colors.black }} />;
 };
 
-export default (props) => {
-  return (
-    <FlatList
-      style={styles.container}
-      ItemSeparatorComponent={_separator}
-      data={props.order}
-      renderItem={({ item }) => (
-        <View style={styles.overAll} key={item.key}>
-          <View style={styles.leftContent}>
-            <Avatar
-              medium
-              source={{ uri: item.img }}
-              activeOpacity={0.7}
-              avatarStyle={{
-                borderRadius: 8,
-                backgroundColor: Colors.white,
-              }}
-            />
-            <BriefInfo
-              title={item.title}
-              star={item.star}
-              ratingSize={10}
-              label1={item.label1}
-              label2={item.label2}
-              label3={item.label3}
-              label4={item.label4}
-            />
+class Ordered extends React.Component {
+  render() {
+    return (
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        style={styles.container}
+        ItemSeparatorComponent={_separator}
+        data={this.props.order}
+        renderItem={({ item }) => (
+          <View style={styles.overAll} key={item.key}>
+            <View style={styles.leftContent}>
+              <Avatar
+                medium
+                source={{ uri: item.img }}
+                activeOpacity={0.7}
+                avatarStyle={{
+                  borderRadius: 8,
+                  backgroundColor: Colors.white,
+                }}
+              />
+              <BriefInfo
+                title={item.title}
+                star={item.star}
+                ratingSize={10}
+                label1={item.label1}
+                label2={item.label2}
+                label3={item.label3}
+                label4={item.label4}
+              />
+            </View>
+            <View>
+              <Ionicons
+                name="md-more"
+                size={IconsSize.large}
+                style={styles.rightIcon}
+              />
+              <Button
+                title="已预约"
+                buttonStyle={{
+                  height: Styles.Height(20),
+                  position: 'absolute',
+                  top: Styles.Height(62),
+                  right: Styles.Width(1),
+                  borderRadius: 5,
+                  backgroundColor: Colors.primary,
+                }}
+                fontSize={FontsSize.small}
+              />
+            </View>
           </View>
-          <View>
-            <Ionicons
-              name="md-more"
-              size={IconsSize.large}
-              style={styles.rightIcon}
-            />
-            <Button
-              title="已预约"
-              buttonStyle={{
-                height: Styles.Height(20),
-                position: 'absolute',
-                top: Styles.Height(62),
-                right: Styles.Width(1),
-                borderRadius: 5,
-                backgroundColor: Colors.primary,
-              }}
-              fontSize={FontsSize.small}
-            />
-          </View>
-        </View>
-      )}
-    />
-  );
-};
+        )}
+      />
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -134,3 +138,7 @@ const styles = StyleSheet.create({
     right: Styles.Width(32),
   },
 });
+
+export default connect(({ games }) => ({
+  ...games,
+}))(Ordered);

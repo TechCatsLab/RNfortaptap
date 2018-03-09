@@ -28,6 +28,7 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   FlatList,
@@ -51,54 +52,57 @@ const _separator = () => {
   return <View style={{ height: 0.5, backgroundColor: Colors.black }} />;
 };
 
-export default (props) => {
-  return (
-    <FlatList
-      style={styles.container}
-      ItemSeparatorComponent={_separator}
-      data={props.install}
-      renderItem={({ item }) => (
-        <View style={styles.overAll} key={item.key}>
-          <View style={styles.leftContent}>
-            <Avatar
-              medium
-              source={{ uri: item.img }}
-              activeOpacity={0.7}
-              avatarStyle={{
-                borderRadius: 8,
-                backgroundColor: Colors.white,
-              }}
-            />
-            <BriefInfo
-              title={item.title}
-              star={item.star}
-              ratingSize={10}
-            />
+class Installed extends React.Component {
+  render() {
+    return (
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        style={styles.container}
+        ItemSeparatorComponent={_separator}
+        data={this.props.install}
+        renderItem={({ item }) => (
+          <View style={styles.overAll} key={item.key}>
+            <View style={styles.leftContent}>
+              <Avatar
+                medium
+                source={{ uri: item.img }}
+                activeOpacity={0.7}
+                avatarStyle={{
+                  borderRadius: 8,
+                  backgroundColor: Colors.white,
+                }}
+              />
+              <BriefInfo
+                title={item.title}
+                star={item.star}
+                ratingSize={10}
+              />
+            </View>
+            <View>
+              <Ionicons
+                name="md-more"
+                size={IconsSize.large}
+                style={styles.rightIcon}
+              />
+              <Button
+                title="打开"
+                buttonStyle={{
+                  height: Styles.Height(20),
+                  position: 'absolute',
+                  top: Styles.Height(62),
+                  right: Styles.Width(1),
+                  borderRadius: 5,
+                  backgroundColor: Colors.primary,
+                }}
+                fontSize={FontsSize.small}
+              />
+            </View>
           </View>
-          <View>
-            <Ionicons
-              name="md-more"
-              size={IconsSize.large}
-              style={styles.rightIcon}
-            />
-            <Button
-              title="打开"
-              buttonStyle={{
-                height: Styles.Height(20),
-                position: 'absolute',
-                top: Styles.Height(62),
-                right: Styles.Width(1),
-                borderRadius: 5,
-                backgroundColor: Colors.primary,
-              }}
-              fontSize={FontsSize.small}
-            />
-          </View>
-        </View>
-      )}
-    />
-  );
-};
+        )}
+      />
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -130,3 +134,7 @@ const styles = StyleSheet.create({
     right: Styles.Width(32),
   },
 });
+
+export default connect(({ games }) => ({
+  ...games,
+}))(Installed);

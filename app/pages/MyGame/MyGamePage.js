@@ -29,10 +29,7 @@
 
 import React from 'react';
 import {
-  View,
   Text,
-  ScrollView,
-  StyleSheet,
   TouchableOpacity,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -40,7 +37,8 @@ import { Avatar } from 'react-native-elements';
 import ScrollableTabView, {
   DefaultTabBar,
 } from 'react-native-scrollable-tab-view';
-import { connect } from 'react-redux';
+
+// import CutlineTabBar from '../../components/CutlineTabBar';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
@@ -52,12 +50,7 @@ import Played from './Components/Played';
 import Collected from './Components/Collected';
 import Ordered from './Components/Ordered';
 
-const tabIndexInstalled = 0;
-const tabIndexPlayed = 2;
-const tabIndexCollected = 4;
-const tabIndexOrdered = 6;
-
-class MyGamePage extends React.Component {
+export default class MyGamePage extends React.Component {
   static navigationOptions = {
     headerTitle: (
       <Text
@@ -107,93 +100,33 @@ class MyGamePage extends React.Component {
     ),
   }
 
-  state= {
-    tabIndex: tabIndexInstalled,
-  }
-
-  renderTabContent = () => {
-    const _tab = this.state.tabIndex;
-
-    switch (_tab) {
-      case tabIndexInstalled:
-        return (
-          <View>
-            <Installed install={this.props.install} />
-          </View>
-        );
-
-      case tabIndexPlayed:
-        return (
-          <View>
-            <Played played={this.props.played} />
-          </View>
-        );
-
-      case tabIndexCollected:
-        return (
-          <View>
-            <Collected collect={this.props.collect} />
-          </View>
-        );
-
-      case tabIndexOrdered:
-        return (
-          <View>
-            <Ordered order={this.props.order} />
-          </View>
-        );
-
-      default:
-        return (<View />);
-    }
+  constructor() {
+    super();
+    this.state = {
+      types: [
+        { title: '已装', component: Installed },
+        { title: '玩过', component: Played },
+        { title: '收藏', component: Collected },
+        { title: '预约', component: Ordered },
+      ],
+    };
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-        >
-          <ScrollableTabView
-            tabBarBackgroundColor={Colors.white}
-            scrollWithoutAnimation
-            tabBarUnderlineStyle={{
-              backgroundColor: Colors.gray,
-              width: Styles.Width(160),
-              height: Styles.Height(0.5),
-            }}
-            tabBarActiveTextColor={Colors.primary}
-            tabBarInactiveTextColor={Colors.black}
-            locked={false}
-            renderTabBar={() => (
-              <DefaultTabBar />
-            )}
-            initialPage={tabIndexInstalled}
-            onChangeTab={({ i }) => (
-              this.setState({ tabIndex: i })
-            )}
-          >
-            <Text tabLabel="已装" />
-            <Text tabLabel="|" />
-            <Text tabLabel="玩过" />
-            <Text tabLabel="|" />
-            <Text tabLabel="收藏" />
-            <Text tabLabel="|" />
-            <Text tabLabel="预约" />
-          </ScrollableTabView>
-          { this.renderTabContent() }
-        </ScrollView>
-      </View>
+      <ScrollableTabView
+        style={{ flex: 1, backgroundColor: Colors.gray }}
+        tabBarBackgroundColor={Colors.white}
+        tabBarActiveTextColor={Colors.primary}
+        tabBarInactiveTextColor={Colors.black}
+        tabBarUnderlineStyle={{ backgroundColor: Colors.primary, width: Styles.ScreenWidth * 0.25 }}
+        renderTabBar={() => <DefaultTabBar />}
+      >
+        { this.state.types.map((v, i) => {
+            const Component = v.component;
+            return <Component key={i} tabLabel={v.title} navigation={this.props.navigation} />; // eslint-disable-line
+        })}
+      </ScrollableTabView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.gray,
-  },
-});
-
-export default connect(({ games }) => ({
-  ...games,
-}))(MyGamePage);

@@ -37,9 +37,9 @@ import {
   Avatar,
 } from 'react-native-elements';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
-import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
+import FontsWeight from '../../res/Fonts/weight';
 import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
@@ -48,7 +48,6 @@ import Attention from './Components/Attention';
 import Video from './Components/Video';
 import Hot from './Components/Hot';
 import Community from './Components/Community';
-import FontsWeight from '../../res/Fonts/weight';
 
 class AttentionPage extends React.Component {
   static navigationOptions = {
@@ -108,10 +107,10 @@ class AttentionPage extends React.Component {
     ];
     return (
       <ScrollableTabView
-        style={{ flex: 1, backgroundColor: '#FBFCFE' }}
-        tabBarBackgroundColor="#ffffff"
+        style={{ flex: 1, backgroundColor: Colors.gray }}
+        tabBarBackgroundColor={Colors.white}
         tabBarActiveTextColor={Colors.primary}
-        tabBarInactiveTextColor="#000000"
+        tabBarInactiveTextColor={Colors.black}
         tabBarUnderlineStyle={{ backgroundColor: Colors.primary, width: Styles.ScreenWidth * 0.25 }}
         renderTabBar={() => <DefaultTabBar />}
       >
@@ -124,7 +123,4 @@ class AttentionPage extends React.Component {
   }
 }
 
-export default connect(({ hot, videos }) => ({
-  ...hot,
-  ...videos,
-}))(AttentionPage);
+export default AttentionPage;
