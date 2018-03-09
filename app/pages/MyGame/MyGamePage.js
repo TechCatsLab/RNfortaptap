@@ -34,11 +34,9 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Avatar } from 'react-native-elements';
-import ScrollableTabView, {
-  DefaultTabBar,
-} from 'react-native-scrollable-tab-view';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 
-// import CutlineTabBar from '../../components/CutlineTabBar';
+import CutlineTabBar from '../../components/CutlineTabBar';
 
 import FontsSize from '../../res/Fonts/size';
 import IconsSize from '../../res/Icons/size';
@@ -103,6 +101,7 @@ export default class MyGamePage extends React.Component {
   constructor() {
     super();
     this.state = {
+      tabNames: ['已装', '玩过', '收藏', '预约'],
       types: [
         { title: '已装', component: Installed },
         { title: '玩过', component: Played },
@@ -120,7 +119,7 @@ export default class MyGamePage extends React.Component {
         tabBarActiveTextColor={Colors.primary}
         tabBarInactiveTextColor={Colors.black}
         tabBarUnderlineStyle={{ backgroundColor: Colors.primary, width: Styles.ScreenWidth * 0.25 }}
-        renderTabBar={() => <DefaultTabBar />}
+        renderTabBar={() => <CutlineTabBar tabNames={this.state.tabNames} />}
       >
         { this.state.types.map((v, i) => {
             const Component = v.component;
