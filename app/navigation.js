@@ -40,7 +40,7 @@ import RankScreen from './pages/Rank/RankPage';
 import DiscoverScreen from './pages/Discover/DiscoverPage';
 import AttentionScreen from './pages/Attention/AttentionPage';
 import MyGameScreen from './pages/MyGame/MyGamePage';
-import DetailsScreen from './pages/Recommend/DetailsPage';
+import DetailsScreen from './pages/Details/DetailsPage';
 // import MainScreen from './Test/MainPage';
 
 const BasicApp = TabNavigator({

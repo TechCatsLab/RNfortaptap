@@ -51,6 +51,8 @@ import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
 
+import DetailsContent from './DetailsContent';
+
 class DetailsPage extends React.Component {
   static navigationOptions = {
     header: null,
@@ -196,7 +198,7 @@ class DetailsPage extends React.Component {
         <FlatList
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
-            <View>
+            <View style={styles.view}>
               <View style={styles.container}>
                 <VideoPlayer
                   source={{ uri: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
@@ -214,7 +216,7 @@ class DetailsPage extends React.Component {
                     large
                     source={{ uri: "https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageMogr2/auto-orient/strip" }}
                     avatarStyle={{
-                      borderRadius: 8,
+                      borderRadius: 15,
                       backgroundColor: Colors.white,
                     }}
                   />
@@ -241,7 +243,7 @@ class DetailsPage extends React.Component {
                   title="已关注"
                   textStyle={{
                     color: Colors.primary,
-                    fontSize: FontsSize.small,
+                    fontSize: FontsSize.tiny,
                   }}
                   buttonStyle={{
                     height: Styles.Height(42),
@@ -257,7 +259,7 @@ class DetailsPage extends React.Component {
                   title="下载"
                   textStyle={{
                     color: Colors.white,
-                    fontSize: FontsSize.small,
+                    fontSize: FontsSize.tiny,
                   }}
                   buttonStyle={{
                     height: Styles.Height(42),
@@ -271,12 +273,28 @@ class DetailsPage extends React.Component {
               </View>
               <Divider
                 style={{
-                  backgroundColor: Colors.gray2,
+                  backgroundColor: Colors.gray1,
                   width: Styles.ScreenWidth,
                   height: Styles.Height(3),
                   marginTop: Styles.Height(20),
                 }}
               />
+              <View
+                style={{
+                  height: Styles.Height(60),
+                }}
+              >
+                <Text>分隔栏</Text>
+              </View>
+              <Divider
+                style={{
+                  backgroundColor: Colors.gray1,
+                  width: Styles.ScreenWidth,
+                  height: Styles.Height(3),
+                  marginTop: Styles.Height(20),
+                }}
+              />
+              <DetailsContent />
             </View>
           }
           data={this.state.labels}
@@ -291,6 +309,9 @@ class DetailsPage extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  view: {
+    backgroundColor: Colors.white,
+  },
   header: {
     display: 'flex',
     flexDirection: 'row',
@@ -354,7 +375,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
     borderStyle: 'solid',
     borderRadius: 4,
-    width: Styles.Width(72),
+    width: Styles.Width(80),
     marginTop: Styles.Height(10),
     marginLeft: Styles.Width(13),
   },
@@ -379,6 +400,7 @@ const styles = StyleSheet.create({
     fontSize: FontsSize.mini,
     fontWeight: FontsWeight.blod,
     color: Colors.white,
+    marginTop: Styles.Height(3),
   },
   grade: {
     fontSize: FontsSize.large,

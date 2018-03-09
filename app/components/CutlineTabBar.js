@@ -41,9 +41,6 @@ import Styles from '../res/Styles';
 import FontsWeight from '../res/Fonts/weight';
 
 export default class CutlineTabBar extends React.Component {
-  // componentDidMount() {
-  //   this.props.scrollValue.addListener(this.setAnimationValue);
-  // }
   renderItem(tab, i) {
     const color = this.props.activeTab === i ? Colors.primary : Colors.gray3;
 
@@ -51,8 +48,8 @@ export default class CutlineTabBar extends React.Component {
       <View style={styles.layout}>
         <TouchableOpacity
           activeOpacity={1}
-          onPress={() => this.props.goToPage(i)}
           key={i}
+          onPress={() => this.props.goToPage(i)}
           style={styles.tab}
         >
           {
@@ -78,9 +75,6 @@ export default class CutlineTabBar extends React.Component {
     return (
       <View style={styles.tab}>
         {this.props.tabs.map((tab, i) => this.renderItem(tab, i))}
-        {/* {
-          this.props.tabs.map((tab, i) => (i === 4 ? this.renderItem1 : this.renderItem2))
-        } */}
       </View>
     );
   }

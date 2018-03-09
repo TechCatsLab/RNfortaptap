@@ -30,8 +30,8 @@
 const Colors = {
   primary: '#14B9C8',
   white: '#fff',
-  gray1: '#666',
-  gray2: '#DDDDDD',
+  gray1: '#DDDDDD',
+  gray2: '#666',
   gray3: '#444444',
   gray: 'rgba(244,244,244,0.8)',
   black: '#000',
