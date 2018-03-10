@@ -36,7 +36,10 @@ import {
 } from 'react-native';
 import {
   Divider,
+  Badge,
 } from 'react-native-elements';
+import Feather from 'react-native-vector-icons/Feather';
+import ImageViewer from 'react-native-image-zoom-viewer';
 
 import FontsSize from '../../res/Fonts/size';
 import FontsWeight from '../../res/Fonts/weight';
@@ -44,19 +47,21 @@ import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
 
+import ImageShow from './Component/ImageShow';
+
 export default class DetailsContent extends React.Component {
   render() {
     return (
       <View>
         <View>
           <Text style={styles.staffwordHead}>开发者的话</Text>
-          <Text style={styles.starffwordContent}>その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。</Text>
+          <Text numberOfLines={3} style={styles.starffwordContent}>その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。その他不具合やお気づきの点がございましたら、お手数ですが 弊社サポートまでお問い合わせください。</Text>
           <TouchableOpacity>
             <Text style={styles.showAll}>显示全部</Text>
           </TouchableOpacity>
         </View>
         <Divider
-          style={{ backgroundColor: Colors.gray2, height: 0.5, marginTop: Styles.Height(10) }}
+          style={{ backgroundColor: Colors.gray2, height: 0.5, marginTop: Styles.Height(5) }}
         />
         <View>
           <Text style={styles.staffwordHead}>编辑的话</Text>
@@ -65,7 +70,85 @@ export default class DetailsContent extends React.Component {
         <Divider
           style={{ backgroundColor: Colors.gray, height: Styles.Height(7), marginTop: Styles.Height(10) }}
         />
-        <Text>xiangqing</Text>
+        <View style={styles.labelView}>
+          <TouchableOpacity style={styles.label}>
+            <Badge
+              containerStyle={
+                {
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: Colors.primary,
+                  borderWidth: 1,
+                  padding: Styles.Height(10),
+                  marginHorizontal: Styles.Width(10),
+                }
+              }
+            >
+              <Text style={styles.labelText}>日文</Text>
+            </Badge>
+            <Badge
+              containerStyle={
+                {
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: Colors.primary,
+                  borderWidth: 1,
+                  padding: Styles.Height(10),
+                  marginHorizontal: Styles.Width(10),
+                }
+              }
+            >
+              <Text style={styles.labelText}>宠物</Text>
+            </Badge>
+            <Badge
+              containerStyle={
+                {
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: Colors.primary,
+                  borderWidth: 1,
+                  padding: Styles.Height(10),
+                  marginHorizontal: Styles.Width(10),
+                }
+              }
+            >
+              <Text style={styles.labelText}>治愈</Text>
+            </Badge>
+            <Badge
+              containerStyle={
+                {
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: Colors.primary,
+                  borderWidth: 1,
+                  padding: Styles.Height(10),
+                  marginHorizontal: Styles.Width(10),
+                }
+              }
+            >
+              <Text style={styles.labelText}>养成</Text>
+            </Badge>
+            <Badge
+              containerStyle={
+                {
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: Colors.primary,
+                  borderWidth: 1,
+                  padding: Styles.Height(10),
+                  marginHorizontal: Styles.Width(10),
+                }
+              }
+            >
+              <Text style={styles.labelText}>+</Text>
+            </Badge>
+          </TouchableOpacity>
+          <Feather
+            name="chevron-right"
+            size={IconsSize.large}
+          />
+        </View>
+        <ImageShow />
       </View>
     );
   }
@@ -79,11 +162,11 @@ const styles = StyleSheet.create({
     padding: Styles.Height(15),
   },
   starffwordContent: {
-    width: Styles.Width(620),
     fontSize: FontsSize.small,
     fontWeight: FontsWeight.blod,
     color: Colors.gray2,
     marginLeft: Styles.Height(15),
+    maxWidth: Styles.ScreenWidth - 12,
   },
   showAll: {
     display: 'flex',
@@ -93,5 +176,19 @@ const styles = StyleSheet.create({
     fontWeight: FontsWeight.blod,
     color: Colors.primary,
     padding: Styles.Height(15),
+  },
+  labelView: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: Styles.Height(15),
+  },
+  label: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  labelText: {
+    color: Colors.primary,
   },
 });
