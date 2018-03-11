@@ -24,25 +24,26 @@
 
 /*
  * Revision History:
- *     Initial: 2018/03/08        Cheng Jifeng
+ *     Initial: 2018/03/11        Cheng Jifeng
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyleSheet,
   View,
   Text,
   TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 
+import FontsWeight from '../res/Fonts/weight';
 import Colors from '../res/Colors';
 import Styles from '../res/Styles';
-import FontsWeight from '../res/Fonts/weight';
+import FontsSize from '../res/Fonts/size';
 
-export default class CutlineTabBar extends React.Component {
+export default class BubbleTabBar extends React.Component {
   renderItem(tab, i) {
-    const color = this.props.activeTab === i ? Colors.primary : Colors.gray3;
+    const color = this.props.activeTab === i ? Colors.primary : Colors.black;
 
     return (
       <View style={styles.layout}>
@@ -52,20 +53,21 @@ export default class CutlineTabBar extends React.Component {
           onPress={() => this.props.goToPage(i)}
           style={styles.tab}
         >
-          {
-            i >= 3 ?
-              <Text
-                style={{ color: color }} // eslint-disable-line
-              >{this.props.tabNames[i]}
-              </Text> :
-              <View style={styles.layout}>
-                <Text
-                  style={{ color: color }} // eslint-disable-line
-                >{this.props.tabNames[i]}
-                </Text>
-                <Text style={styles.cutLine}>|</Text>
-              </View>
-          }
+          <Text
+            style={{ color: color }} // eslint-disable-line
+          >{this.props.tabNames[i]}
+          </Text>
+          <Text
+            style={
+              {
+                color: color, // eslint-disable-line
+                fontSize: FontsSize.small,
+                marginLeft: Styles.Height(5),
+                marginBottom: Styles.Height(6),
+              }
+            }
+          >{this.props.bubbles[i]}
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -80,10 +82,11 @@ export default class CutlineTabBar extends React.Component {
   }
 }
 
-CutlineTabBar.propTypes = {
+BubbleTabBar.propTypes = {
   goToPage: PropTypes.func.isRequired,
   activeTab: PropTypes.number.isRequired,
   tabs: PropTypes.array.isRequired,
+  bubbles: PropTypes.number.isRequired,
   tabNames: PropTypes.array.isRequired,
 };
 

@@ -118,8 +118,18 @@ export default class MyGamePage extends React.Component {
         tabBarBackgroundColor={Colors.white}
         tabBarActiveTextColor={Colors.primary}
         tabBarInactiveTextColor={Colors.black}
-        tabBarUnderlineStyle={{ backgroundColor: Colors.primary, width: Styles.ScreenWidth * 0.25 }}
-        renderTabBar={() => <CutlineTabBar tabNames={this.state.tabNames} />}
+        tabBarUnderlineStyle={
+          {
+            backgroundColor: Colors.primary,
+            width: Styles.ScreenWidth * 0.25,
+          }
+        }
+        renderTabBar={() => (
+          <CutlineTabBar
+            tabNames={this.state.tabNames}
+            tabs={this.state.types}
+          />
+        )}
       >
         { this.state.types.map((v, i) => {
             const Component = v.component;

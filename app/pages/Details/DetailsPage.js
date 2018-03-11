@@ -51,7 +51,9 @@ import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
 
-import DetailsContent from './DetailsContent';
+import DetailsTabBar from './DetailsTabBar';
+// import DetailsContent from './DetailsContent';
+
 
 class DetailsPage extends React.Component {
   static navigationOptions = {
@@ -284,7 +286,8 @@ class DetailsPage extends React.Component {
                   height: Styles.Height(60),
                 }}
               >
-                <Text>分隔栏</Text>
+                <DetailsTabBar />
+                {/* <Text>分隔栏</Text> */}
               </View>
               <Divider
                 style={{
@@ -294,7 +297,7 @@ class DetailsPage extends React.Component {
                   marginTop: Styles.Height(20),
                 }}
               />
-              <DetailsContent />
+              {/* <DetailsContent /> */}
             </View>
           }
           data={this.state.labels}
