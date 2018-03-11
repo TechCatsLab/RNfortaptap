@@ -26,3 +26,46 @@
  * Revision History:
  *     Initial: 2018/03/11        Cheng Jifeng
  */
+
+import React from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+} from 'react-native';
+
+import FontsSize from '../../../res/Fonts/size';
+import FontsWeight from '../../../res/Fonts/weight';
+import Colors from '../../../res/Colors';
+import Styles from '../../../res/Styles';
+
+export default (props) => {
+  return (
+    <View style={styles.layout}>
+      <Text
+        style={{
+          backgroundColor: Colors.primary,
+          width: Styles.Width(10),
+          height: Styles.Height(50),
+          borderRadius: Styles.Width(4),
+        }}
+      />
+      <Text style={styles.title}>{props.title}</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  layout: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginLeft: Styles.Width(20),
+    marginVertical: Styles.Height(15),
+  },
+  title: {
+    fontSize: FontsSize.large,
+    fontWeight: FontsWeight.blod,
+    color: Colors.black,
+    marginLeft: Styles.Width(15),
+  },
+});

@@ -47,6 +47,7 @@ import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
 
 import ImageShow from './Component/ImageShow';
+import Caption from './Component/Caption';
 
 export default class DetailsContent extends React.Component {
   render() {
@@ -62,8 +63,8 @@ export default class DetailsContent extends React.Component {
         <Divider
           style={
             {
-              backgroundColor: Colors.gray2,
-              height: 0.5,
+              backgroundColor: Colors.gray1,
+              height: 1,
               marginTop: Styles.Height(5),
             }
           }
@@ -181,12 +182,12 @@ export default class DetailsContent extends React.Component {
         <Divider
           style={
             {
-              backgroundColor: Colors.gray,
-              height: 0.5,
-              marginTop: Styles.Height(10),
+              backgroundColor: Colors.gray1,
+              height: 1,
             }
           }
         />
+        <Caption title="简介" />
       </View>
     );
   }
@@ -209,7 +210,7 @@ const styles = StyleSheet.create({
   showAll: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
     fontSize: FontsSize.medium,
     fontWeight: FontsWeight.blod,
     color: Colors.primary,
@@ -233,11 +234,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    fontSize: FontsSize.medium,
-    fontWeight: FontsWeight.blod,
   },
   circleIcon: {
     color: Colors.white,
+    fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.blod,
   },
   circleText: {
     color: Colors.black,

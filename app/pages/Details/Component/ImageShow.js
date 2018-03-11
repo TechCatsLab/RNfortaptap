@@ -64,6 +64,7 @@ export default class ImageShow extends React.Component {
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
+          resizeMode="cover"
         >
           {
             this.state.images.map((item, index) => (
@@ -78,10 +79,9 @@ export default class ImageShow extends React.Component {
                     key={index} // eslint-disable-line
                     source={{ uri: item.url }}
                     style={{
-                      height: Styles.Height(250),
-                      width: Styles.Width(160),
+                      height: Styles.Height(300),
+                      width: Styles.Width(200),
                       backgroundColor: Colors.primary,
-                      padding: Styles.Width(20),
                     }}
                   />
                 </TouchableOpacity>
@@ -90,6 +90,7 @@ export default class ImageShow extends React.Component {
           }
         </ScrollView>
         <Modal
+          style={{ flex: 1, width: null, height: null }}
           onPress={() => { this.setModalVisible(!this.state.modalVisible); }}
           visible={this.state.modalVisible}
           transparent
