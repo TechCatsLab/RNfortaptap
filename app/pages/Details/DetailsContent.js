@@ -39,7 +39,6 @@ import {
   Badge,
 } from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
-import ImageViewer from 'react-native-image-zoom-viewer';
 
 import FontsSize from '../../res/Fonts/size';
 import FontsWeight from '../../res/Fonts/weight';
@@ -61,14 +60,26 @@ export default class DetailsContent extends React.Component {
           </TouchableOpacity>
         </View>
         <Divider
-          style={{ backgroundColor: Colors.gray2, height: 0.5, marginTop: Styles.Height(5) }}
+          style={
+            {
+              backgroundColor: Colors.gray2,
+              height: 0.5,
+              marginTop: Styles.Height(5),
+            }
+          }
         />
         <View>
           <Text style={styles.staffwordHead}>编辑的话</Text>
           <Text style={styles.starffwordContent}>我的蛙怎么还不回来啊！！！</Text>
         </View>
         <Divider
-          style={{ backgroundColor: Colors.gray, height: Styles.Height(7), marginTop: Styles.Height(10) }}
+          style={
+            {
+              backgroundColor: Colors.gray,
+              height: Styles.Height(7),
+              marginTop: Styles.Height(10),
+            }
+          }
         />
         <View style={styles.labelView}>
           <TouchableOpacity style={styles.label}>
@@ -149,6 +160,33 @@ export default class DetailsContent extends React.Component {
           />
         </View>
         <ImageShow />
+        <View>
+          <View style={styles.circleLabel}>
+            <Badge
+              containerStyle={
+                {
+                  borderRadius: 50,
+                  padding: Styles.Height(10),
+                  marginLeft: Styles.Width(25),
+                  backgroundColor: Colors.primary,
+                  marginVertical: Styles.Height(20),
+                }
+              }
+            >
+              <Text style={styles.circleIcon}>日</Text>
+            </Badge>
+            <Text style={styles.circleText}>日文</Text>
+          </View>
+        </View>
+        <Divider
+          style={
+            {
+              backgroundColor: Colors.gray,
+              height: 0.5,
+              marginTop: Styles.Height(10),
+            }
+          }
+        />
       </View>
     );
   }
@@ -190,5 +228,19 @@ const styles = StyleSheet.create({
   },
   labelText: {
     color: Colors.primary,
+  },
+  circleLabel: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontSize: FontsSize.medium,
+    fontWeight: FontsWeight.blod,
+  },
+  circleIcon: {
+    color: Colors.white,
+  },
+  circleText: {
+    color: Colors.black,
+    marginLeft: Styles.Width(15),
   },
 });

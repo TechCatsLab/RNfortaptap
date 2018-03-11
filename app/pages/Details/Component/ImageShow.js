@@ -60,32 +60,34 @@ export default class ImageShow extends React.Component {
   }
   render() {
     return (
-      <View>
+      <View style={{ backgroundColor: Colors.gray }}>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          style={styles.imageLayout}
         >
-          <TouchableOpacity
-            onPress={() => {
-              this.setModalVisible(!this.state.modalVisible);
-            }}
-          >
-            {
-              this.state.images.map((item, index) => (
-                <Image
-                  key={index} // eslint-disable-line
-                  source={{ uri: item.url }}
-                  style={{
-                    height: Styles.Height(250),
-                    width: Styles.Width(160),
-                    backgroundColor: Colors.primary,
-                    padding: Styles.Width(20),
+          {
+            this.state.images.map((item, index) => (
+              <View>
+                <TouchableOpacity
+                  style={styles.imageLayout}
+                  onPress={() => {
+                    this.setModalVisible(!this.state.modalVisible);
                   }}
-                />
-              ))
-            }
-          </TouchableOpacity>
+                >
+                  <Image
+                    key={index} // eslint-disable-line
+                    source={{ uri: item.url }}
+                    style={{
+                      height: Styles.Height(250),
+                      width: Styles.Width(160),
+                      backgroundColor: Colors.primary,
+                      padding: Styles.Width(20),
+                    }}
+                  />
+                </TouchableOpacity>
+              </View>
+            ))
+          }
         </ScrollView>
         <Modal
           onPress={() => { this.setModalVisible(!this.state.modalVisible); }}
@@ -105,7 +107,8 @@ export default class ImageShow extends React.Component {
 
 const styles = StyleSheet.create({
   imageLayout: {
-    marginLeft: Styles.Width(20),
-    marginVertical: Styles.Height(15),
+    display: 'flex',
+    flexDirection: 'row',
+    padding: Styles.Height(20),
   },
 });
