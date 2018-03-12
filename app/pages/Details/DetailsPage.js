@@ -198,6 +198,11 @@ class DetailsPage extends React.Component {
           </View>
         </View>
         <FlatList
+          data={this.state.labels}
+          renderItem={({ item }) => (
+            <Text style={styles.list}>{item.content}</Text>
+          )}
+          onScroll={this._onScroll.bind(this)}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
             <View style={styles.view}>
@@ -281,30 +286,18 @@ class DetailsPage extends React.Component {
                   marginTop: Styles.Height(20),
                 }}
               />
-              <View
-                style={{
-                  height: Styles.Height(60),
-                }}
-              >
-                <DetailsTabBar />
-                {/* <Text>分隔栏</Text> */}
-              </View>
-              <Divider
+              <DetailsTabBar />
+              {/* <Divider
                 style={{
                   backgroundColor: Colors.gray1,
                   width: Styles.ScreenWidth,
                   height: Styles.Height(3),
                   marginTop: Styles.Height(20),
                 }}
-              />
+              /> */}
               {/* <DetailsContent /> */}
             </View>
           }
-          data={this.state.labels}
-          renderItem={({ item }) => (
-            <Text style={styles.list}>{item.content}</Text>
-          )}
-          onScroll={this._onScroll.bind(this)}
         />
       </View>
     );
