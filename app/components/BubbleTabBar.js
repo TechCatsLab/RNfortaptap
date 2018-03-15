@@ -36,9 +36,9 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import FontsSize from '../res/Fonts/size';
 import Colors from '../res/Colors';
 import Styles from '../res/Styles';
-import FontsSize from '../res/Fonts/size';
 
 export default class BubbleTabBar extends React.Component {
   renderItem(tab, i) {

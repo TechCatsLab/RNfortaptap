@@ -29,17 +29,14 @@
 
 import React from 'react';
 import {
-  View,
-  StyleSheet,
-  FlatList,
   Text,
   TouchableOpacity,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   Avatar,
-  Divider,
 } from 'react-native-elements';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 import { connect } from 'react-redux';
 
 import FontsSize from '../../res/Fonts/size';
@@ -47,8 +44,10 @@ import IconsSize from '../../res/Icons/size';
 import Colors from '../../res/Colors';
 import Styles from '../../res/Styles';
 
-import RankContent from './Components/RankContent';
-import LabelClassify from '../../components/LabelClassify';
+import LabelTabBar from './Components/LabelTabBar';
+import Order from './Components/Order';
+import GenreStyle from './Components/GenreStyle';
+import Manufacturer from './Components/Manufacturer';
 
 class RankPage extends React.Component {
   static navigationOptions = {
@@ -100,32 +99,31 @@ class RankPage extends React.Component {
     ),
   }
 
+  constructor() {
+    super();
+    this.state = {
+      tabNames: ['下载榜', '新品榜', '预约榜', '热玩榜', '厂商'],
+    };
+  }
+
   render() {
     return (
-      <View>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={
-            <View
-              style={styles.content}
-            >
-              <LabelClassify labels={this.props.labels} />
-              <Divider />
-              <RankContent content={this.props.content} />
-            </View>
-          }
-        />
-      </View>
+      <ScrollableTabView
+        style={{ flex: 1, backgroundColor: Colors.white }}
+        tabBarBackgroundColor={Colors.white}
+        renderTabBar={() => (
+          <LabelTabBar tabNames={this.state.tabNames} />
+        )}
+      >
+        <GenreStyle content={this.props.content} />
+        <GenreStyle content={this.props.content} />
+        <Order content={this.props.content} />
+        <GenreStyle content={this.props.content} />
+        <Manufacturer content={this.props.content} />
+      </ScrollableTabView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  content: {
-    flexGrow: 1,
-    backgroundColor: Colors.white,
-  },
-});
 
 export default connect(({ rank }) => ({
   ...rank,

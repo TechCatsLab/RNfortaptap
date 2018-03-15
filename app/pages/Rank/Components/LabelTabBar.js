@@ -24,51 +24,73 @@
 
 /*
  * Revision History:
- *     Initial: 2018/01/23        Cheng Jifeng
+ *     Initial: 2018/03/15        Cheng Jifeng
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
-  StyleSheet,
   Text,
+  TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
+import {
+  Badge,
+  Divider,
+} from 'react-native-elements';
 
-import FontsSize from '../../../res/Fonts/size';
+import Colors from '../../../res/Colors';
 import Styles from '../../../res/Styles';
 
-export default class RankHeader extends React.Component {
+export default class LabelTabBar extends React.Component {
+  renderItem(tab, i) {
+    const colors = this.props.activeTab === i ? Colors.white : Colors.gray2;
+    const bgColor = this.props.activeTab === i ? Colors.primary : Colors.gray;
+    return (
+      <View style={styles.layout}>
+        <TouchableOpacity
+          activeOpacity={1}
+          key={i}
+          onPress={() => this.props.goToPage(i)}
+          style={styles.tab}
+        >
+          <Divider />
+          <Badge containerStyle={{ backgroundColor: bgColor }}>
+            <Text style={{ color: colors }}>{this.props.tabNames[i]}</Text>
+          </Badge>
+        </TouchableOpacity>
+      </View>
+    );
+  }
   render() {
     return (
-      <View style={styles.view}>
-        <View>
-          <View style={styles.allRankType}>
-            <Text style={styles.textRank}>下载榜</Text>
-            <Text style={styles.textRank}>|</Text>
-            <Text style={styles.textRank}>新品榜</Text>
-            <Text style={styles.textRank}>|</Text>
-            <Text style={styles.textRank}>预约榜</Text>
-            <Text style={styles.textRank}>|</Text>
-            <Text style={styles.textRank}>热卖榜</Text>
-            <Text style={styles.textRank}>|</Text>
-            <Text style={styles.textRank}>热玩榜</Text>
-          </View>
-        </View>
+      <View style={styles.tab}>
+        {this.props.tabs.map((tab, i) => this.renderItem(tab, i))}
       </View>
     );
   }
 }
 
+LabelTabBar.propTypes = {
+  goToPage: PropTypes.func.isRequired,
+  activeTab: PropTypes.number.isRequired,
+  tabs: PropTypes.array.isRequired,
+  tabNames: PropTypes.array.isRequired,
+};
+
 const styles = StyleSheet.create({
-  allRankType: {
+  layout: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    marginHorizontal: Styles.Height(5),
-    marginVertical: Styles.Width(5),
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  textRank: {
-    marginRight: Styles.Width(10),
-    fontSize: FontsSize.small,
+  tab: {
+    height: Styles.Height(80),
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: Colors.white,
   },
 });

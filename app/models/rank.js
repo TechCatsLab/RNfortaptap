@@ -188,7 +188,7 @@ export default {
       },
       {
         key: 15,
-        number: 1,
+        number: 15,
         img: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageMogr2/auto-orient/strip',
         title: '旅行青蛙',
         label1: '治愈',
@@ -199,7 +199,7 @@ export default {
       },
       {
         key: 16,
-        number: 2,
+        number: 16,
         img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
         title: '楚留香（预下载）',
         label1: '画质党',
@@ -210,7 +210,7 @@ export default {
       },
       {
         key: 17,
-        number: 3,
+        number: 17,
         img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
         title: '终结者2：审判日',
         label1: '吃鸡',
@@ -221,7 +221,7 @@ export default {
       },
       {
         key: 18,
-        number: 4,
+        number: 18,
         img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
         title: '荒野行动',
         label1: '吃鸡',
@@ -232,7 +232,7 @@ export default {
       },
       {
         key: 19,
-        number: 5,
+        number: 19,
         img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
         title: 'アリス・ギア・アイギス',
         label1: '动漫',
@@ -243,7 +243,7 @@ export default {
       },
       {
         key: 20,
-        number: 6,
+        number: 20,
         img: 'https://img.tapimg.com/market/lcs/0f944ee48f2bf78138504cc98980e508_360.png?imageMogr2/auto-orient/strip',
         title: '旅行青蛙',
         label1: '治愈',
@@ -254,7 +254,7 @@ export default {
       },
       {
         key: 21,
-        number: 7,
+        number: 21,
         img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
         title: '楚留香（预下载）',
         label1: '画质党',
@@ -265,7 +265,7 @@ export default {
       },
       {
         key: 22,
-        number: 8,
+        number: 22,
         img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
         title: '终结者2：审判日',
         label1: '吃鸡',
@@ -276,7 +276,7 @@ export default {
       },
       {
         key: 23,
-        number: 9,
+        number: 23,
         img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
         title: '荒野行动',
         label1: '吃鸡',
@@ -287,7 +287,7 @@ export default {
       },
       {
         key: 24,
-        number: 10,
+        number: 24,
         img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
         title: 'アリス・ギア・アイギス',
         label1: '动漫',
@@ -298,7 +298,7 @@ export default {
       },
       {
         key: 25,
-        number: 11,
+        number: 25,
         img: 'https://img.tapimg.com/market/lcs/c118963872d02ccbad2905842e4a6c20_360.png?imageMogr2/auto-orient/strip',
         title: '楚留香（预下载）',
         label1: '画质党',
@@ -309,7 +309,7 @@ export default {
       },
       {
         key: 26,
-        number: 12,
+        number: 26,
         img: 'https://img.tapimg.com/market/icons/d2cbb82d7eb85b18a0983191edc1f181_360.png?imageMogr2/auto-orient/strip',
         title: '终结者2：审判日',
         label1: '吃鸡',
@@ -320,7 +320,7 @@ export default {
       },
       {
         key: 27,
-        number: 13,
+        number: 27,
         img: 'https://img.tapimg.com/market/lcs/53ef45a26814f286fa2efcb338c68ba4_360.png?imageMogr2/auto-orient/strip',
         title: '荒野行动',
         label1: '吃鸡',
@@ -331,7 +331,7 @@ export default {
       },
       {
         key: 28,
-        number: 14,
+        number: 28,
         img: 'https://img.tapimg.com/market/lcs/57fcfb36a1dedcc3841479bce1e842e1_360.png?imageMogr2/auto-orient/strip',
         title: 'アリス・ギア・アイギス',
         label1: '动漫',
