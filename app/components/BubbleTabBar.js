@@ -36,7 +36,6 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import FontsWeight from '../res/Fonts/weight';
 import Colors from '../res/Colors';
 import Styles from '../res/Styles';
 import FontsSize from '../res/Fonts/size';
@@ -96,11 +95,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  cutLine: {
-    marginLeft: Styles.Width(60),
-    color: Colors.gray3,
-    fontWeight: FontsWeight.blod,
   },
   tab: {
     height: Styles.Height(80),

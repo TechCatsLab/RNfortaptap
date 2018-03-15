@@ -67,51 +67,39 @@ class DetailsPage extends React.Component {
     this.state = {
       labels: [
         {
-          key: 0,
           content: '新游预约',
         },
         {
-          key: 1,
           content: '单机',
         },
         {
-          key: 2,
           content: '角色扮演',
         },
         {
-          key: 3,
           content: '动作',
         },
         {
-          key: 4,
           content: 'MOBA',
         },
         {
-          key: 5,
           content: '策略',
         },
         {
-          key: 6,
           content: '卡牌',
         },
         {
-          key: 7,
           content: '生存',
         },
         {
-          key: 8,
           content: '模拟',
         },
         {
-          key: 9,
           content: '竞速',
         },
         {
-          key: 10,
           content: '益智',
         },
         {
-          key: 11,
           content: '二次元',
         },
       ],
@@ -133,6 +121,10 @@ class DetailsPage extends React.Component {
         style: { opacity: 1 },
       });
     }
+  }
+
+  _keyExtractor= (item, index) => {
+    return index + item;
   }
 
   render() {
@@ -202,6 +194,7 @@ class DetailsPage extends React.Component {
           renderItem={({ item }) => (
             <Text style={styles.list}>{item.content}</Text>
           )}
+          keyExtractor={this._keyExtractor}
           onScroll={this._onScroll.bind(this)}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={

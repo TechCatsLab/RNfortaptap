@@ -44,11 +44,6 @@ export default class DetailsTabBar extends React.Component {
     this.state = {
       tabNames: ['详情', '评价', '论坛'],
       bubbles: [null, 4671, 426],
-      // types: [
-      //   { title: '详情', component: DetailsContent },
-      //   { title: '评价', component: CommentPage },
-      //   { title: '论坛', component: CommunityPage },
-      // ],
     };
   }
   render() {
@@ -76,10 +71,6 @@ export default class DetailsTabBar extends React.Component {
         <DetailsContent tabLabel="详情" />
         <CommentPage tabLabel="评论" />
         <CommunityPage tabLabel="论坛" />
-        {/* { this.state.types.map((v, i) => {
-            const Component = v.component;
-            return <Component key={i} tabLabel={v.title} navigation={this.props.navigation} />; // eslint-disable-line
-        })} */}
       </ScrollableTabView>
     );
   }
