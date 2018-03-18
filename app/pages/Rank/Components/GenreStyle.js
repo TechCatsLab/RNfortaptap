@@ -27,7 +27,7 @@
  *     Initial: 2018/03/15        Cheng Jifeng
  */
 
- /*
+/*
  * MIT License
  *
  * Copyright (c) 2018 SmartestEE Co., Ltd..
@@ -78,12 +78,28 @@ const _separator = () => {
   return <View style={{ height: 0.5, backgroundColor: Colors.black }} />;
 };
 
+const _refreshing = () => {
+  const timer = setTimeout(() => {
+    clearTimeout(timer);
+  }, 3000);
+};
+
+const _onLoad = () => {
+  const timer = setTimeout(() => {
+    clearTimeout(timer);
+  }, 3000);
+};
+
 export default (props) => {
   return (
     <FlatList
       ItemSeparatorComponent={_separator}
       showsVerticalScrollIndicator={false}
       data={props.content}
+      onRefresh={_refreshing}
+      refreshing={false}
+      onEndReachedThreshold={0}
+      onEndReached={_onLoad}
       renderItem={({ item }) => (
         <View style={styles.overAll} key={item.key}>
           <View style={styles.leftContent}>
