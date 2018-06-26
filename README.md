@@ -22,12 +22,12 @@
 1. `adb kill-server`断开连接
 2. `adb start-server`重新连接
 ## 效果图
-<img src='http://pax19zugp.bkt.clouddn.com/taptap9.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap8.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap7.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap6.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap5.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap4.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap3.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap2.png' width='300' height='600' />
-<img src='http://pax19zugp.bkt.clouddn.com/taptap1.png' width='300' height='600' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap9.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap8.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap7.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap6.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap5.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap4.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap3.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap2.png' width='320' height='640' />
+<img src='http://pax19zugp.bkt.clouddn.com/taptap1.png' width='320' height='640' />
