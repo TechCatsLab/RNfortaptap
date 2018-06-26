@@ -22,6 +22,6 @@
 1. `adb kill-server`断开连接
 2. `adb start-server`重新连接
 ## 效果图
-![](http://pax19zugp.bkt.clouddn.com/taptap9.png)
+![](http://pax19zugp.bkt.clouddn.com/taptap1.png)
 ![](http://pax19zugp.bkt.clouddn.com/taptap5.png)
 ![](http://pax19zugp.bkt.clouddn.com/taptap5.png)
